@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vitória Araújo — Product Specialist | Product Operations & Customer Journey</title>
-<meta name="description" content="Portfólio de Vitória Araújo — Product Specialist com atuação em Product Operations e Customer Journey. +1,6M clientes, R$160MM/mês em receita.">
+<title>Vitória Araújo — Product Manager | Jornada, Conversão & Product Operations</title>
+<meta name="description" content="Portfólio de Vitória Araújo — Product Manager com foco em jornada do cliente, conversão e Product Operations em produtos digitais de alta escala.">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -93,6 +93,22 @@
   .hrole { font-size: 13px; color: var(--rm); font-weight: 500; margin-bottom: .75rem; line-height: 1.5; }
   .hbio { font-size: 14px; color: var(--tm); line-height: 1.75; margin-bottom: 1.25rem; max-width: 460px; }
   .hctas { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .hero-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 1rem;
+    max-width: 520px;
+  }
+  .hero-highlight {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1a7a4a;
+    background: #edfaf4;
+    border-radius: 8px;
+    padding: 6px 10px;
+  }
 
   .bp {
     background: var(--r); color: #fff; border: none;
@@ -309,11 +325,16 @@
   <div class="hero">
     <div>
       <h1>Olá, sou a<br><em>Vitória Araújo</em></h1>
-      <div class="hrole">Product Specialist · Product Operations &amp; Customer Journey</div>
-      <p class="hbio">Product Specialist em Product Operations e Customer Journey. Transformo dados em decisões e fricções em eficiência — com vivência em B2B, B2C, SaaS e telecom de alta escala.</p>
+      <div class="hrole">Product Manager | Jornada do Cliente, Conversão &amp; Product Operations</div>
+      <p class="hbio">Especialista em transformar dados e processos complexos em produtos que aumentam conversão, eficiência operacional e experiência do cliente.</p>
       <div class="hctas">
         <a class="bp" href="#contato">Falar comigo</a>
         <a class="bs" href="#cases">Ver projetos</a>
+      </div>
+      <div class="hero-highlights">
+        <span class="hero-highlight">1,6M+ clientes impactados</span>
+        <span class="hero-highlight">10+ iniciativas lideradas</span>
+        <span class="hero-highlight">B2B · B2C · SaaS · Telecom</span>
       </div>
     </div>
     <div class="av">
@@ -327,20 +348,20 @@
   <!-- SOBRE -->
   <section id="sobre">
     <p class="sl">sobre mim</p>
-    <h2 class="st">Product Specialist com atuação em alta escala</h2>
+    <h2 class="st">Product Manager com atuação em jornada, conversão e escala</h2>
     <div class="nums">
-      <div class="nc"><div class="nn">+1,6M</div><div class="nl2">clientes impactados na Brisanet</div></div>
-      <div class="nc"><div class="nn">R$160M</div><div class="nl2">faturamento mensal sob gestão</div></div>
-      <div class="nc"><div class="nn">~26%</div><div class="nl2">redução de cancelamentos no funil</div></div>
+      <div class="nc"><div class="nn">+1,6M</div><div class="nl2">clientes impactados em telecom</div></div>
+      <div class="nc"><div class="nn">10+</div><div class="nl2">iniciativas de produto lideradas</div></div>
+      <div class="nc"><div class="nn">B2B · B2C</div><div class="nl2">experiência em SaaS, telecom e operações digitais</div></div>
     </div>
     <div class="ag">
       <div class="ac">
         <h3>Como trabalho</h3>
-        <p>Conecto estratégia, dados e operação para conduzir decisões que geram impacto real. Atuo em funis de aquisição, jornadas ponta a ponta e iniciativas cross-funcionais — sempre com foco em eficiência e resultado de negócio.</p>
+        <p>Atuo na construção e evolução de produtos digitais orientados por dados, conectando estratégia, tecnologia e operação para resolver problemas complexos de negócio. Meu foco está em aumentar conversão, reduzir atritos operacionais, automatizar processos e transformar indicadores em decisões de produto.</p>
       </div>
       <div class="ac">
         <h3>O que me move</h3>
-        <p>Evolução para liderança em produto. Ambientes de alta escala, B2B e B2C, onde produto, tecnologia e operação precisam falar a mesma língua. Sistemas complexos com impacto mensurável.</p>
+        <p>Tenho experiência em ambientes B2B e B2C de alta escala, incluindo telecom, SaaS e operações digitais. Conduzo discovery, definição de roadmap, experimentação e alinhamento entre negócio e tecnologia para construir produtos com impacto mensurável para clientes e para o negócio.</p>
       </div>
     </div>
   </section>
@@ -377,10 +398,18 @@
       }
       .crd-top { display: flex; justify-content: space-between; align-items: flex-start; }
       .crd-chip {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        max-width: max-content;
+        white-space: nowrap;
         font-size: 10px; font-weight: 600; letter-spacing: .06em;
         text-transform: uppercase; padding: 3px 9px;
         border-radius: 20px; background: var(--rl);
         color: var(--rd); border: 0.5px solid rgba(212,83,126,.25);
+      }
+      @media(max-width:900px){
+        .crd-chip { white-space: normal; max-width: 100%; }
       }
       .crd-arrow {
         width: 24px; height: 24px; border-radius: 50%;
@@ -738,54 +767,30 @@
 
   <!-- SKILLS -->
   <section id="skills">
-    <p class="sl">stack &amp; frameworks</p>
-    <h2 class="st">Habilidades e metodologias</h2>
+    <p class="sl">especialidades</p>
+    <h2 class="st">Áreas de atuação</h2>
     <div class="sg2">
       <div class="sg">
         <h3>Produto &amp; Estratégia</h3>
         <div class="stags">
-          <span class="stag hi">Product Operations</span>
+          <span class="stag hi">Product Management</span>
           <span class="stag hi">Customer Journey</span>
-          <span class="stag hi">Roadmap &amp; Backlog</span>
-          <span class="stag hi">Discovery</span>
-          <span class="stag">OKRs</span>
-          <span class="stag">RICE / ICE</span>
-          <span class="stag">Go-to-market</span>
-          <span class="stag">PRD</span>
+          <span class="stag hi">Product Operations</span>
+          <span class="stag hi">Growth &amp; Conversão</span>
+          <span class="stag">Product Discovery</span>
+          <span class="stag">Roadmap</span>
         </div>
       </div>
       <div class="sg">
-        <h3>Dados &amp; Métricas</h3>
+        <h3>Dados, Operação &amp; Contextos</h3>
         <div class="stags">
-          <span class="stag hi">Funil de conversão</span>
-          <span class="stag hi">KPIs críticos</span>
-          <span class="stag hi">Data-driven</span>
-          <span class="stag">Cohort analysis</span>
-          <span class="stag">A/B testing</span>
-          <span class="stag">North Star Metric</span>
-        </div>
-      </div>
-      <div class="sg">
-        <h3>Agilidade</h3>
-        <div class="stags">
-          <span class="stag hi">Scrum</span>
-          <span class="stag hi">Kanban</span>
-          <span class="stag hi">Agile Master</span>
-          <span class="stag">Lean</span>
-          <span class="stag">Design Thinking</span>
-          <span class="stag">Rituais ágeis</span>
-        </div>
-      </div>
-      <div class="sg">
-        <h3>Ferramentas</h3>
-        <div class="stags">
-          <span class="stag">Notion</span>
-          <span class="stag">Figma</span>
-          <span class="stag">Jira</span>
-          <span class="stag">Miro</span>
-          <span class="stag">Hotjar</span>
-          <span class="stag">Maze</span>
-          <span class="stag">Power BI</span>
+          <span class="stag hi">Data Analysis</span>
+          <span class="stag hi">Experimentação</span>
+          <span class="stag hi">Stakeholder Management</span>
+          <span class="stag">B2B</span>
+          <span class="stag">B2C</span>
+          <span class="stag">SaaS</span>
+          <span class="stag">Telecom</span>
         </div>
       </div>
     </div>
