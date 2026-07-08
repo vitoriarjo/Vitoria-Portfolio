@@ -1843,7 +1843,7 @@ body {
       </div>
       <div class="hero-metrics">
         <div class="hero-metric"><div><strong>1M+</strong><span>clientes impactados</span></div></div>
-        <div class="hero-metric"><div><strong>10+</strong><span>iniciativas lideradas</span></div></div>
+        <div class="hero-metric"><div><strong>11+</strong><span>iniciativas lideradas</span></div></div>
         <div class="hero-metric"><div><strong>B2B · B2C</strong><span>SaaS · Telecom</span></div></div>
       </div>
     </div>
@@ -2350,6 +2350,17 @@ body {
           metrics: ["Dezenas de iniciativas acompanhadas", "Maior previsibilidade do roadmap"]
         },
         {
+          chip: "Consultoria · Product Ownership",
+          context: "Consultoria em transformação digital pela Grupo Portfolio para uma empresa do segmento de guindastes do Ceará",
+          title: "Transformação Digital Microsoft 365",
+          desc: "Como Product Owner em consultoria, conduzi a modernização da colaboração corporativa por meio da migração para Microsoft 365, alinhando negócio, usuários e equipes técnicas.",
+          atuacao: "Atuei como Product Owner na iniciativa, conduzindo discovery com stakeholders, estruturação e priorização do backlog, refinamento de requisitos e acompanhamento da implantação junto às equipes técnicas. O trabalho conectou cliente, usuários e tecnologia para garantir uma migração gradual, segura e orientada à adoção da nova solução.",
+          prob: "A empresa utilizava um ambiente baseado em FileServer, com limitações de colaboração, compartilhamento de informações, acesso remoto e escalabilidade. O desafio era modernizar a plataforma sem interromper a operação e garantindo uma transição segura para os usuários.",
+          resultados: ["Modernização da colaboração corporativa com Microsoft 365", "Redução do tempo de acesso às informações", "Aumento da produtividade das equipes", "Implantação conduzida com continuidade operacional", "Maior alinhamento entre áreas de negócio, usuários e equipe técnica"],
+          indicadores: ["40% de redução no tempo de acesso às informações", "30% de aumento na produtividade das equipes", "98% das entregas concluídas dentro do cronograma", "Migração realizada sem impacto operacional"],
+          metrics: ["40% menos tempo de acesso", "98% entregas no prazo"]
+        },
+        {
           chip: "Software Factory · B2B",
           context: "Atuação simultânea em diversos produtos e clientes em uma fábrica de software",
           title: "Gestão de Produtos B2B",
@@ -2374,7 +2385,7 @@ body {
         }).join('');
 
         grid.innerHTML +=
-          '<div class="crd" onclick="openModal(' + i + ')">' +
+          '<div class="crd" data-title="' + c.title.replace(/"/g, '&quot;') + '" onclick="openModal(' + i + ')">' +
             '<div class="crd-top">' +
               '<span class="crd-chip">' + c.chip + '</span>' +
               '<span class="crd-arrow">↗</span>' +
