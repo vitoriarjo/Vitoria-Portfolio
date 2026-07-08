@@ -349,7 +349,7 @@
     position: fixed; inset: 0;
     background: rgba(0,0,0,.42);
     backdrop-filter: blur(6px);
-    z-index: 999;
+    z-index: 9999;
     display: flex; align-items: center; justify-content: center;
     opacity: 0; pointer-events: none;
     transition: opacity .25s;
@@ -1116,6 +1116,25 @@ body {
 .foot a, .foot span { color: var(--tm) !important; text-decoration: none !important; }
 .copyright { color: var(--muted) !important; }
 
+
+
+  /* Ajuste modal x navbar: quando um case estiver aberto, a navegação não cobre o botão de fechar */
+  body.modal-open .nav {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-18px);
+  }
+  .modal-overlay {
+    z-index: 9999 !important;
+  }
+  .modal-box {
+    position: relative;
+    z-index: 10000 !important;
+  }
+  .modal-close {
+    z-index: 10001 !important;
+  }
+
 </style>
 
 <style>
@@ -1634,7 +1653,7 @@ body {
         position: fixed; inset: 0;
         background: rgba(0,0,0,.45);
         backdrop-filter: blur(4px);
-        z-index: 999;
+        z-index: 9999;
         display: flex; align-items: center; justify-content: center;
         opacity: 0; pointer-events: none;
         transition: opacity .25s;
@@ -1899,6 +1918,7 @@ body {
           + "<div class=\"modal-indicators\">" + indHtml + "</div>";
         document.getElementById("caseModal").classList.add("active");
         document.body.style.overflow = "hidden";
+        document.body.classList.add("modal-open");
       }
 
       function closeModal(e) {
@@ -1907,6 +1927,7 @@ body {
       function closeModalBtn() {
         document.getElementById("caseModal").classList.remove("active");
         document.body.style.overflow = "";
+        document.body.classList.remove("modal-open");
       }
       document.addEventListener("keydown", function(e){
         if (e.key === "Escape") closeModalBtn();
