@@ -1714,6 +1714,97 @@ body {
 }
 </style>
 
+
+<style>
+/* Correção definitiva dos cards do carrossel/cases */
+.cases-track,
+.cases-grid {
+  align-items: stretch !important;
+}
+
+.crd {
+  min-width: 280px !important;
+  width: 100% !important;
+  min-height: 430px !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: visible !important;
+}
+
+.crd-chip,
+.ctag,
+.modal-chip {
+  white-space: normal !important;
+  max-width: 100% !important;
+  line-height: 1.2 !important;
+  overflow-wrap: anywhere !important;
+}
+
+.crd-title {
+  font-size: clamp(20px, 2vw, 24px) !important;
+  line-height: 1.12 !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  hyphens: auto !important;
+}
+
+.crd-desc {
+  flex: 0 0 auto !important;
+  line-height: 1.55 !important;
+  overflow: visible !important;
+}
+
+.crd-arrow {
+  margin: 1.2rem auto !important;
+  flex-shrink: 0 !important;
+}
+
+.crd-metrics {
+  margin-top: auto !important;
+  overflow: visible !important;
+}
+
+.crd-metric {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  line-height: 1.35 !important;
+}
+
+@media (max-width: 920px) {
+  .cases-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr)) !important;
+  }
+  .crd {
+    min-width: 280px !important;
+    min-height: 420px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cases-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .crd {
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
+}
+
+/* Ajuste específico para o case de Software Factory */
+.crd[data-title*="Múltiplos Produtos"],
+.crd[data-title*="Software Factory"] {
+  min-width: 300px !important;
+}
+
+.crd[data-title*="Múltiplos Produtos"] .crd-title,
+.crd[data-title*="Software Factory"] .crd-title {
+  font-size: 22px !important;
+  line-height: 1.1 !important;
+}
+</style>
+
 </head>
 <body>
 
@@ -2060,6 +2151,86 @@ body {
         .case-float.next { right: 8px; }
       }
     </style>
+
+<style id="final-fix-mobile-carousel">
+/* Fix final: evita corte lateral dos cards no carrossel */
+#cases .cases-carousel {
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+#cases .cases-grid {
+  box-sizing: border-box !important;
+}
+
+#cases .crd {
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  min-width: 0 !important;
+}
+
+#cases .crd-title,
+#cases .crd-desc,
+#cases .crd-chip,
+#cases .crd-metric {
+  max-width: 100% !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+@media (max-width: 560px) {
+  #cases .cases-carousel {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #cases .cases-grid {
+    gap: 0 !important;
+    width: 100% !important;
+  }
+
+  #cases .crd {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 26px 26px 30px !important;
+  }
+
+  #cases .crd-title {
+    font-size: 20px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -.035em !important;
+  }
+
+  #cases .crd-desc {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  #cases .case-float {
+    top: auto !important;
+    bottom: 10px !important;
+    transform: none !important;
+    z-index: 20 !important;
+  }
+
+  #cases .case-float.prev { left: 12px !important; }
+  #cases .case-float.next { right: 12px !important; }
+}
+
+@media (min-width: 561px) and (max-width: 820px) {
+  #cases .cases-carousel {
+    padding-left: 44px !important;
+    padding-right: 44px !important;
+  }
+}
+</style>
+
     <div class="cases-headline">
       <p class="cases-subtitle">Uma seleção de iniciativas que mostram minha atuação conectando jornada, dados, operação e produto para gerar impacto mensurável.</p>
     </div>
@@ -2246,10 +2417,18 @@ body {
         casePage = Math.min(casePage, maxCasePage());
 
         var perView = cardsPerView();
-        var gap = 18;
-        var step = cards[0].getBoundingClientRect().width + gap;
-        var maxOffset = Math.max(0, grid.scrollWidth - grid.parentElement.clientWidth);
-        var targetOffset = Math.min(casePage * perView * step, maxOffset);
+        var carousel = grid.parentElement;
+        var cs = window.getComputedStyle(carousel);
+        var paddingLeft = parseFloat(cs.paddingLeft) || 0;
+        var paddingRight = parseFloat(cs.paddingRight) || 0;
+        var visibleWidth = carousel.clientWidth - paddingLeft - paddingRight;
+
+        var targetIndex = Math.min(casePage * perView, cards.length - 1);
+        var targetCard = cards[targetIndex];
+
+        var targetOffset = targetCard.offsetLeft;
+        var maxOffset = Math.max(0, grid.scrollWidth - visibleWidth);
+        targetOffset = Math.min(targetOffset, maxOffset);
 
         grid.style.transform = 'translateX(-' + targetOffset + 'px)';
 
