@@ -1601,6 +1601,119 @@ body {
   .logo-name { display: none !important; }
 }
 </style>
+
+<style id="fix-cards-carousel-v8">
+/* Correção do carrossel de cases: evita quebra/corte no último card */
+#cases .cases-carousel {
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+#cases .cases-grid {
+  align-items: stretch !important;
+}
+
+#cases .crd {
+  box-sizing: border-box !important;
+  height: auto !important;
+  min-height: 360px !important;
+  overflow: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+#cases .crd-top {
+  flex: 0 0 auto !important;
+}
+
+#cases .crd-title {
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+}
+
+#cases .crd-desc {
+  flex: 0 0 auto !important;
+  overflow-wrap: break-word !important;
+}
+
+#cases .crd-metrics {
+  margin-top: auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+#cases .crd-metric {
+  width: 100% !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+#cases .metric-symbol {
+  flex-shrink: 0 !important;
+}
+
+/* Em telas menores, reduz o padding lateral do carrossel para o card não ficar estreito/cortado */
+@media (max-width: 560px) {
+  #cases .cases-carousel {
+    padding: 8px 14px 16px !important;
+  }
+
+  #cases .cases-grid {
+    gap: 14px !important;
+  }
+
+  #cases .crd {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    min-height: 390px !important;
+    padding: 22px 20px !important;
+  }
+
+  #cases .case-float {
+    width: 34px !important;
+    height: 34px !important;
+    background: rgba(255,255,255,.96) !important;
+  }
+
+  #cases .case-float.prev {
+    left: 2px !important;
+  }
+
+  #cases .case-float.next {
+    right: 2px !important;
+  }
+
+  #cases .crd-title {
+    font-size: 19px !important;
+    line-height: 1.14 !important;
+  }
+
+  #cases .crd-desc,
+  #cases .crd-metric {
+    font-size: 13px !important;
+  }
+}
+
+/* Em telas intermediárias, garante altura consistente */
+@media (min-width: 561px) and (max-width: 820px) {
+  #cases .crd {
+    min-height: 380px !important;
+  }
+}
+
+@media (min-width: 821px) {
+  #cases .crd {
+    min-height: 370px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -2068,8 +2181,8 @@ body {
         {
           chip: "Software Factory · B2B",
           context: "Atuação simultânea em diversos produtos e clientes em uma fábrica de software",
-          title: "Gestão de Múltiplos Produtos B2B",
-          desc: "Estruturação de backlog e discovery em fábrica de software multi-cliente.",
+          title: "Gestão de Produtos B2B",
+          desc: "Estruturação de backlog, discovery e priorização em Software Factory B2B.",
           atuacao: "Conduzi discovery, definição de requisitos, priorização de backlog e acompanhamento de desenvolvimento para múltiplos produtos digitais.",
           prob: "A diversidade de contextos aumentava a complexidade de priorização e acompanhamento das entregas.",
           resultados: ["Maior previsibilidade das entregas", "Melhor alinhamento entre stakeholders", "Redução de retrabalho pós-implantação"],
