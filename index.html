@@ -1525,6 +1525,82 @@ body {
   .nav-icons a.linkedin-icon { width: 40px !important; min-width: 40px !important; height: 40px !important; }
 }
 </style>
+
+<style>
+/* Branding final — monograma [va] + borboleta */
+.nl.brand-lockup {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .72rem !important;
+  min-width: fit-content;
+}
+.logo-mark {
+  display: inline-flex !important;
+  align-items: flex-start !important;
+  gap: .22rem !important;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif !important;
+  color: #714C66 !important;
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  letter-spacing: -.10em !important;
+  line-height: .86 !important;
+  text-transform: lowercase !important;
+}
+.logo-text {
+  display: inline-block;
+  font: inherit;
+}
+.logo-butterfly {
+  display: inline-block !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  margin-left: .14rem !important;
+  margin-top: .10rem !important;
+  transform: rotate(-8deg) !important;
+  filter: drop-shadow(0 8px 14px rgba(214,90,146,.20)) !important;
+  transition: transform .28s ease, filter .28s ease !important;
+}
+.nl.brand-lockup:hover .logo-butterfly {
+  transform: rotate(7deg) translateY(-2px) scale(1.08) !important;
+  filter: drop-shadow(0 12px 18px rgba(214,90,146,.28)) !important;
+}
+.logo-name {
+  margin-left: .10rem !important;
+  color: #6D445B !important;
+  font-family: Inter, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: .09em !important;
+  text-transform: uppercase !important;
+}
+.foot-logo {
+  display: inline-flex !important;
+  align-items: flex-start !important;
+  gap: .28rem !important;
+}
+.foot-logo-text,
+.foot-logo span {
+  font-family: "Plus Jakarta Sans", Inter, sans-serif !important;
+  color: #714C66 !important;
+  font-size: clamp(68px, 9vw, 118px) !important;
+  font-weight: 900 !important;
+  letter-spacing: -.10em !important;
+  line-height: .86 !important;
+  text-transform: lowercase !important;
+}
+.foot-logo em {
+  font-style: normal !important;
+  font-size: clamp(22px, 2.6vw, 34px) !important;
+  margin-top: clamp(12px, 1.6vw, 22px) !important;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 10px 18px rgba(214,90,146,.22)) !important;
+}
+@media (max-width: 760px) {
+  .logo-mark { font-size: 24px !important; }
+  .logo-butterfly { font-size: 13px !important; }
+  .logo-name { display: none !important; }
+}
+</style>
 </head>
 <body>
 
@@ -1532,7 +1608,10 @@ body {
 
   <!-- NAV -->
   <nav class="nav">
-    <a class="nl" href="#top" aria-label="Início"><span class="logo-mark">VA</span><span class="logo-butterfly">🦋</span><span class="logo-name">Vitória Araújo</span></a>
+    <a class="nl brand-lockup" href="#top" aria-label="Início">
+      <span class="logo-mark"><span class="logo-text">[va]</span><span class="logo-butterfly" aria-hidden="true">🦋</span></span>
+      <span class="logo-name">Vitória Araújo</span>
+    </a>
     <div class="nr">
       <a href="#sobre">Sobre</a>
       <a href="#skills">Competências</a>
@@ -2389,7 +2468,7 @@ body {
     </div>
   </section>
 
-  <footer class="foot"><div class="foot-logo"><span>VA</span><em>🦋</em></div><div class="foot-links"><b>links</b><a href="#sobre">Sobre</a><a href="#skills">Competências</a><a href="#exp">Experiências</a><a href="#cases">Projetos</a><a href="#contato">Contato</a></div><div class="foot-links"><b>contato</b><a href="tel:+5585996892438">(85) 99689-2438</a><a href="mailto:vitoriarwjo@gmail.com">vitoriarwjo@gmail.com</a><a href="https://www.linkedin.com/in/vitoriarjo/" target="_blank" rel="noopener">LinkedIn</a></div></footer><div class="copyright">© 2026 Vitória Araújo. Todos os direitos reservados.</div>
+  <footer class="foot"><div class="foot-logo"><span class="foot-logo-text">[va]</span><em>🦋</em></div><div class="foot-links"><b>links</b><a href="#sobre">Sobre</a><a href="#skills">Competências</a><a href="#exp">Experiências</a><a href="#cases">Projetos</a><a href="#contato">Contato</a></div><div class="foot-links"><b>contato</b><a href="tel:+5585996892438">(85) 99689-2438</a><a href="mailto:vitoriarwjo@gmail.com">vitoriarwjo@gmail.com</a><a href="https://www.linkedin.com/in/vitoriarjo/" target="_blank" rel="noopener">LinkedIn</a></div></footer><div class="copyright">© 2026 Vitória Araújo. Todos os direitos reservados.</div>
 
 </div>
 </body>
