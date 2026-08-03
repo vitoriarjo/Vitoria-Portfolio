@@ -2884,6 +2884,151 @@ document.querySelector('.nav .brand')?.setAttribute('aria-label','Vitória Araú
     color:#c9c1cc;
   }
 }
+
+
+/* =====================================================
+   AJUSTE FINAL — IMPACTO EM NÚMEROS + PRÁTICA DE PRODUTO
+   ===================================================== */
+#impacto{
+  background:linear-gradient(180deg,#fffafc 0%,#fff 100%)!important;
+}
+#impacto .impact-grid-v3{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:22px!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:visible!important;
+}
+#impacto .impact-card-v3{
+  min-height:250px;
+  padding:34px 36px!important;
+  border:1px solid #eadde3!important;
+  border-radius:26px!important;
+  background:rgba(255,255,255,.92)!important;
+  box-shadow:0 14px 38px rgba(81,36,58,.06)!important;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+#impacto .impact-card-v3:hover{
+  transform:translateY(-4px);
+  border-color:#d9b8c7!important;
+  box-shadow:0 22px 48px rgba(81,36,58,.10)!important;
+}
+#impacto .impact-card-v3 strong{color:#b93d6b!important}
+#impacto .impact-card-v3 h3{color:#51243a!important}
+#impacto .impact-card-v3 p{color:#6e5d66!important}
+
+#visao-produto{
+  position:relative;
+  overflow:hidden;
+  padding:88px 0!important;
+  background:linear-gradient(145deg,#fff7fa 0%,#fff 58%,#fbf3f7 100%)!important;
+  color:#241e24!important;
+}
+#visao-produto:before{
+  content:'';
+  position:absolute;
+  width:420px;
+  height:420px;
+  right:-180px;
+  top:-190px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(201,79,120,.12),rgba(201,79,120,0) 70%);
+  pointer-events:none;
+}
+#visao-produto .container{position:relative}
+#visao-produto .section-head{
+  align-items:flex-end;
+  margin-bottom:36px;
+}
+#visao-produto .eyebrow{
+  color:#c94f78!important;
+  letter-spacing:.15em;
+}
+#visao-produto .section-head h2{
+  max-width:720px;
+  color:#51243a!important;
+  font-size:clamp(38px,5vw,58px)!important;
+  line-height:1.04;
+  letter-spacing:-.05em;
+}
+#visao-produto .section-head h2:after{
+  content:'com responsabilidade compartilhada'!important;
+  display:block!important;
+  margin-top:14px;
+  color:#806673!important;
+  font-size:clamp(17px,2vw,23px)!important;
+  font-weight:600!important;
+  line-height:1.35;
+  letter-spacing:-.025em!important;
+}
+#visao-produto .section-head p{
+  max-width:560px;
+  color:#6e5d66!important;
+  font-size:15px;
+  line-height:1.75;
+  opacity:1!important;
+}
+#visao-produto .v7-vision-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:18px!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:visible!important;
+}
+#visao-produto .v7-vision-grid article{
+  position:relative;
+  min-height:245px;
+  padding:30px 28px!important;
+  border:1px solid #eadde3;
+  border-radius:24px;
+  background:#fff!important;
+  box-shadow:0 14px 38px rgba(81,36,58,.06);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+#visao-produto .v7-vision-grid article:hover{
+  transform:translateY(-4px);
+  border-color:#d8aabd;
+  box-shadow:0 22px 48px rgba(81,36,58,.10);
+}
+#visao-produto .v7-vision-grid span{
+  display:inline-grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  background:#fff0f5;
+  color:#b93d6b!important;
+  font-size:11px;
+  letter-spacing:.04em;
+}
+#visao-produto .v7-vision-grid h3{
+  margin:42px 0 12px!important;
+  color:#51243a!important;
+  font-size:23px!important;
+}
+#visao-produto .v7-vision-grid p{
+  margin:0;
+  color:#6e5d66!important;
+  font-size:13px!important;
+  line-height:1.72!important;
+}
+@media(max-width:980px){
+  #impacto .impact-grid-v3,
+  #visao-produto .v7-vision-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:640px){
+  #impacto .impact-grid-v3,
+  #visao-produto .v7-vision-grid{grid-template-columns:1fr!important}
+  #impacto .impact-card-v3,
+  #visao-produto .v7-vision-grid article{min-height:auto;padding:26px 24px!important}
+  #visao-produto{padding:62px 0!important}
+  #visao-produto .section-head h2{font-size:clamp(36px,11vw,48px)!important}
+  #visao-produto .v7-vision-grid h3{margin-top:28px!important}
+}
 </style>
 
 </body></html>
