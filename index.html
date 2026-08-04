@@ -3350,4 +3350,56 @@ function show(i){n=Math.max(0,Math.min(c.length-1,i));c.forEach(function(x,j){x.
 c.forEach(function(card,i){var back=card.querySelector('.ap-bar b');if(back)back.onclick=function(){show(i-1)};card.querySelectorAll('.ap-btn').forEach(function(b){b.setAttribute('role','button');b.tabIndex=0;function go(){var t=b.textContent.toLowerCase();if(t.indexOf('voltar ao início')>-1)show(0);else if(t.indexOf('voltar ao acompanhamento')>-1)show(4);else if(i<c.length-1)show(i+1)}b.onclick=go;b.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}}})});
 if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=function(){c[1].querySelectorAll('.ap-date').forEach(function(y){y.classList.remove('active','is-selected')});x.classList.add('active','is-selected')}});c[1].querySelectorAll('.ap-period').forEach(function(x){x.onclick=function(){c[1].querySelectorAll('.ap-period').forEach(function(y){y.classList.remove('active','is-selected')});x.classList.add('active','is-selected')}})}var sw=c[2]&&c[2].querySelector('.ap-switch');if(sw)sw.onclick=function(){sw.querySelector('.ap-toggle').classList.toggle('is-off')};if(c[5])c[5].querySelectorAll('.ap-menu-item').forEach(function(x,i){x.onclick=function(){if(i===0)show(1);else if(i===2)show(0)}});show(0)}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init()})();
 </script>
+<style id="voice-permission-toggle-alignment-fix">
+/* Mantém cada toggle preso à sua própria linha e impede módulos vizinhos de se sobreporem. */
+.css-static-drawer .css-body{
+  grid-auto-rows:max-content!important;
+  align-items:start!important;
+}
+.css-static-drawer .perm-module{
+  height:auto!important;
+  max-height:none!important;
+  align-self:start!important;
+  contain:layout paint!important;
+  isolation:isolate!important;
+}
+.css-static-drawer .perm-list{
+  position:relative!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:visible!important;
+}
+.css-static-drawer .perm-list label{
+  position:relative!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 30px!important;
+  align-items:center!important;
+  column-gap:12px!important;
+  width:100%!important;
+  min-height:36px!important;
+  box-sizing:border-box!important;
+}
+.css-static-drawer .perm-list label>span{
+  grid-column:1!important;
+  min-width:0!important;
+}
+.css-static-drawer .perm-list input[type=checkbox]{
+  grid-column:2!important;
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  justify-self:end!important;
+  align-self:center!important;
+  transform:none!important;
+  z-index:1!important;
+}
+.css-static-drawer .perm-list input[type=checkbox]:checked{
+  transform:none!important;
+}
+@media(max-width:720px){
+  .css-static-drawer .perm-list label{
+    grid-template-columns:minmax(0,1fr) 30px!important;
+  }
+}
+</style>
 </body></html>
