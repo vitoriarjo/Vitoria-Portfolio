@@ -1187,6 +1187,355 @@ body{color:var(--v7-ink);background:linear-gradient(180deg,#fff 0%,#fcfafb 42%,#
 /* V27 — grupos de usuários com drawer e permissões clicáveis */
 .group-manage-btn{width:100%;margin-top:12px;border:1px solid #cfd9e6;border-radius:8px;background:#fff;padding:9px 10px;color:#1858d8;font-size:8px;font-weight:800;cursor:pointer}.group-manage-btn:hover{background:#eef4ff;border-color:#1858d8}
 .group-permission-editor{display:flex;flex-direction:column;gap:14px}.group-summary-box{padding:12px;border:1px solid #dce5ef;border-radius:10px;background:#f8fafc}.group-summary-box label{display:block;font-size:7px;font-weight:800;text-transform:uppercase;color:#8190a2;margin-bottom:5px}.group-summary-box input,.group-summary-box textarea,.group-summary-box select{width:100%;box-sizing:border-box;border:1px solid #d7e0eb;border-radius:8px;background:#fff;padding:10px;color:#31445a;font:inherit}.group-summary-box textarea{min-height:68px;resize:vertical}.group-permission-section{border:1px solid #dce5ef;border-radius:10px;overflow:hidden}.group-permission-section>button{width:100%;display:flex;align-items:center;justify-content:space-between;border:0;background:#f8fafc;padding:11px 12px;color:#30435a;font-size:9px;font-weight:800;cursor:pointer}.group-permission-section>button span:last-child{color:#1858d8}.group-permission-list{display:grid;gap:0}.group-permission-list label{display:flex!important;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;margin:0!important;border-top:1px solid #edf1f5;cursor:pointer}.group-permission-list label span{margin:0!important;font-size:8px!important;color:#43576e!important}.group-permission-list input[type=checkbox]{appearance:none;width:36px;height:20px;border-radius:999px;background:#cfd8e4;position:relative;cursor:pointer;transition:.2s}.group-permission-list input[type=checkbox]:after{content:"";position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;top:2px;left:2px;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:.2s}.group-permission-list input[type=checkbox]:checked{background:#1858d8}.group-permission-list input[type=checkbox]:checked:after{transform:translateX(16px)}.group-permission-footer{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:9px;background:#eef4ff;color:#3c5d89;font-size:8px}.group-permission-footer strong{color:#1858d8}
+
+/* =====================================================
+   V32 — EVOLUTION HUB: HERO COMPACTO + FLUXOS EM DESTAQUE
+   ===================================================== */
+#page-case-evolution-hub .case-hero{
+  padding:44px 0 34px!important;
+}
+#page-case-evolution-hub .evolution-hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(300px,.65fr);
+  gap:18px;
+  align-items:stretch;
+}
+#page-case-evolution-hub .evolution-hero-main,
+#page-case-evolution-hub .evolution-hero-aside{
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 18px 50px rgba(81,36,58,.07);
+}
+#page-case-evolution-hub .evolution-hero-main{
+  padding:26px 28px;
+  display:grid;
+  align-content:start;
+  gap:18px;
+}
+#page-case-evolution-hub .evolution-hero-title{
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr);
+  gap:16px;
+  align-items:center;
+}
+#page-case-evolution-hub .evolution-mark{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
+  background:linear-gradient(145deg,var(--rose-dark),#8b4563);
+  color:#fff;
+  font:800 24px 'Plus Jakarta Sans';
+  box-shadow:0 12px 28px rgba(109,53,78,.20);
+}
+#page-case-evolution-hub .evolution-hero-title h2{
+  margin:0;
+  font-size:clamp(28px,3.6vw,44px);
+  letter-spacing:-.045em;
+  color:var(--rose-dark);
+}
+#page-case-evolution-hub .evolution-hero-title p{
+  margin:4px 0 0;
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--rose);
+}
+#page-case-evolution-hub .evolution-hero-copy{
+  max-width:850px;
+  margin:0;
+  font-size:14px;
+  line-height:1.72;
+  color:var(--muted);
+}
+#page-case-evolution-hub .evolution-highlights{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+#page-case-evolution-hub .evolution-highlight{
+  min-height:74px;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:linear-gradient(145deg,#fff,#fff9fb);
+}
+#page-case-evolution-hub .evolution-highlight strong,
+#page-case-evolution-hub .evolution-highlight span{
+  display:block;
+}
+#page-case-evolution-hub .evolution-highlight strong{
+  font-size:11px;
+  line-height:1.35;
+  color:var(--rose-dark);
+}
+#page-case-evolution-hub .evolution-highlight span{
+  margin-top:4px;
+  font-size:9px;
+  line-height:1.45;
+  color:var(--muted);
+}
+#page-case-evolution-hub .evolution-hero-aside{
+  padding:22px;
+}
+#page-case-evolution-hub .evolution-hero-aside>span{
+  display:block;
+  margin-bottom:12px;
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  color:var(--rose);
+}
+#page-case-evolution-hub .evolution-fact-list{
+  display:grid;
+  gap:10px;
+}
+#page-case-evolution-hub .evolution-fact{
+  display:grid;
+  grid-template-columns:32px 1fr;
+  gap:10px;
+  align-items:start;
+  padding:10px 0;
+}
+#page-case-evolution-hub .evolution-fact+.evolution-fact{
+  border-top:1px solid var(--line);
+}
+#page-case-evolution-hub .evolution-fact>b{
+  display:grid;
+  place-items:center;
+  width:32px;
+  height:32px;
+  border-radius:10px;
+  background:var(--rose-soft);
+  color:var(--rose-dark);
+  font-size:12px;
+}
+#page-case-evolution-hub .evolution-fact small,
+#page-case-evolution-hub .evolution-fact strong{
+  display:block;
+}
+#page-case-evolution-hub .evolution-fact small{
+  margin-bottom:3px;
+  font-size:8px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:#a78695;
+}
+#page-case-evolution-hub .evolution-fact strong{
+  font-size:11px;
+  line-height:1.45;
+  color:var(--rose-dark);
+}
+
+/* Fluxos em destaque */
+#page-case-evolution-hub .evolution-flows-section{
+  padding:54px 0!important;
+  background:linear-gradient(180deg,#fff,#fff8fb);
+}
+#page-case-evolution-hub .evolution-flows-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:24px;
+  margin-bottom:24px;
+}
+#page-case-evolution-hub .evolution-flows-head h2{
+  margin:6px 0 0;
+  font-size:clamp(30px,4vw,46px);
+  color:var(--rose-dark);
+}
+#page-case-evolution-hub .evolution-flows-head p{
+  max-width:540px;
+  margin:0;
+  font-size:13px;
+  line-height:1.65;
+  color:var(--muted);
+}
+#page-case-evolution-hub .evolution-flow-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+}
+#page-case-evolution-hub .evolution-flow-tab{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:9px 12px;
+  background:#fff;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  cursor:pointer;
+}
+#page-case-evolution-hub .evolution-flow-tab.active{
+  background:var(--rose-dark);
+  border-color:var(--rose-dark);
+  color:#fff;
+}
+#page-case-evolution-hub .evolution-flow-panel{
+  display:none;
+}
+#page-case-evolution-hub .evolution-flow-panel.active{
+  display:block;
+  animation:evoFlowIn .2s ease;
+}
+@keyframes evoFlowIn{
+  from{opacity:.3;transform:translateY(4px)}
+  to{opacity:1;transform:none}
+}
+#page-case-evolution-hub .evolution-flow-card{
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:22px;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+#page-case-evolution-hub .evolution-flow-card header{
+  display:flex;
+  justify-content:space-between;
+  align-items:start;
+  gap:18px;
+  margin-bottom:18px;
+}
+#page-case-evolution-hub .evolution-flow-card header h3{
+  margin:0;
+  font-size:20px;
+  color:var(--rose-dark);
+}
+#page-case-evolution-hub .evolution-flow-card header p{
+  max-width:620px;
+  margin:5px 0 0;
+  font-size:11px;
+  line-height:1.55;
+  color:var(--muted);
+}
+#page-case-evolution-hub .evolution-flow-card header span{
+  flex:0 0 auto;
+  padding:7px 9px;
+  border-radius:999px;
+  background:var(--rose-soft);
+  color:var(--rose-dark);
+  font-size:8px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+#page-case-evolution-hub .evolution-flow-steps{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:9px;
+}
+#page-case-evolution-hub .evolution-step{
+  position:relative;
+  min-height:108px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:linear-gradient(145deg,#fff,#fff9fb);
+}
+#page-case-evolution-hub .evolution-step:not(:last-child):after{
+  content:"→";
+  position:absolute;
+  right:-10px;
+  top:50%;
+  z-index:2;
+  transform:translateY(-50%);
+  width:20px;
+  height:20px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--rose-dark);
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+}
+#page-case-evolution-hub .evolution-step b,
+#page-case-evolution-hub .evolution-step strong,
+#page-case-evolution-hub .evolution-step small{
+  display:block;
+}
+#page-case-evolution-hub .evolution-step b{
+  width:26px;
+  height:26px;
+  display:grid;
+  place-items:center;
+  margin-bottom:10px;
+  border-radius:9px;
+  background:var(--rose-soft);
+  color:var(--rose-dark);
+  font-size:9px;
+}
+#page-case-evolution-hub .evolution-step strong{
+  font-size:10px;
+  line-height:1.35;
+  color:var(--rose-dark);
+}
+#page-case-evolution-hub .evolution-step small{
+  margin-top:5px;
+  font-size:8px;
+  line-height:1.45;
+  color:var(--muted);
+}
+#page-case-evolution-hub .evolution-flow-rules{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+#page-case-evolution-hub .evolution-flow-rules span{
+  padding:7px 9px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  color:var(--muted);
+  font-size:8px;
+  font-weight:700;
+}
+
+/* Botões do case com leitura melhor */
+#page-case-evolution-hub button,
+#page-case-evolution-hub .btn{
+  min-height:38px;
+  font-size:11px!important;
+  font-weight:800!important;
+  letter-spacing:.01em;
+}
+#page-case-evolution-hub .app-content button:hover,
+#page-case-evolution-hub .btn:hover{
+  background:var(--rose-dark)!important;
+  border-color:var(--rose-dark)!important;
+}
+#page-case-evolution-hub .order-secondary,
+#page-case-evolution-hub .decision-panel .secondary-action{
+  background:#fff!important;
+  color:var(--rose-dark)!important;
+  border:1px solid #d5bdc8!important;
+}
+
+@media(max-width:980px){
+  #page-case-evolution-hub .evolution-hero-grid{grid-template-columns:1fr}
+  #page-case-evolution-hub .evolution-highlights{grid-template-columns:repeat(2,1fr)}
+  #page-case-evolution-hub .evolution-flow-steps{grid-template-columns:repeat(2,1fr)}
+  #page-case-evolution-hub .evolution-step:not(:last-child):after{display:none}
+}
+@media(max-width:640px){
+  #page-case-evolution-hub .case-hero{padding:34px 0 26px!important}
+  #page-case-evolution-hub .evolution-hero-main,
+  #page-case-evolution-hub .evolution-hero-aside{padding:20px}
+  #page-case-evolution-hub .evolution-hero-title{grid-template-columns:46px 1fr}
+  #page-case-evolution-hub .evolution-mark{width:46px;height:46px;border-radius:14px;font-size:20px}
+  #page-case-evolution-hub .evolution-highlights,
+  #page-case-evolution-hub .evolution-flow-steps{grid-template-columns:1fr}
+  #page-case-evolution-hub .evolution-flows-head{display:block}
+  #page-case-evolution-hub .evolution-flows-head p{margin-top:10px}
+}
+
 </style>
 <style>
 /* V30 — grupos compactos estilo Admin Center */
@@ -2006,8 +2355,109 @@ h1,h2,h3,h4,.brand,.btn{
 </div>
 </div></div><div aria-hidden="true" class="voice-drawer" data-voice-drawer=""><div class="voice-drawer-backdrop" data-close-drawer=""></div><aside><header><div><small data-drawer-kicker="">Cadastro</small><h4 data-drawer-title="">Nova configuração</h4></div><button class="icon-btn" data-close-drawer="">×</button></header><div data-drawer-body=""></div><footer><button class="btn-ui secondary-ui" data-close-drawer="">Cancelar</button><button class="btn-ui primary-ui">Salvar</button></footer></aside></div></section><section class="case-learning-section"><div class="container"><div class="section-head"><div><span class="eyebrow">Reflexão</span><h2>Aprendizados que levei deste trabalho.</h2></div></div><div class="learning-grid"><article class="learning-card"><span>O que se confirmou</span><p>Um MVP SaaS precisa validar uma operação completa, mesmo com escopo reduzido. A priorização dos módulos críticos permitiu entregar valor comercial sem tentar reproduzir toda a plataforma legada.</p></article><article class="learning-card"><span>O principal trade-off</span><p>Arquitetura e experiência precisam evoluir juntas. Modernizar a base técnica sem simplificar implantação, configuração e leitura operacional manteria parte relevante da complexidade anterior.</p></article></div></div></section><section id="page-case-voice-cloud-como-eu-evoluiria-hoje-8"><div class="container"><article class="content-card future-card"><span class="eyebrow">Visão de evolução</span><h2>Como eu evoluiria hoje</h2><p>Eu ampliaria o produto com inteligência aplicada à operação: análise de qualidade, detecção de motivos de contato e recomendações para supervisores em tempo quase real.</p></article></div></section><section><div class="container"><div class="summary-card" style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap"><div><span class="eyebrow">Próximo passo</span><h2 style="font-size:28px;color:var(--rose-dark);margin-top:6px">Continue explorando</h2></div><a class="btn" data-home-anchor="cases" href="#cases">Voltar à seleção de cases</a></div></div></section></main><main class="single-page-view case-page-shell" data-evidence="observed" id="page-case-jornada-fibra"><section class="case-hero"><div class="container"><a class="back" data-home-anchor="cases" href="#cases">← Voltar para os cases</a><span class="eyebrow">Telecom · Customer Journey &amp; Growth</span><div class="case-status-row"><span class="case-status">Entregue</span><span class="case-evidence-note">Resultados observados na evolução da jornada.</span></div><h1>Simplificando a aquisição de Fibra em uma jornada de alta escala.</h1><div class="case-summary"><article class="summary-card"><p>Evolução de uma jornada de aquisição em alta escala, conectando conversão, experiência do cliente e eficiência operacional do orçamento à instalação.</p></article><aside class="summary-card facts"><div class="fact"><span>Contexto</span><strong>Jornada ponta a ponta de aquisição da Fibra — orçamento, contratação, agendamento e instalação — para uma base superior a 1,6 milhão de clientes</strong></div></aside></div></div></section><nav aria-label="Navegação do case" class="case-local-nav"><div class="container case-local-nav-inner"><a href="#page-case-jornada-fibra-como-pensei-este-problema-0">Product thinking</a><a href="#page-case-jornada-fibra-meu-papel-2">Problema e contexto</a><a href="#page-case-jornada-fibra-frentes-de-evolucao-4">Decisões</a><a href="#page-case-jornada-fibra-indicadores-de-impacto-5">Resultados</a></div></nav><section class="v4-thinking" id="page-case-jornada-fibra-como-pensei-este-problema-0"><div class="container"><div class="v4-thinking-head"><span class="eyebrow">Product thinking</span><h2>Como pensei este problema.</h2></div><div class="v4-thinking-grid"><article><span>Objetivo</span><p>Aumentar conversão e reduzir rupturas na aquisição de Fibra.</p></article><article><span>Hipótese</span><p>Simplificar a formalização e qualificar dados mais cedo reduziria abandono e retrabalho.</p></article><article><span>Trade-off</span><p>Menos etapas sem comprometer segurança e conformidade.</p></article><article><span>Métrica de sucesso</span><p>Conversão, cancelamento, lead time e taxa de conclusão.</p></article></div></div><section id="page-case-jornada-fibra-meu-papel-2"><div class="container content-grid"><article class="content-card"><span class="eyebrow">Problema</span><h2>Problema e contexto</h2><p>O funil de aquisição acumulava cancelamentos, etapas manuais e fricções entre orçamento, formalização, agendamento e instalação. Como as perdas aconteciam em pontos diferentes e eram tratadas por áreas distintas, faltava uma visão ponta a ponta para conectar experiência do cliente, conversão e eficiência operacional.</p></article><article class="content-card"><span class="eyebrow">Minha atuação</span><h2>Meu papel</h2><p>Lidero a evolução da jornada ponta a ponta, estruturando problemas, prioridades, indicadores e iniciativas com Produto, Engenharia, Comercial, Operações e Backoffice. Minha atuação combina análise de funil, discovery com as áreas, desenho de regras, simplificação da experiência e governança das entregas.</p></article></div></section><section id="page-case-jornada-fibra-frentes-de-evolucao-4"><div class="container"><div class="section-head"><div><span class="eyebrow">Decisões de produto</span><h2>Três frentes conectadas por uma visão única da jornada</h2></div></div><div class="content-grid"><article class="content-card"><h3>Simplificação da formalização</h3><p>A jornada contratual foi redesenhada para reduzir esforço e abandono sem eliminar validações necessárias.</p><ul class="list"><li>Redução de 17 para 3 telas.</li><li>Organização das decisões em uma sequência mais curta e compreensível.</li><li>Antecipação de validações para evitar retrabalho nas etapas seguintes.</li></ul></article><article class="content-card"><h3>Prevenção de perdas no funil</h3><p>Os pontos de ruptura passaram a ser analisados por etapa e motivo, permitindo priorizar intervenções com efeito sobre cancelamento e lead time.</p><ul class="list"><li>Acompanhamento de conversão entre orçamento, efetivação e instalação.</li><li>Identificação de gargalos operacionais e dependências entre áreas.</li><li>Priorização de iniciativas com impacto na recuperação da jornada.</li></ul></article><article class="content-card"><h3>Qualificação e segurança da aquisição</h3><p>A análise de risco foi aproximada do início da jornada para melhorar a qualidade dos orçamentos antes da formalização.</p><ul class="list"><li>Expansão de validações para canais digitais.</li><li>Tratamento de regras e exceções com Produto e Tecnologia.</li><li>Acompanhamento da detecção como indicador de qualidade da aquisição.</li></ul></article></div></div></section><section id="page-case-jornada-fibra-indicadores-de-impacto-5"><div class="container"><div class="section-head"><div><span class="eyebrow">Impacto</span><h2>Resultados e impacto</h2></div></div><div class="content-grid"><article class="content-card"><h2>Resultados observados</h2><ul class="list"><li>Menor perda relativa no funil de aquisição ao longo de 12 meses.</li><li>Formalização contratual mais curta e com menos esforço para o cliente.</li><li>Maior capacidade de identificar riscos ainda nos canais digitais.</li><li>Gestão da jornada orientada por conversão, cancelamento, lead time e eficiência operacional.</li></ul></article><article class="content-card"><h2>Indicadores de impacto</h2><ul class="list"><li>Cancelamento reduzido de 7,77% para 6,05% em 12 meses — queda relativa de aproximadamente 22%.</li><li>Formalização reduzida de 17 para 3 telas — 82% menos etapas.</li><li>Jornada com base superior a 1,6 milhão de clientes.</li></ul></article></div></div></section><section class="case-learning-section"><div class="container"><div class="section-head"><div><span class="eyebrow">Reflexão</span><h2>Aprendizados que levei deste trabalho.</h2></div></div><div class="learning-grid"><article class="learning-card"><span>O que se confirmou</span><p>Reduzir telas não é apenas remover etapas: é reorganizar decisões, antecipar validações e tornar o progresso compreensível para o usuário.</p></article><article class="learning-card"><span>O principal trade-off</span><p>Em jornadas de alta escala, pequenas fricções se multiplicam. A combinação entre dados do funil e observação operacional foi essencial para priorizar mudanças com impacto real.</p></article></div></div></section><section id="page-case-jornada-fibra-como-eu-evoluiria-hoje-6"><div class="container"><article class="content-card future-card"><span class="eyebrow">Visão de evolução</span><h2>Como eu evoluiria hoje</h2><p>Eu consolidaria uma visão preditiva do funil para identificar, antes da perda, quais clientes têm maior risco de abandono e qual intervenção tem mais chance de recuperar a jornada.</p></article></div></section><section><div class="container"><div class="summary-card" style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap"><div><span class="eyebrow">Próximo passo</span><h2 style="font-size:28px;color:var(--rose-dark);margin-top:6px">Continue explorando</h2></div><a class="btn" data-home-anchor="cases" href="#cases">Voltar à seleção de cases</a></div></div></section></section></main><main class="single-page-view case-page-shell" data-evidence="observed" id="page-case-automacao-capacidade"><section class="case-hero"><div class="container"><a class="back" data-home-anchor="cases" href="#cases">← Voltar para os cases</a><span class="eyebrow">Telecom · Product Operations</span><div class="case-status-row"><span class="case-status">Entregue</span><span class="case-evidence-note">Resultados operacionais observados.</span></div><h1>Liberando capacidade para vender mais sem expandir infraestrutura.</h1><div class="case-summary"><article class="summary-card"><p>Automação criada para liberar capacidade já existente na rede e permitir novas vendas sem depender de expansão imediata de infraestrutura.</p><div class="metrics" style="margin-top:24px"><div class="metric"><strong>Dezenas de milhares de reservas liberadas</strong></div><div class="metric"><strong>Milhares de instalações viabilizadas</strong></div></div></article><aside class="summary-card facts"><div class="fact"><span>Contexto</span><strong>Rede de fibra com capacidade comercial bloqueada por reservas antigas de portas em caixas ópticas</strong></div></aside></div></div></section><nav aria-label="Navegação do case" class="case-local-nav"><div class="container case-local-nav-inner"><a href="#page-case-automacao-capacidade-como-pensei-este-problema-0">Product thinking</a><a href="#page-case-automacao-capacidade-meu-papel-2">Problema e contexto</a><a href="#page-case-automacao-capacidade-logica-da-solucao-4">Estratégia</a><a href="#page-case-automacao-capacidade-evidencias-da-entrega-5">Resultados</a></div></nav><section class="v4-thinking" id="page-case-automacao-capacidade-como-pensei-este-problema-0"><div class="container"><div class="v4-thinking-head"><span class="eyebrow">Product thinking</span><h2>Como pensei este problema.</h2></div><div class="v4-thinking-grid"><article><span>Objetivo</span><p>Recuperar capacidade bloqueada por reservas sem perspectiva de instalação.</p></article><article><span>Hipótese</span><p>Regras automáticas de expiração liberariam portas para novas vendas com menor esforço operacional.</p></article><article><span>Trade-off</span><p>Ganho de capacidade versus risco de remover reservas válidas.</p></article><article><span>Métrica de sucesso</span><p>Portas liberadas, instalações viabilizadas e exceções tratadas.</p></article></div></div><section id="page-case-automacao-capacidade-meu-papel-2"><div class="container content-grid"><article class="content-card"><span class="eyebrow">Problema</span><h2>Problema e contexto</h2><p>Clientes deixavam de contratar o serviço mesmo quando havia capacidade física disponível. Reservas antigas permaneciam associadas às portas da rede, criando indisponibilidade artificial e exigindo análises manuais para confirmar se aquela capacidade poderia voltar a ser comercializada.</p></article><article class="content-card"><span class="eyebrow">Minha atuação</span><h2>Meu papel</h2><p>Liderei a transformação da rotina manual em uma automação recorrente: defini critérios de expiração, exceções, salvaguardas e rastreabilidade; conectei Jornada, Produto, Operações e Tecnologia; e estruturei a validação dos efeitos sobre capacidade e instalações.</p></article></div></section><section id="page-case-automacao-capacidade-logica-da-solucao-4"><div class="container"><div class="section-head"><div><span class="eyebrow">Estratégia</span><h2>Como a automação foi desenhada para liberar capacidade com segurança</h2></div></div><div class="content-grid"><article class="content-card"><h3>Regra principal</h3><p>Reservas sem evolução por dez dias passaram a ser elegíveis para limpeza automática, reduzindo o acúmulo de portas bloqueadas sem perspectiva de instalação.</p></article><article class="content-card"><h3>Exceções protegidas</h3><p>A regra preservou cenários que exigiam tratamento diferenciado antes da liberação.</p><ul class="list"><li>Clientes B2B foram mantidos fora da limpeza automática.</li><li>Condomínios dependiam da existência de caixa ativa antes de qualquer liberação.</li><li>Orçamentos de CNPJ foram protegidos no recorte de cancelamento histórico.</li></ul></article><article class="content-card"><h3>Rastreabilidade e auditoria</h3><p>Cada limpeza precisava ser identificável e passível de conferência, permitindo analisar o motivo da remoção e corrigir exceções sem tornar o processo novamente manual.</p></article><article class="content-card"><h3>Validação do efeito</h3><p>O sucesso não foi medido apenas pelo volume removido, mas pela capacidade efetivamente recuperada e pelas instalações que passaram a ser viabilizadas.</p></article></div></div></section><section id="page-case-automacao-capacidade-evidencias-da-entrega-5"><div class="container"><div class="section-head"><div><span class="eyebrow">Impacto</span><h2>Resultados e impacto</h2></div></div><div class="content-grid"><article class="content-card"><h2>Resultados observados</h2><ul class="list"><li>Capacidade instalada recuperada sem investimento adicional em infraestrutura.</li><li>Redução do tratamento manual e do tempo de análise.</li><li>Mais disponibilidade comercial para novas vendas.</li><li>Processo recorrente criado para manutenção da capacidade.</li></ul></article><article class="content-card"><h2>Evidências da entrega</h2><ul class="list"><li>Dezenas de milhares de reservas obsoletas removidas automaticamente.</li><li>Milhares de instalações viabilizadas nos meses seguintes.</li><li>Regras e exceções operacionais transformadas em automação rastreável.</li></ul></article></div></div></section><section class="case-learning-section"><div class="container"><div class="section-head"><div><span class="eyebrow">Reflexão</span><h2>Aprendizados que levei deste trabalho.</h2></div></div><div class="learning-grid"><article class="learning-card"><span>O que se confirmou</span><p>Capacidade disponível não é apenas um dado técnico; ela influencia diretamente conversão, receita e experiência. Automatizar a limpeza de reservas tornou um gargalo invisível em uma alavanca de negócio.</p></article><article class="learning-card"><span>O principal trade-off</span><p>Exceções como clientes B2B e condomínios precisaram ser incorporadas desde o início. Uma automação eficiente depende de regras transparentes, rastreabilidade e possibilidade de auditoria.</p></article></div></div></section><section id="page-case-automacao-capacidade-como-eu-evoluiria-hoje-6"><div class="container"><article class="content-card future-card"><span class="eyebrow">Visão de evolução</span><h2>Como eu evoluiria hoje</h2><p>Eu evoluiria a automação para um modelo preventivo, identificando reservas com alta probabilidade de abandono antes de atingirem o prazo de limpeza e direcionando ações diferentes por perfil de risco.</p></article></div></section><section><div class="container"><div class="summary-card" style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap"><div><span class="eyebrow">Próximo passo</span><h2 style="font-size:28px;color:var(--rose-dark);margin-top:6px">Continue explorando</h2></div><a class="btn" data-home-anchor="cases" href="#cases">Voltar à seleção de cases</a></div></div></section></section></main><main class="single-page-view case-page-shell" data-evidence="expected" id="page-case-backlog-crm"><section class="case-hero"><div class="container"><a class="back" data-home-anchor="cases" href="#cases">← Voltar para os cases</a><span class="eyebrow">Telecom · CRM · Product Ops</span><div class="case-status-row"><span class="case-status">Contínuo</span><span class="case-evidence-note">Resultados da governança e impactos planejados por iniciativa.</span></div><h1>Como transformei demandas operacionais em decisões de produto.</h1><div class="case-summary"><article class="summary-card"><p>Estruturei a governança de um backlog corporativo transformando dores operacionais em problemas de produto, regras de negócio, critérios de aceite e métricas de acompanhamento.</p><div class="metrics" style="margin-top:24px"><div class="metric"><strong>Dezenas de iniciativas acompanhadas</strong></div><div class="metric"><strong>Prioridade, rastreabilidade e qualidade de refinamento</strong></div></div></article><aside class="summary-card facts"><div class="fact"><span>Contexto</span><strong>CRM utilizado por vendas, canais digitais, Backoffice, auditoria e operação</strong></div><div class="fact"><span>Meu papel</span><strong>Discovery, priorização, especificação funcional, alinhamento e validação</strong></div></aside></div></div></section><nav aria-label="Navegação do case" class="case-local-nav"><div class="container case-local-nav-inner"><a href="#page-case-backlog-crm-como-pensei-este-problema-0">Product thinking</a><a href="#page-case-backlog-crm-transformar-solicitacoes-em-decisoes-de-produto-2">Um backlog amplo, com dores de naturezas diferentes</a><a href="#page-case-backlog-crm-como-organizei-o-trabalho-3">Como organizei o trabalho</a><a href="#page-case-backlog-crm-criterios-priorizacao-35">Priorização</a><a href="#page-case-backlog-crm-auditoria-de-orcamentos-duplicados-4">Auditoria de orçamentos duplicados</a></div></nav><section class="v4-thinking" id="page-case-backlog-crm-como-pensei-este-problema-0"><div class="container"><div class="v4-thinking-head"><span class="eyebrow">Product thinking</span><h2>Como pensei este problema.</h2></div><div class="v4-thinking-grid"><article><span>Objetivo</span><p>Transformar demandas dispersas em decisões priorizadas e rastreáveis.</p></article><article><span>Hipótese</span><p>Estruturar problemas, regras, critérios de aceite e métricas elevaria a qualidade do backlog.</p></article><article><span>Trade-off</span><p>Profundidade de discovery versus urgência operacional.</p></article><article><span>Métrica de sucesso</span><p>Lead time de decisão, clareza de escopo, retrabalho e impacto por iniciativa.</p></article></div></div><section id="page-case-backlog-crm-transformar-solicitacoes-em-decisoes-de-produto-2"><div class="container content-grid"><article class="content-card"><span class="eyebrow">Problema</span><h2>Um backlog amplo, com dores de naturezas diferentes</h2><p>As demandas chegavam de múltiplas áreas e misturavam correções operacionais, automações, prevenção de fraude, comunicação com clientes e evolução da jornada comercial. Sem uma estrutura comum, ficava difícil comparar impacto, risco, dependências e urgência.</p></article><article class="content-card"><span class="eyebrow">Minha atuação</span><h2>Transformar solicitações em decisões de produto</h2><p>Conduzi discovery com as áreas, traduzi necessidades em regras de negócio e critérios de aceite, organizei dependências com Tecnologia e defini como cada iniciativa seria acompanhada após a entrega.</p></article></div></section><section id="page-case-backlog-crm-como-organizei-o-trabalho-3"><div class="container"><div class="section-head"><div><span class="eyebrow">Abordagem</span><h2>Como organizei o trabalho</h2></div></div><div class="crm-process-grid"><article class="crm-process-card"><span>01</span><h3>Entender a dor</h3><p>Mapeamento do problema, público afetado, etapa da jornada e impacto operacional.</p></article><article class="crm-process-card"><span>02</span><h3>Definir o recorte</h3><p>Escopo, não escopo, regras de negócio, exceções e dependências.</p></article><article class="crm-process-card"><span>03</span><h3>Preparar a entrega</h3><p>Critérios de aceite, fluxos, eventos, etiquetas, integrações e validação funcional.</p></article><article class="crm-process-card"><span>04</span><h3>Medir o efeito</h3><p>Indicadores de adoção, conversão, lead time, volume e eficiência operacional.</p></article></div></div></section><section id="page-case-backlog-crm-criterios-priorizacao-35"><div class="container"><div class="section-head"><div><span class="eyebrow">Priorização</span><h2>Como comparei demandas de naturezas diferentes</h2></div></div><div class="content-grid"><article class="content-card"><h3>Impacto na jornada</h3><p>Quantidade de clientes afetados, etapa do funil, intensidade da fricção e potencial de melhorar conversão ou experiência.</p></article><article class="content-card"><h3>Urgência e recorrência</h3><p>Frequência do problema, criticidade para o negócio e existência de prazo comercial, regulatório ou operacional.</p></article><article class="content-card"><h3>Esforço e dependências</h3><p>Complexidade técnica, integrações, disponibilidade das squads, fornecedores envolvidos e risco de bloquear outras entregas.</p></article><article class="content-card"><h3>Capacidade de medir</h3><p>Existência de baseline, eventos e indicadores que permitissem verificar o efeito após o lançamento.</p></article><article class="content-card"><h3>Decisão de recorte</h3><p>Quando o problema era amplo, priorizei uma primeira versão com regras e público claros, reduzindo risco sem perder a possibilidade de evolução.</p></article></div></div></section><section class="crm-initiative-section" id="page-case-backlog-crm-auditoria-de-orcamentos-duplicados-4"><div class="container"><div class="section-head"><div><span class="eyebrow">Exemplo 01</span><h2>Auditoria de orçamentos duplicados</h2></div></div><div class="content-grid"><article class="content-card"><h3>O problema</h3><p>O CRM não identificava automaticamente quando um CPF já possuía orçamento cancelado recentemente ou ainda pendente. Isso permitia recriações por outros canais, alterava a autoria comercial e distorcia indicadores.</p></article><article class="content-card"><h3>Decisão de produto</h3><p>Inserir a checagem no momento da criação do orçamento, exigir aceite explícito do vendedor, registrar a duplicidade no histórico e impedir a efetivação automática até decisão da auditoria.</p></article></div><div aria-label="Fluxo de auditoria de orçamentos duplicados" class="crm-flow"><div class="crm-flow-step"><strong>CPF consultado</strong><span>Histórico cruzado entre canais</span></div><div class="crm-flow-arrow">→</div><div class="crm-flow-step"><strong>Duplicidade identificada</strong><span>Aviso e aceite obrigatório</span></div><div class="crm-flow-arrow">→</div><div class="crm-flow-step"><strong>Orçamento marcado</strong><span>Bloqueio da efetivação automática</span></div><div class="crm-flow-arrow">→</div><div class="crm-flow-step accent"><strong>Auditoria decide</strong><span>Liberação ou cancelamento</span></div></div><div class="content-grid"><article class="content-card"><h3>Regras estruturadas</h3><ul class="list"><li>Aplicação inicial para Fibra e Combo.</li><li>Consulta por CPF, independentemente do endereço ou canal.</li><li>Janela de 30 dias para orçamentos cancelados.</li><li>Pendências de Mapas, Agendamento ou instalação sem limite temporal.</li><li>Chamado automático com etiqueta e protocolo do orçamento bloqueador.</li></ul></article><article class="content-card"><h3>Indicadores definidos</h3><ul class="list"><li>Volume de orçamentos marcados por canal.</li><li>Taxa de liberação e cancelamento após auditoria.</li><li>Tempo médio de decisão da fila.</li><li>Redução de apropriação indevida entre canais.</li><li>Redução de auditoria reativa e retrabalho.</li></ul></article></div></div></section><section class="crm-initiative-section" id="page-case-backlog-crm-deep-link-para-contratos-pendentes-5"><div class="container"><div class="section-head"><div><span class="eyebrow">Exemplo 02</span><h2>Deep Link para contratos pendentes</h2></div></div><div class="content-grid"><article class="content-card"><h3>O problema</h3><p>Clientes avançavam na contratação, mas abandonavam a assinatura. O Backoffice precisava cobrar manualmente pelo WhatsApp e explicar onde localizar os contratos no aplicativo.</p></article><article class="content-card"><h3>Decisão de produto</h3><p>Criar uma comunicação exclusiva para contratos pendentes, com CTA que leva diretamente à tela de assinatura. Sem o app instalado, o cliente é direcionado à loja correta.</p></article></div><div aria-label="Fluxo de Deep Link para contratos pendentes" class="crm-flow"><div class="crm-flow-step"><strong>Pendência identificada</strong><span>Segmentação pelo CRM</span></div><div class="crm-flow-arrow">→</div><div class="crm-flow-step"><strong>HSM exclusivo</strong><span>Mensagem rastreável</span></div><div class="crm-flow-arrow">→</div><div class="crm-flow-step"><strong>Deep Link</strong><span>Abre contratos ou loja do app</span></div><div class="crm-flow-arrow">→</div><div class="crm-flow-step accent"><strong>Assinatura</strong><span>Jornada segue para agendamento</span></div></div><div class="content-grid"><article class="content-card"><h3>Recorte e governança</h3><ul class="list"><li>Público restrito a clientes com contrato não assinado.</li><li>Template exclusivo para isolar a mensuração.</li><li>Pausa de comunicações paralelas durante a janela de teste.</li><li>Fraseologia validada antes da submissão à Meta.</li><li>Rastreabilidade da origem para análise em BI.</li></ul></article><article class="content-card"><h3>Métricas planejadas</h3><ul class="list"><li>Taxa de assinatura após o disparo.</li><li>Taxa de clique no Deep Link.</li><li>Entrega e abertura da mensagem.</li><li>Instalação do app pelo fallback.</li><li>Redução do lead time de formalização.</li></ul></article></div></div></section><section id="page-case-backlog-crm-o-que-este-case-evidencia-6"><div class="container"><div class="section-head"><div><span class="eyebrow">Competências demonstradas</span><h2>O que este case evidencia</h2></div></div><div class="crm-competency-grid"><article class="content-card"><h3>Discovery operacional</h3><p>Transformação de problemas relatados pelas áreas em hipóteses e requisitos verificáveis.</p></article><article class="content-card"><h3>Especificação de produto</h3><p>Regras de negócio, regras funcionais, critérios de aceite, exceções e rastreabilidade.</p></article><article class="content-card"><h3>Gestão de stakeholders</h3><p>Alinhamento entre Produto, Backoffice, Auditoria, Comercial, TI, Dados e fornecedores.</p></article><article class="content-card"><h3>Orientação a métricas</h3><p>Definição de indicadores antes da entrega para avaliar comportamento e impacto operacional.</p></article></div></div></section><section id="page-case-backlog-crm-resultado-da-gestao-do-backlog-7"><div class="container"><div class="section-head"><div><span class="eyebrow">Impacto</span><h2>Resultado da gestão do backlog</h2></div></div><div class="content-grid"><article class="content-card"><h3>Impactos alcançados na operação de produto</h3><ul class="list"><li>Maior clareza sobre prioridade, risco, dependência e responsável.</li><li>Refinamentos mais completos antes da entrada em desenvolvimento.</li><li>Melhor coordenação entre iniciativas que compartilhavam sistemas e jornadas.</li><li>Decisões registradas com critérios de aceite e métricas desde a origem.</li></ul></article><article class="content-card"><h3>Impactos esperados das iniciativas</h3><ul class="list"><li>Menor duplicidade e apropriação indevida de vendas entre canais.</li><li>Auditoria mais proativa e rastreável.</li><li>Maior conversão de contratos pendentes.</li><li>Menor dependência de atuação manual do Backoffice.</li></ul></article></div></div></section><section class="case-learning-section"><div class="container"><div class="section-head"><div><span class="eyebrow">Reflexão</span><h2>Aprendizados que levei deste trabalho.</h2></div></div><div class="learning-grid"><article class="learning-card"><span>O que se confirmou</span><p>Backlogs ganham qualidade quando começam por problemas comparáveis, e não por listas de solicitações. Regras, critérios de aceite e métricas reduziram ambiguidades antes do desenvolvimento.</p></article><article class="learning-card"><span>O principal trade-off</span><p>Urgência operacional e profundidade de discovery precisam coexistir. O recorte correto foi decisivo para avançar rápido sem transformar exceções locais em soluções frágeis.</p></article></div></div></section><section id="page-case-backlog-crm-como-eu-evoluiria-hoje-8"><div class="container"><article class="content-card future-card"><span class="eyebrow">Visão de evolução</span><h2>Como eu evoluiria hoje</h2><p>Eu conectaria todas as iniciativas do backlog a uma árvore de oportunidades e a um painel único de outcomes, permitindo acompanhar desde a dor original até o impacto após o lançamento — com recortes por canal, etapa da jornada e tipo de cliente.</p></article></div></section><section><div class="container"><div class="summary-card" style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap"><div><span class="eyebrow">Próximo passo</span><h2 style="font-size:28px;color:var(--rose-dark);margin-top:6px">Continue explorando</h2></div><a class="btn" data-home-anchor="cases" href="#cases">Voltar à seleção de cases</a></div></div></section></section></main><main class="single-page-view case-page-shell" data-evidence="observed" id="page-case-portfolio-b2b"><section class="case-hero"><div class="container"><a class="back" data-home-anchor="cases" href="#cases">← Voltar para os cases</a><span class="eyebrow">Software Factory · Produtos B2B</span><div class="case-status-row"><span class="case-status">Entregue</span><span class="case-evidence-note">Resultados observados na gestão multi-cliente.</span></div><h1>Gerenciando produtos B2B distintos com uma visão única de portfólio.</h1><div class="case-summary"><article class="summary-card"><p>Gestão simultânea de produtos digitais B2B, conectando necessidades de negócio, discovery e entrega em contextos distintos.</p><div class="metrics" style="margin-top:24px"><div class="metric"><strong>7 produtos digitais B2B</strong></div><div class="metric"><strong>Menos retrabalho pós-implantação</strong></div></div></article><aside class="summary-card facts"><div class="fact"><span>Contexto</span><strong>Gestão simultânea de sete produtos digitais para clientes públicos e privados</strong></div></aside></div></div></section><nav aria-label="Navegação do case" class="case-local-nav"><div class="container case-local-nav-inner"><a href="#page-case-portfolio-b2b-como-pensei-este-problema-0">Product thinking</a><a href="#page-case-portfolio-b2b-meu-papel-2">Problema e contexto</a><a href="#page-case-portfolio-b2b-governanca-4">Governança</a><a href="#page-case-portfolio-b2b-escala-do-portfolio-5">Resultados</a></div></nav><section class="v4-thinking" id="page-case-portfolio-b2b-como-pensei-este-problema-0"><div class="container"><div class="v4-thinking-head"><span class="eyebrow">Product thinking</span><h2>Como pensei este problema.</h2></div><div class="v4-thinking-grid"><article><span>Objetivo</span><p>Gerenciar prioridades concorrentes em um portfólio multi-cliente.</p></article><article><span>Hipótese</span><p>Governança comum e recortes claros permitiriam entregar valor sem perder visão do conjunto.</p></article><article><span>Trade-off</span><p>Urgências individuais versus capacidade compartilhada das squads.</p></article><article><span>Métrica de sucesso</span><p>Previsibilidade, lead time, qualidade e satisfação dos stakeholders.</p></article></div></div><section id="page-case-portfolio-b2b-meu-papel-2"><div class="container content-grid"><article class="content-card"><span class="eyebrow">Problema</span><h2>Problema e contexto</h2><p>O portfólio reunia clientes com objetivos, maturidades e restrições diferentes, enquanto Design e Engenharia compartilhavam capacidade. O desafio era comparar demandas heterogêneas, construir recortes viáveis e manter previsibilidade sem aplicar a mesma solução de gestão a todos os produtos.</p></article><article class="content-card"><span class="eyebrow">Minha atuação</span><h2>Meu papel</h2><p>Gerenciei sete produtos e contas B2B em paralelo, conduzindo discovery, escopo, backlog, roadmap e alinhamento entre clientes, Design e Engenharia. Atuei em produtos como sites institucionais, sistemas internos, hubs de integração, automações/RPA e migração de infraestrutura, adaptando o processo sem perder uma governança comum.</p></article></div></section><section id="page-case-portfolio-b2b-governanca-4"><div class="container"><div class="section-head"><div><span class="eyebrow">Gestão de portfólio</span><h2>Como mantive consistência entre produtos diferentes</h2></div></div><div class="content-grid"><article class="content-card"><h3>Descoberta e recorte</h3><p>Cada demanda era traduzida em problema, objetivo, usuários afetados, restrições e critérios de aceite antes de disputar capacidade com as demais.</p></article><article class="content-card"><h3>Governança comum</h3><p>Roadmaps, riscos, dependências e decisões eram apresentados em uma estrutura comparável, mesmo quando a natureza técnica e o contexto de negócio eram diferentes.</p></article><article class="content-card"><h3>Adaptação por cliente</h3><p>A cadência, o nível de documentação e a forma de validação eram ajustados à maturidade e à disponibilidade de cada stakeholder, sem perder rastreabilidade.</p></article><article class="content-card"><h3>Capacidade compartilhada</h3><p>Conflitos de prioridade eram tratados explicitando impacto, urgência, risco e esforço, permitindo negociar escopo e sequência de entrega com transparência.</p></article></div></div></section><section id="page-case-portfolio-b2b-escala-do-portfolio-5"><div class="container"><div class="section-head"><div><span class="eyebrow">Impacto</span><h2>Resultados e impacto</h2></div></div><div class="content-grid"><article class="content-card"><h2>Resultados observados</h2><ul class="list"><li>Maior clareza entre clientes e equipes técnicas sobre problema, escopo e critérios de aceite.</li><li>Menos ambiguidades descobertas somente após a implantação.</li><li>Melhor previsibilidade por meio de roadmaps, riscos e dependências visíveis.</li><li>Soluções adaptadas ao contexto de cada negócio sem perder uma lógica comum de gestão.</li></ul></article><article class="content-card"><h2>Escala do portfólio</h2><ul class="list"><li>Sete produtos digitais B2B gerenciados em paralelo.</li><li>Portfólio com sites, sistemas internos, hubs de integração, automações e migração de infraestrutura.</li></ul></article></div></div></section><section class="case-learning-section"><div class="container"><div class="section-head"><div><span class="eyebrow">Reflexão</span><h2>Aprendizados que levei deste trabalho.</h2></div></div><div class="learning-grid"><article class="learning-card"><span>O que se confirmou</span><p>Gerir um portfólio multi-cliente exige padrões comuns de decisão e flexibilidade na execução. Uma mesma governança ajudou a comparar prioridades sem ignorar contextos distintos.</p></article><article class="learning-card"><span>O principal trade-off</span><p>Capacidade compartilhada torna trade-offs visíveis. Roadmaps, riscos e dependências precisavam ser apresentados de forma simples para clientes e times técnicos tomarem decisões melhores.</p></article></div></div></section><section id="page-case-portfolio-b2b-como-eu-evoluiria-hoje-6"><div class="container"><article class="content-card future-card"><span class="eyebrow">Visão de evolução</span><h2>Como eu evoluiria hoje</h2><p>Eu estruturaria uma visão comparável do portfólio com indicadores comuns de valor, risco e esforço, apoiando decisões de capacidade e priorização entre contas.</p></article></div></section><section><div class="container"><div class="summary-card" style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap"><div><span class="eyebrow">Próximo passo</span><h2 style="font-size:28px;color:var(--rose-dark);margin-top:6px">Continue explorando</h2></div><a class="btn" data-home-anchor="cases" href="#cases">Voltar à seleção de cases</a></div></div></section></section></main><main class="single-page-view case-page-shell" data-evidence="observed" id="page-case-score-antifraude"><section class="case-hero"><div class="container"><a class="back" data-home-anchor="cases" href="#cases">← Voltar para os cases</a><div class="case-status-row"><span class="case-status">Entregue</span><span class="case-evidence-note">Resultados observados na expansão do score.</span></div><h1>Ampliando a detecção de risco nos canais digitais.</h1><div class="case-summary"><article class="summary-card"><p>Expansão da análise de risco nos canais digitais para identificar comportamentos suspeitos mais cedo e tornar a aquisição mais consistente entre canais.</p></article><aside class="summary-card facts"></aside></div></div></section><nav aria-label="Navegação do case" class="case-local-nav"><div class="container case-local-nav-inner"><a href="#page-case-score-antifraude-como-pensei-este-problema-0">Product thinking</a><a href="#page-case-score-antifraude-meu-papel-2">Problema e contexto</a><a href="#page-case-score-antifraude-indicadores-de-impacto-5">Resultados</a></div></nav><section class="v4-thinking" id="page-case-score-antifraude-como-pensei-este-problema-0"><div class="container"><div class="v4-thinking-head"><span class="eyebrow">Product thinking</span><h2>Como pensei este problema.</h2></div><div class="v4-thinking-grid"><article><span>Objetivo</span><p>Reduzir perdas e qualificar vendas digitais antes da formalização.</p></article><article><span>Hipótese</span><p>Aplicar score e sinais de risco no início da jornada permitiria decisões mais seguras.</p></article><article><span>Trade-off</span><p>Maior rigor na prevenção versus fricção e risco de falso positivo.</p></article></div></div><section id="page-case-score-antifraude-meu-papel-2"><div class="container content-grid"><article class="content-card"><span class="eyebrow">Problema</span><h2>Problema e contexto</h2><p>Os canais digitais operavam com níveis diferentes de validação, o que reduzia a capacidade de identificar comportamentos suspeitos antes da contratação e criava decisões inconsistentes para clientes com perfis semelhantes.</p></article><article class="content-card"><span class="eyebrow">Minha atuação</span><h2>Meu papel</h2><p>Conduzi a expansão da solução para novos canais, articulando regras de decisão, integrações, experiência da jornada e indicadores com Produto, Tecnologia e Negócio. A conversão foi tratada como guardrail da iniciativa, sem ser apresentada como resultado enquanto não houvesse medição consolidada por canal.</p></article></div></section><section id="page-case-score-antifraude-indicadores-de-impacto-5"><div class="container"><div class="section-head"><div><span class="eyebrow">Impacto</span><h2>Resultados e impacto</h2></div></div><div class="content-grid"><article class="content-card"><h2>Resultados observados</h2><ul class="list"><li>Identificação de risco antecipada para etapas anteriores à formalização.</li><li>Mais consistência entre canais que antes operavam com validações diferentes.</li><li>Base mais qualificada para evoluir regras a partir de aprovação, falso positivo e comportamento posterior.</li></ul></article></div></div></section><section class="case-learning-section"><div class="container"><div class="section-head"><div><span class="eyebrow">Reflexão</span><h2>Aprendizados que levei deste trabalho.</h2></div></div><div class="learning-grid"><article class="learning-card"><span>O que se confirmou</span><p>Mais detecção não significa automaticamente uma política melhor. O equilíbrio entre risco, conversão e falso positivo precisa ser acompanhado por canal e etapa da jornada.</p></article><article class="learning-card"><span>O principal trade-off</span><p>Antecipar a análise ampliou a capacidade de prevenção, mas reforçou a importância de explicar decisões, tratar exceções e retroalimentar as regras com resultados posteriores.</p></article></div></div></section><section id="page-case-score-antifraude-como-eu-evoluiria-hoje-6"><div class="container"><article class="content-card future-card"><span class="eyebrow">Visão de evolução</span><h2>Como eu evoluiria hoje</h2><p>Eu evoluiria o score para uma abordagem adaptativa, com acompanhamento de falsos positivos, regras por canal e retroalimentação a partir dos resultados de ativação e inadimplência.</p></article></div></section><section><div class="container"><div class="summary-card" style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap"><div><span class="eyebrow">Próximo passo</span><h2 style="font-size:28px;color:var(--rose-dark);margin-top:6px">Continue explorando</h2></div><a class="btn" data-home-anchor="cases" href="#cases">Voltar à seleção de cases</a></div></div></section></section></main>
 <main class="single-page-view case-page-shell case-standardized" data-case-family="product-case" data-evidence="observed" id="page-case-evolution-hub">
-<section class="case-hero"><div class="container"><a class="back" data-home-anchor="cases" href="#cases">← Voltar aos cases</a><span class="eyebrow">Evolution Hub · ERP B2B · SaaS operacional · Product Operations</span><h1>Uma operação B2B inteira conectada por um único fluxo de pedido.</h1><div class="case-status-row"><span class="case-status">Produto entregue</span><span class="case-evidence-note">Interfaces reconstruídas e anonimizadas a partir do produto original</span></div><div class="case-summary"><article class="summary-card"><p>O Evolution Hub nasceu para transformar processos fragmentados em uma jornada operacional única: da oportunidade comercial e análise financeira às compras, estoque, expedição e acompanhamento da entrega. Atuei como Product Owner na concepção e entrega do produto, conectando regras de negócio, experiência, tecnologia e operação em um ERP modular para uma empresa B2B.</p></article><aside class="summary-card facts"><div class="fact"><span>Meu papel</span><strong>Product Owner em fábrica de software</strong></div><div class="fact"><span>Entrega</span><strong>Produto desenvolvido e entregue ao cliente B2B</strong></div><div class="fact"><span>Produto</span><strong>ERP modular para operação B2B</strong></div><div class="fact"><span>Escopo</span><strong>Comercial, Financeiro, Compras, Estoque, Expedição e Logística</strong></div><div class="fact"><span>Abordagem</span><strong>Discovery, regras de negócio, backlog, UX e delivery</strong></div></aside></div></div></section>
-<nav aria-label="Navegação do case" class="case-local-nav"><div class="container case-local-nav-inner"><a href="#evolution-thinking">Product Thinking</a><a href="#evolution-problema">Problema</a><a href="#evolution-solucao">Arquitetura</a><a href="#evolution-telas">Módulos</a><a href="#evolution-decisoes">Decisões</a><a href="#evolution-impacto">Impacto</a></div></nav>
+<section class="case-hero"><div class="container">
+<a class="back" data-home-anchor="cases" href="#cases">← Voltar aos cases</a>
+<span class="eyebrow">Evolution Hub · ERP B2B · SaaS operacional</span>
+<h1>Uma operação B2B inteira conectada por um único fluxo de pedido.</h1>
+<div class="case-status-row"><span class="case-status">Produto entregue</span><span class="case-evidence-note">Interfaces reconstruídas e anonimizadas a partir do produto original</span></div>
+
+<div class="evolution-hero-grid">
+  <article class="evolution-hero-main">
+    <div class="evolution-hero-title">
+      <span class="evolution-mark">E</span>
+      <div><h2>Evolution Hub</h2><p>ERP modular para operação B2B</p></div>
+    </div>
+    <p class="evolution-hero-copy">O Evolution Hub unifica a jornada comercial, financeira e logística em um único produto. Atuei como Product Owner conduzindo discovery, definição funcional, priorização do backlog, prototipação, validação com usuários e acompanhamento da entrega junto ao time de desenvolvimento.</p>
+    <div class="evolution-highlights">
+      <div class="evolution-highlight"><strong>6 módulos integrados</strong><span>Comercial ao acompanhamento da entrega.</span></div>
+      <div class="evolution-highlight"><strong>Pedido como objeto central</strong><span>Status, documentos, custos e eventos em uma única visão.</span></div>
+      <div class="evolution-highlight"><strong>Regras e exceções</strong><span>Bloqueios, alçadas, backorder, devoluções e auditoria.</span></div>
+      <div class="evolution-highlight"><strong>Discovery ao delivery</strong><span>Processos, backlog, UX, testes e validação.</span></div>
+    </div>
+  </article>
+
+  <aside class="evolution-hero-aside">
+    <span>Meu papel & contexto</span>
+    <div class="evolution-fact-list">
+      <div class="evolution-fact"><b>PO</b><div><small>Meu papel</small><strong>Product Owner em fábrica de software</strong></div></div>
+      <div class="evolution-fact"><b>✓</b><div><small>Entrega</small><strong>Produto desenvolvido e entregue ao cliente B2B</strong></div></div>
+      <div class="evolution-fact"><b>6</b><div><small>Escopo</small><strong>Comercial, Financeiro, Compras, Estoque, Expedição e Logística</strong></div></div>
+      <div class="evolution-fact"><b>↗</b><div><small>Abordagem</small><strong>Discovery, regras de negócio, backlog, UX e delivery</strong></div></div>
+    </div>
+  </aside>
+</div>
+</div></section>
+<nav aria-label="Navegação do case" class="case-local-nav"><div class="container case-local-nav-inner"><a href="#evolution-fluxos">Fluxos</a><a href="#evolution-thinking">Product Thinking</a><a href="#evolution-problema">Problema</a><a href="#evolution-solucao">Arquitetura</a><a href="#evolution-telas">Módulos</a><a href="#evolution-decisoes">Decisões</a><a href="#evolution-impacto">Impacto</a></div></nav>
+<section class="evolution-flows-section" id="evolution-fluxos"><div class="container">
+  <div class="evolution-flows-head">
+    <div><span class="eyebrow">Principais fluxos do sistema</span><h2>Quatro jornadas conectadas pelo mesmo pedido.</h2></div>
+    <p>Os fluxos abaixo mostram como o sistema orquestra decisões entre áreas, impede avanços incompletos e mantém rastreabilidade do início ao fim.</p>
+  </div>
+
+  <div class="evolution-flow-tabs" role="tablist" aria-label="Fluxos do Evolution Hub">
+    <button class="evolution-flow-tab active" data-evo-flow="commercial" type="button">Comercial</button>
+    <button class="evolution-flow-tab" data-evo-flow="purchase" type="button">Compras</button>
+    <button class="evolution-flow-tab" data-evo-flow="dispatch" type="button">Expedição</button>
+    <button class="evolution-flow-tab" data-evo-flow="international" type="button">Importação</button>
+  </div>
+
+  <div class="evolution-flow-panel active" data-evo-panel="commercial">
+    <article class="evolution-flow-card">
+      <header><div><h3>Fluxo comercial e financeiro</h3><p>Da oportunidade ao faturamento, com disponibilidade e viabilidade validadas antes da promessa ao cliente.</p></div><span>Lead to cash</span></header>
+      <div class="evolution-flow-steps">
+        <div class="evolution-step"><b>01</b><strong>Oportunidade</strong><small>Cliente, necessidade, potencial e responsável.</small></div>
+        <div class="evolution-step"><b>02</b><strong>Proposta</strong><small>Itens, preço, desconto, prazo e modalidade de entrega.</small></div>
+        <div class="evolution-step"><b>03</b><strong>Análise financeira</strong><small>Crédito, limite, margem, impostos e alçada.</small></div>
+        <div class="evolution-step"><b>04</b><strong>Pedido aprovado</strong><small>Reserva de estoque e geração das pendências operacionais.</small></div>
+        <div class="evolution-step"><b>05</b><strong>Faturamento</strong><small>Nota fiscal, cobrança e liberação para expedição.</small></div>
+      </div>
+      <div class="evolution-flow-rules"><span>Bloqueio por limite</span><span>Desconto por alçada</span><span>Pedido parcial</span><span>Backorder</span><span>Auditoria de alterações</span></div>
+    </article>
+  </div>
+
+  <div class="evolution-flow-panel" data-evo-panel="purchase">
+    <article class="evolution-flow-card">
+      <header><div><h3>Fluxo de compras e abastecimento</h3><p>Transforma necessidade de reposição em cotação, aprovação, pedido ao fornecedor e entrada física no estoque.</p></div><span>Procure to stock</span></header>
+      <div class="evolution-flow-steps">
+        <div class="evolution-step"><b>01</b><strong>Necessidade</strong><small>Ruptura, estoque mínimo, pedido reservado ou previsão de demanda.</small></div>
+        <div class="evolution-step"><b>02</b><strong>Cotação</strong><small>Comparação de fornecedor, prazo, moeda, frete e condição.</small></div>
+        <div class="evolution-step"><b>03</b><strong>Aprovação</strong><small>Alçada por valor, centro de custo e justificativa.</small></div>
+        <div class="evolution-step"><b>04</b><strong>Pedido de compra</strong><small>Emissão, confirmação e acompanhamento do fornecedor.</small></div>
+        <div class="evolution-step"><b>05</b><strong>Recebimento</strong><small>Conferência, lote, série, divergência e entrada no estoque.</small></div>
+      </div>
+      <div class="evolution-flow-rules"><span>Compra emergencial</span><span>Fornecedor homologado</span><span>Recebimento parcial</span><span>Divergência de quantidade</span><span>Reposição automática</span></div>
+    </article>
+  </div>
+
+  <div class="evolution-flow-panel" data-evo-panel="dispatch">
+    <article class="evolution-flow-card">
+      <header><div><h3>Fluxo de expedição e entrega</h3><p>Coordena separação, conferência, documentação, contratação do transporte e acompanhamento da entrega.</p></div><span>Order to delivery</span></header>
+      <div class="evolution-flow-steps">
+        <div class="evolution-step"><b>01</b><strong>Pedido liberado</strong><small>Pagamento, crédito, nota e reserva confirmados.</small></div>
+        <div class="evolution-step"><b>02</b><strong>Picking</strong><small>Separação por endereço, lote, série e prioridade.</small></div>
+        <div class="evolution-step"><b>03</b><strong>Packing</strong><small>Conferência, embalagem, peso, volume e etiqueta.</small></div>
+        <div class="evolution-step"><b>04</b><strong>Despacho</strong><small>Correios, transportadora, carga aérea, retirada ou frota.</small></div>
+        <div class="evolution-step"><b>05</b><strong>Entrega</strong><small>Rastreamento, SLA, ocorrência, reentrega e comprovante.</small></div>
+      </div>
+      <div class="evolution-flow-rules"><span>Separação por onda</span><span>Conferência dupla</span><span>Entrega agendada</span><span>Ocorrência logística</span><span>Logística reversa</span></div>
+    </article>
+  </div>
+
+  <div class="evolution-flow-panel" data-evo-panel="international">
+    <article class="evolution-flow-card">
+      <header><div><h3>Fluxo de compra internacional</h3><p>Integra negociação com fornecedor externo, câmbio, documentação, desembaraço e disponibilidade futura.</p></div><span>Import to availability</span></header>
+      <div class="evolution-flow-steps">
+        <div class="evolution-step"><b>01</b><strong>Compra exterior</strong><small>Fornecedor, moeda, incoterm, quantidade e prazo.</small></div>
+        <div class="evolution-step"><b>02</b><strong>Embarque</strong><small>Invoice, packing list, transporte e previsão de chegada.</small></div>
+        <div class="evolution-step"><b>03</b><strong>Desembaraço</strong><small>Documentos, impostos, despachante e pendências.</small></div>
+        <div class="evolution-step"><b>04</b><strong>Recebimento</strong><small>Conferência física, custos finais e entrada por lote.</small></div>
+        <div class="evolution-step"><b>05</b><strong>Disponibilidade</strong><small>Atualização do estoque e dos pedidos em backorder.</small></div>
+      </div>
+      <div class="evolution-flow-rules"><span>Variação cambial</span><span>Custo landed</span><span>ETA atualizado</span><span>Documentação obrigatória</span><span>Prioridade para pedidos reservados</span></div>
+    </article>
+  </div>
+</div></section>
+
 <section class="v4-thinking" id="evolution-thinking"><div class="container"><div class="v4-thinking-head"><div><span class="eyebrow">Raciocínio de Produto</span><h2>Raciocínio de produto: da operação fragmentada a uma plataforma modular.</h2></div></div><div class="v4-thinking-grid"><article><span>Objetivo</span><p>Conectar a jornada comercial, financeira e logística sem apagar regras, responsabilidades e exceções de cada área.</p></article><article><span>Hipótese</span><p>Um pedido central, enriquecido por status, documentos, reservas e eventos, reduziria rupturas e aumentaria previsibilidade.</p></article><article><span>Trade-off</span><p>Dar profundidade para cada módulo sem criar uma navegação excessivamente técnica ou difícil para usuários operacionais.</p></article><article><span>Métrica de sucesso</span><p>Lead time do pedido, pendências, divergências de estoque, tempo de aprovação, SLA de expedição e taxa de entrega.</p></article></div></div></section>
 <section id="evolution-problema"><div class="container content-grid"><article class="content-card"><span class="eyebrow">Contexto</span><h2>O pedido atravessava áreas que trabalhavam com tempos e regras diferentes.</h2><p>O Comercial precisava prometer prazo e disponibilidade. O Financeiro precisava validar crédito, pagamento, impostos e custos. Compras precisava abastecer o estoque, inclusive por importação. Estoque precisava receber, conferir, reservar e localizar produtos. Expedição precisava separar, embalar, documentar e selecionar o método de envio. Logística precisava acompanhar transportadoras, ocorrências, reentregas e devoluções.</p><ul class="list"><li>Informações de disponibilidade e prazo não estavam conectadas à negociação.</li><li>Compras internacionais exigiam acompanhamento de câmbio, documentos, impostos e desembaraço.</li><li>Estoque disponível, reservado, bloqueado e em trânsito precisavam ser diferenciados.</li><li>Envios podiam ocorrer pelos Correios, transportadoras, carga aérea, frota própria, retirada ou entrega local.</li></ul></article><article class="content-card"><span class="eyebrow">Minha atuação</span><h2>Como estruturei a concepção e reduzi riscos antes da construção.</h2><p>Atuei na consultoria para traduzir processos reais em fluxos digitais, regras de transição, permissões e critérios de aceite. Estruturei a visão modular do produto, organizei dependências entre áreas e acompanhei prototipação, desenvolvimento, testes e validação com o cliente.</p><ul class="list"><li>Workshops para entender Comercial, Financeiro, Suprimentos, Estoque e Logística.</li><li>Mapeamento de cenários nacionais, internacionais, parciais, bloqueados e excepcionais.</li><li>Priorização por risco operacional, dependência e valor para o usuário.</li><li>Definição de histórias, critérios de aceite, regras de status e rastreabilidade.</li></ul></article></div></section>
 <section class="evolution-blue" id="evolution-solucao"><div class="container"><div class="section-head"><div><span class="eyebrow">Arquitetura da solução</span><h2>Um ERP orientado ao ciclo de vida do pedido e do estoque.</h2></div><p>O pedido funciona como objeto central. A partir dele, cada módulo consulta e registra apenas as informações necessárias à sua decisão, mantendo histórico e visibilidade compartilhada.</p></div><div class="erp-flow"><article><span>01</span><h3>Comercial</h3><p>Oportunidade, proposta, disponibilidade, prazo e modalidade de entrega.</p></article><article><span>02</span><h3>Financeiro</h3><p>Crédito, pagamento, fiscal, custos e alçadas.</p></article><article><span>03</span><h3>Compras</h3><p>Fornecimento nacional, importação, câmbio e desembaraço.</p></article><article><span>04</span><h3>Estoque</h3><p>Recebimento, lote, série, localização, reserva e reposição.</p></article><article><span>05</span><h3>Expedição</h3><p>Picking, packing, documentos, etiquetas e transportadora.</p></article><article><span>06</span><h3>Logística</h3><p>Rastreamento, SLA, ocorrência, reentrega e logística reversa.</p></article></div><div class="erp-architecture-note"><strong>Regra central do produto</strong><p>Nenhum módulo avança apenas porque uma tela foi preenchida. O avanço depende de estados válidos: crédito aprovado, pagamento confirmado, item reservado, documentação emitida, volume conferido e método de envio contratado.</p></div></div></section>
@@ -3888,6 +4338,174 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
     show(0);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initEvolutionPrototype);else initEvolutionPrototype();
+})();
+</script>
+
+<script>
+document.addEventListener('click', function(event){
+  const tab = event.target.closest('[data-evo-flow]');
+  if(!tab) return;
+  const page = tab.closest('#page-case-evolution-hub');
+  if(!page) return;
+
+  const target = tab.getAttribute('data-evo-flow');
+  page.querySelectorAll('[data-evo-flow]').forEach(function(item){
+    item.classList.toggle('active', item === tab);
+    item.setAttribute('aria-selected', item === tab ? 'true' : 'false');
+  });
+  page.querySelectorAll('[data-evo-panel]').forEach(function(panel){
+    panel.classList.toggle('active', panel.getAttribute('data-evo-panel') === target);
+  });
+});
+</script>
+
+<style>
+/* Evolution Hub · interactive product depth v27 */
+#page-case-evolution-hub .erp-tabs span{cursor:pointer;transition:.18s ease}
+#page-case-evolution-hub .erp-tabs span:hover{color:var(--rose-dark);background:#fff7fa}
+#page-case-evolution-hub .erp-row:not(.head){cursor:pointer;transition:.18s ease}
+#page-case-evolution-hub .erp-row:not(.head):hover{background:#fff7fa;transform:translateY(-1px)}
+#page-case-evolution-hub .module-heading button,#page-case-evolution-hub .order-form-card header button{transition:.18s ease}
+#page-case-evolution-hub .module-heading button:hover,#page-case-evolution-hub .order-form-card header button:hover{transform:translateY(-1px);filter:brightness(.96)}
+#page-case-evolution-hub .order-stepper>div{cursor:pointer}
+#page-case-evolution-hub .order-stepper>div:hover span{color:var(--rose-dark)}
+#page-case-evolution-hub .fulfillment-options label{cursor:pointer;transition:.18s ease}
+#page-case-evolution-hub .fulfillment-options label:hover{border-color:#c9a7b6!important;background:#fffafb}
+#page-case-evolution-hub .evo-stage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#page-case-evolution-hub .evo-stage-card{border:1px solid #e5dce0;border-radius:12px;padding:14px;background:#fff;display:grid;gap:5px;cursor:pointer;transition:.18s ease}
+#page-case-evolution-hub .evo-stage-card:hover,#page-case-evolution-hub .evo-stage-card.selected{border-color:#9d607a;background:#fff8fb;box-shadow:0 7px 18px rgba(109,53,78,.08)}
+#page-case-evolution-hub .evo-stage-card small{color:#8b7580;font-size:9px;text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+#page-case-evolution-hub .evo-stage-card strong{font-size:12px;color:#523343}
+#page-case-evolution-hub .evo-stage-card span{font-size:10px;line-height:1.45;color:#786770}
+#page-case-evolution-hub .evo-form-block{display:grid;gap:10px;padding-top:4px}
+#page-case-evolution-hub .evo-field-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#page-case-evolution-hub .evo-field{display:grid;gap:5px}
+#page-case-evolution-hub .evo-field>span{font-size:9px;color:#7b6872;font-weight:800}
+#page-case-evolution-hub .evo-field div{min-height:42px;border:1px solid #e3dade;border-radius:10px;background:#fff;padding:9px 10px;display:grid;gap:2px}
+#page-case-evolution-hub .evo-field div b{font-size:11px;color:#563545}
+#page-case-evolution-hub .evo-field div small{font-size:9px;color:#8f7d86}
+#page-case-evolution-hub .evo-review{display:grid;gap:7px}
+#page-case-evolution-hub .evo-review p{margin:0;padding:9px 10px;border-radius:9px;background:#f8f6f7;font-size:10px;color:#64545c;display:flex;justify-content:space-between;gap:10px}
+#page-case-evolution-hub .evo-review p b{color:#4f3240}
+.evo-drawer{position:fixed;inset:0;z-index:99999;display:none;align-items:stretch;justify-content:flex-end}
+.evo-drawer.open{display:flex}
+.evo-drawer-backdrop{position:absolute;inset:0;background:rgba(33,19,26,.42);backdrop-filter:blur(2px)}
+.evo-drawer-panel{position:relative;width:min(430px,94vw);height:100%;background:#fff;box-shadow:-24px 0 60px rgba(45,24,34,.18);padding:24px;display:flex;flex-direction:column;gap:18px;animation:evoSlide .2s ease}
+@keyframes evoSlide{from{transform:translateX(25px);opacity:.5}to{transform:none;opacity:1}}
+.evo-drawer-panel header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding-bottom:14px;border-bottom:1px solid #eee5e9}
+.evo-drawer-panel header small{display:block;color:#9d607a;text-transform:uppercase;font-size:10px;font-weight:900;letter-spacing:.1em;margin-bottom:5px}
+.evo-drawer-panel header h3{margin:0;color:#563545;font-size:21px;line-height:1.2}
+.evo-drawer-close{border:0;background:#f6f1f3;color:#6d354e;width:34px;height:34px;border-radius:10px;font-size:19px;cursor:pointer}
+.evo-drawer-body{display:grid;gap:12px;overflow:auto}
+.evo-detail-card{border:1px solid #e8dfe3;background:#fffafb;border-radius:13px;padding:14px;display:grid;gap:4px}
+.evo-detail-card small{font-size:9px;color:#967987;text-transform:uppercase;font-weight:800;letter-spacing:.06em}
+.evo-detail-card strong{font-size:13px;color:#503140}.evo-detail-card span{font-size:11px;line-height:1.5;color:#786670}
+.evo-drawer-actions{margin-top:auto;display:flex;gap:8px;padding-top:14px;border-top:1px solid #eee5e9}
+.evo-drawer-actions button{flex:1;border-radius:10px;border:1px solid #d8c8cf;background:#fff;padding:10px 12px;color:#6d354e;font-weight:800;cursor:pointer}
+.evo-drawer-actions button.primary{background:#6d354e;color:#fff;border-color:#6d354e}
+.evo-toast{position:fixed;right:24px;bottom:24px;z-index:100000;background:#4e2d3c;color:#fff;padding:11px 14px;border-radius:11px;box-shadow:0 14px 30px rgba(40,20,30,.2);font:700 11px/1.4 Figtree,system-ui,sans-serif;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s ease}.evo-toast.show{opacity:1;transform:none}
+@media(max-width:720px){#page-case-evolution-hub .evo-stage-grid,#page-case-evolution-hub .evo-field-row{grid-template-columns:1fr}.evo-drawer-panel{padding:18px}}
+</style>
+<div class="evo-drawer" id="evo-action-drawer" aria-hidden="true">
+  <div class="evo-drawer-backdrop" data-evo-close></div>
+  <aside class="evo-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="evo-drawer-title">
+    <header><div><small id="evo-drawer-kicker">Detalhes</small><h3 id="evo-drawer-title">Evolution Hub</h3></div><button class="evo-drawer-close" type="button" data-evo-close aria-label="Fechar">×</button></header>
+    <div class="evo-drawer-body" id="evo-drawer-body"></div>
+    <div class="evo-drawer-actions"><button type="button" data-evo-close>Cancelar</button><button class="primary" id="evo-drawer-confirm" type="button">Confirmar ação</button></div>
+  </aside>
+</div>
+<div class="evo-toast" id="evo-toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  function initEvolutionDepth(){
+    var page=document.getElementById('page-case-evolution-hub');
+    if(!page||page.dataset.depthReady)return;
+    page.dataset.depthReady='1';
+    var drawer=document.getElementById('evo-action-drawer');
+    var drawerTitle=document.getElementById('evo-drawer-title');
+    var drawerKicker=document.getElementById('evo-drawer-kicker');
+    var drawerBody=document.getElementById('evo-drawer-body');
+    var drawerConfirm=document.getElementById('evo-drawer-confirm');
+    var toast=document.getElementById('evo-toast');
+    var toastTimer;
+    function notify(message){clearTimeout(toastTimer);toast.textContent=message;toast.classList.add('show');toastTimer=setTimeout(function(){toast.classList.remove('show')},2200)}
+    function closeDrawer(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true')}
+    function openDrawer(kicker,title,cards,confirmLabel){
+      drawerKicker.textContent=kicker;drawerTitle.textContent=title;
+      drawerBody.innerHTML=cards.map(function(card){return '<article class="evo-detail-card"><small>'+card[0]+'</small><strong>'+card[1]+'</strong><span>'+card[2]+'</span></article>'}).join('');
+      drawerConfirm.textContent=confirmLabel||'Confirmar ação';drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');
+    }
+    drawer.querySelectorAll('[data-evo-close]').forEach(function(btn){btn.addEventListener('click',closeDrawer)});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer()});
+    drawerConfirm.addEventListener('click',function(){notify(drawerConfirm.textContent+' concluída no protótipo');closeDrawer()});
+
+    /* Tabs become navigable states instead of static decoration. */
+    page.querySelectorAll('.erp-tabs').forEach(function(tabs){
+      tabs.querySelectorAll('span').forEach(function(tab){
+        tab.setAttribute('role','button');tab.tabIndex=0;
+        function activate(){tabs.querySelectorAll('span').forEach(function(x){x.classList.remove('active')});tab.classList.add('active');notify('Visão “'+tab.textContent.trim()+'” ativada')}
+        tab.addEventListener('click',activate);tab.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();activate()}});
+      });
+    });
+
+    /* Operational table rows expose the cross-module context. */
+    page.querySelectorAll('.erp-row:not(.head)').forEach(function(row){
+      row.tabIndex=0;row.setAttribute('role','button');
+      function details(){
+        var module=row.closest('.product-screen-card');var moduleName=module&&module.querySelector('.screen-index')?module.querySelector('.screen-index').textContent.trim():'Operação';
+        var primary=row.querySelector('b')?row.querySelector('b').textContent.trim():'Registro selecionado';
+        openDrawer('Registro · '+moduleName,primary,[['Status atual','Contexto sincronizado','Dados do pedido, responsáveis e eventos disponíveis para consulta.'],['Rastreabilidade','Histórico preservado','Mudanças de status e decisões ficam vinculadas ao registro.'],['Próxima ação','Fluxo orientado por estado','O sistema libera apenas ações compatíveis com a etapa atual.']],'Abrir no fluxo');
+      }
+      row.addEventListener('click',details);row.addEventListener('keydown',function(e){if(e.key==='Enter'){details()}});
+    });
+
+    /* Context actions per operational module. Clone removes the old demo-only "next screen" behavior. */
+    var actionConfig={
+      '＋ Nova ordem de compra':['Compras','Nova ordem de compra',[['Origem da demanda','Reposição + pedidos reservados','Consolide necessidades antes de cotar.'],['Fornecedor','Homologação obrigatória','Prazo, moeda, incoterm e condição entram na comparação.'],['Alçada','Aprovação por valor','Centro de custo e justificativa definem o aprovador.']],'Criar ordem'],
+      'Registrar entrada':['Estoque','Registrar recebimento',[['Documento','NF-e / processo de importação','Vincule a entrada à sua origem.'],['Conferência','Quantidade, lote e série','Divergências abrem tratativa sem liberar o saldo.'],['Destino','Depósito e endereço','Itens aprovados entram como disponíveis ou quarentena.']],'Confirmar entrada'],
+      'Gerar etiquetas':['Expedição','Gerar etiquetas de despacho',[['Pedido','Pedido #4824','3 volumes conferidos e aptos para despacho.'],['Modalidade','Transportadora regional','Cotação selecionada conforme prazo e cubagem.'],['Documentos','NF-e + DANFE + Romaneio','Documentação pronta para acompanhar a carga.']],'Emitir etiquetas'],
+      'Registrar ocorrência':['Logística','Nova ocorrência logística',[['Evento','Ausência, atraso, avaria ou extravio','Classifique o evento para definir o plano de ação.'],['SLA','Tratativa monitorada','Responsável e prazo são registrados automaticamente.'],['Desfecho','Reentrega ou logística reversa','O pedido preserva toda a linha do tempo.']],'Registrar ocorrência']
+    };
+    page.querySelectorAll('.module-heading button').forEach(function(oldButton){
+      var label=oldButton.textContent.trim();if(label==='＋ Nova proposta')return;
+      var cfg=actionConfig[label];if(!cfg)return;
+      var button=oldButton.cloneNode(true);oldButton.parentNode.replaceChild(button,oldButton);
+      button.addEventListener('click',function(){openDrawer(cfg[0],cfg[1],cfg[2],cfg[3])});
+    });
+
+    /* The commercial creation screen is now a five-step product flow. */
+    var create=page.querySelector('.commercial-create-screen');
+    if(create){
+      var form=create.querySelector('.order-form-card');var summary=create.querySelector('.order-summary-card');var stepper=create.querySelector('.order-stepper');
+      var originalProducts=form.innerHTML;var stage=2;
+      var nextOld=summary.querySelector('.order-next');var next=nextOld.cloneNode(true);nextOld.parentNode.replaceChild(next,nextOld);
+      var draftOld=summary.querySelector('.order-secondary');var draft=draftOld.cloneNode(true);draftOld.parentNode.replaceChild(draft,draftOld);
+      var stages={
+        1:{title:'Cliente e unidade',body:'<header><div><small>Etapa 1 de 5</small><strong>Cliente e unidade de atendimento</strong></div><button type="button">＋ Novo contato</button></header><div class="evo-form-block"><div class="evo-field-row"><label class="evo-field"><span>Conta</span><div><b>Conta corporativa A</b><small>CNPJ anonimizado · cliente ativo</small></div></label><label class="evo-field"><span>Unidade</span><div><b>Fortaleza · Matriz</b><small>Endereço principal de faturamento</small></div></label></div><div class="evo-stage-grid"><article class="evo-stage-card selected"><small>Crédito</small><strong>Limite disponível</strong><span>Cadastro apto para análise comercial.</span></article><article class="evo-stage-card"><small>Contato</small><strong>Comprador responsável</strong><span>Preferências de contato e entrega registradas.</span></article></div></div>'},
+        3:{title:'Condições comerciais',body:'<header><div><small>Etapa 3 de 5</small><strong>Preço, desconto e pagamento</strong></div><button type="button">Simular cenário</button></header><div class="evo-form-block"><div class="evo-field-row"><label class="evo-field"><span>Condição de pagamento</span><div><b>28 / 56 dias</b><small>Dentro da política do cliente</small></div></label><label class="evo-field"><span>Desconto</span><div><b>4,0%</b><small>Alçada comercial automática</small></div></label></div><div class="evo-stage-grid"><article class="evo-stage-card selected"><small>Margem</small><strong>18,6% após desconto</strong><span>Acima da margem mínima de 15%.</span></article><article class="evo-stage-card"><small>Crédito</small><strong>R$ 17.580 comprometidos</strong><span>Operação dentro do limite disponível.</span></article></div></div>'},
+        4:{title:'Entrega e frete',body:'<header><div><small>Etapa 4 de 5</small><strong>Modalidade e promessa de entrega</strong></div><button type="button">Recalcular fretes</button></header><div class="evo-form-block"><div class="evo-stage-grid"><article class="evo-stage-card"><small>PAC</small><strong>R$ 186 · 5–7 dias</strong><span>Menor custo · rastreio integrado.</span></article><article class="evo-stage-card selected"><small>Transportadora</small><strong>R$ 228 · 3–4 dias</strong><span>Entrega agendada · melhor SLA.</span></article><article class="evo-stage-card"><small>Carga aérea</small><strong>R$ 412 · 1–2 dias</strong><span>Opção expressa para itens imediatos.</span></article><article class="evo-stage-card"><small>Retirada</small><strong>Sem custo de frete</strong><span>Disponível no CD Nordeste.</span></article></div><div class="evo-field-row"><label class="evo-field"><span>Janela de entrega</span><div><b>13/08 · 08h–12h</b><small>Confirmada com o cliente</small></div></label><label class="evo-field"><span>Estratégia</span><div><b>Envio parcial</b><small>Saldo importado segue em segundo despacho</small></div></label></div></div>'},
+        5:{title:'Revisão e envio',body:'<header><div><small>Etapa 5 de 5</small><strong>Revisão antes da análise financeira</strong></div><span class="draft-badge">Tudo validado</span></header><div class="evo-review"><p><span>Cliente e unidade</span><b>Conta corporativa A · Fortaleza</b></p><p><span>Produtos</span><b>18 un. · 1 em reposição futura</b></p><p><span>Condição comercial</span><b>4% desc. · 28/56 dias</b></p><p><span>Entrega</span><b>Parcial · transportadora</b></p><p><span>Total preliminar</span><b>R$ 17.766</b></p></div><div class="availability-alert"><b>✓</b><div><strong>Pedido pronto para análise</strong><span>As validações comerciais foram concluídas. O próximo estado depende da aprovação financeira.</span></div></div>'}
+      };
+      function setStage(value){
+        stage=Math.max(1,Math.min(5,value));
+        if(stage===2){form.innerHTML=originalProducts}else{form.innerHTML=stages[stage].body}
+        [].slice.call(stepper.children).filter(function(el){return el.tagName==='DIV'}).forEach(function(el,i){var n=i+1;el.classList.toggle('active',n===stage);el.classList.toggle('done',n<stage);var b=el.querySelector('b');if(b)b.textContent=n<stage?'✓':n});
+        var validation=summary.querySelector('.order-validation');
+        if(validation){validation.innerHTML='<small>Validações desta etapa</small><p class="ok">✓ Dados obrigatórios preenchidos</p><p class="ok">✓ Regras de negócio verificadas</p>'+(stage<5?'<p class="pending">○ Próxima etapa ainda pendente</p>':'<p class="ok">✓ Pedido pronto para envio</p>')}
+        next.textContent=stage===5?'Enviar para análise financeira →':'Salvar e continuar →';
+        wireStageCards();
+      }
+      function wireStageCards(){form.querySelectorAll('.evo-stage-card').forEach(function(card){card.addEventListener('click',function(){var group=card.parentNode;group.querySelectorAll('.evo-stage-card').forEach(function(x){x.classList.remove('selected')});card.classList.add('selected');notify(card.querySelector('strong').textContent.trim()+' selecionado')})});
+        form.querySelectorAll('header button').forEach(function(btn){btn.addEventListener('click',function(){notify(btn.textContent.trim()+' — simulação atualizada')})});
+        form.querySelectorAll('.fulfillment-options label').forEach(function(label){label.addEventListener('click',function(){form.querySelectorAll('.fulfillment-options label').forEach(function(x){x.classList.remove('selected');var mark=x.querySelector('b');if(mark)mark.textContent='○'});label.classList.add('selected');var mark=label.querySelector('b');if(mark)mark.textContent='◉';notify(label.querySelector('strong').textContent.trim()+' selecionado')})});
+      }
+      var stepNodes=[].slice.call(stepper.children).filter(function(el){return el.tagName==='DIV'});stepNodes.forEach(function(el,i){el.addEventListener('click',function(){setStage(i+1)})});
+      next.addEventListener('click',function(){if(stage<5){setStage(stage+1);notify('Etapa '+stage+' de 5')}else{openDrawer('Financeiro','Pedido enviado para análise',[['Pedido','#4829','Criado a partir do fluxo comercial.'],['Status','Aguardando análise financeira','Crédito, margem e condição serão validados.'],['Rastreabilidade','Histórico preservado','O Comercial acompanha o avanço sem perder contexto.']],'Simular aprovação')}});
+      draft.addEventListener('click',function(){notify('Rascunho salvo · você pode retomar depois')});
+      setStage(2);
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initEvolutionDepth);else initEvolutionDepth();
 })();
 </script>
 </body></html>
