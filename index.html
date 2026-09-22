@@ -440,6 +440,8 @@ a:focus-visible,button:focus-visible,label[tabindex]:focus-visible{outline:2px s
 .metric-highlight span{font-size:13px;font-weight:700;color:var(--ink)}
 .metric-highlight small{font-size:11px;color:var(--muted)}
 @media(max-width:520px){.tradeoff-options{flex-direction:column}.metric-highlight{flex-direction:column;gap:6px}}
+.reveal-init{opacity:0;transform:translateY(16px)}
+.reveal-init.is-visible{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
 .case-local-nav{position:sticky;top:74px;z-index:38;background:rgba(252,250,251,.94);backdrop-filter:blur(14px);border-top:1px solid rgba(234,221,227,.7);border-bottom:1px solid var(--line)}
 .case-local-nav-inner{display:flex;gap:8px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
 .case-local-nav-inner::-webkit-scrollbar{display:none}
@@ -3302,6 +3304,25 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
     }, {rootMargin:'-15% 0px -65% 0px', threshold:0});
     map.forEach(function(link, sec){ observer.observe(sec); });
   });
+})();
+(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = Array.prototype.slice.call(document.querySelectorAll('.section-head'));
+  if(!els.length) return;
+  els.forEach(function(el){ el.classList.add('reveal-init'); });
+  function inView(el){
+    var r = el.getBoundingClientRect();
+    return r.top < window.innerHeight && r.bottom > 0;
+  }
+  els.forEach(function(el){ if(inView(el)) el.classList.add('is-visible'); });
+  var pending = els.filter(function(el){ return !el.classList.contains('is-visible'); });
+  if(!pending.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.1});
+  pending.forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body></html>
