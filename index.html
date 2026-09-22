@@ -167,15 +167,16 @@ img{
 .case-visual-panel .mini-app{padding:9px 14px;border-radius:12px;background:#fff;border:1px solid rgba(145,35,85,.14);font-size:12px;font-weight:800;color:var(--rose-dark)}
 .case-visual-panel .mini-arrow{color:var(--rose);font-size:20px;line-height:1}
 .case-visual-panel .mini-app.unified{background:var(--rose-dark);color:#fff;border-color:var(--rose-dark);padding:11px 18px;font-size:13px}
-.case-visual-panel.brisa-phones-panel{min-height:0;min-width:0;padding:28px 16px 30px;gap:8px}
-.brisa-phones-v2{display:flex;align-items:flex-end;justify-content:center;width:100%;min-width:0}
-.mini-phone{position:relative;flex:0 0 auto;overflow:hidden;border-radius:26px;box-shadow:0 16px 34px rgba(36,30,36,.14);background:#fff}
+.case-visual-panel.brisa-phones-panel{min-height:0;min-width:0;padding:28px 16px 30px;gap:8px;position:relative;overflow:hidden}
+.case-visual-panel.brisa-phones-panel::before{content:'';position:absolute;width:80%;height:82%;top:6%;right:-10%;border-radius:42% 58% 65% 35%/45% 40% 60% 55%;background:linear-gradient(135deg,rgba(180,71,108,.16),rgba(255,243,247,.85));pointer-events:none}
+.brisa-phones-v2{display:flex;align-items:flex-end;justify-content:center;width:100%;min-width:0;position:relative}
+.mini-phone{position:relative;flex:0 0 auto;overflow:hidden;border-radius:26px;box-shadow:0 22px 42px rgba(109,53,78,.20),0 8px 16px rgba(109,53,78,.10);background:#fff;transition:transform .25s ease}
 .mini-phone .auto-phone-new{transform-origin:top left;pointer-events:none;box-shadow:none!important;margin:0!important}
-.mini-phone.preview{width:122px;height:244px;z-index:1;opacity:.92}
+.mini-phone.preview{width:122px;height:244px;z-index:1;opacity:.94}
 .mini-phone.preview .auto-phone-new{transform:scale(.3987)}
-.mini-phone.preview.left{margin-right:-24px;margin-bottom:30px}
-.mini-phone.preview.right{margin-left:-24px;margin-bottom:30px}
-.mini-phone.primary{width:190px;height:380px;z-index:2}
+.mini-phone.preview.left{margin-right:-24px;margin-bottom:22px;transform:rotate(-7deg)}
+.mini-phone.preview.right{margin-left:-24px;margin-bottom:22px;transform:rotate(7deg)}
+.mini-phone.primary{width:190px;height:380px;z-index:2;transform:rotate(-1.5deg)}
 .mini-phone.primary .auto-phone-new{transform:scale(.6209)}
 @media(max-width:520px){
 .mini-phone.preview{width:95px;height:190px}
