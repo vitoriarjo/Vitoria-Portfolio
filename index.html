@@ -474,6 +474,10 @@ a:focus-visible,button:focus-visible,label[tabindex]:focus-visible{outline:2px s
 .metric-highlight span{font-size:13px;font-weight:700;color:var(--ink)}
 .metric-highlight small{font-size:11px;color:var(--muted)}
 @media(max-width:520px){.tradeoff-options{flex-direction:column}.metric-highlight{flex-direction:column;gap:6px}}
+.impact-card-v3 strong,.metric-highlight strong,.mini-priority-block,.mini-cal-days span,.case-number,.method-card .index,.other-project-grid-v3 a>span{white-space:nowrap;word-break:keep-all;overflow-wrap:normal;font-variant-numeric:tabular-nums}
+.impact-card-v3 strong,.metric-highlight strong{line-height:.95;letter-spacing:-.02em}
+.case-number,.method-card .index,.other-project-grid-v3 a>span{flex-shrink:0}
+.impact-card-v3{min-width:0}
 .reveal-init{opacity:0;transform:translateY(16px)}
 .reveal-init.is-visible{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
 .case-local-nav{position:sticky;top:74px;z-index:38;background:rgba(252,250,251,.94);backdrop-filter:blur(14px);border-top:1px solid rgba(234,221,227,.7);border-bottom:1px solid var(--line)}
