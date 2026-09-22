@@ -169,20 +169,21 @@ img{
 .case-visual-panel .mini-app.unified{background:var(--rose-dark);color:#fff;border-color:var(--rose-dark);padding:11px 18px;font-size:13px}
 .case-visual-panel.brisa-phones-panel{min-height:0;min-width:0;padding:28px 16px 30px;gap:8px;position:relative;overflow:hidden}
 .case-visual-panel.brisa-phones-panel::before{content:'';position:absolute;width:80%;height:82%;top:6%;right:-10%;border-radius:42% 58% 65% 35%/45% 40% 60% 55%;background:linear-gradient(135deg,rgba(180,71,108,.16),rgba(255,243,247,.85));pointer-events:none}
-.brisa-phones-v2{display:flex;align-items:flex-end;justify-content:center;width:100%;min-width:0;position:relative}
-.mini-phone{position:relative;flex:0 0 auto;overflow:hidden;border-radius:26px;box-shadow:0 22px 42px rgba(109,53,78,.20),0 8px 16px rgba(109,53,78,.10);background:#fff;transition:transform .25s ease}
+.brisa-phones-v2{position:relative;width:100%;min-width:0;height:404px}
+.mini-phone{overflow:hidden;border-radius:26px;box-shadow:0 22px 42px rgba(109,53,78,.20),0 8px 16px rgba(109,53,78,.10);background:#fff}
 .mini-phone .auto-phone-new{transform-origin:top left;pointer-events:none;box-shadow:none!important;margin:0!important}
-.mini-phone.preview{width:122px;height:244px;z-index:1;opacity:.94}
+.mini-phone.preview{position:absolute;left:50%;top:60px;width:122px;height:244px;z-index:1;opacity:.94}
 .mini-phone.preview .auto-phone-new{transform:scale(.3987)}
-.mini-phone.preview.left{margin-right:-24px;margin-bottom:22px;transform:rotate(-7deg)}
-.mini-phone.preview.right{margin-left:-24px;margin-bottom:22px;transform:rotate(7deg)}
-.mini-phone.primary{width:190px;height:380px;z-index:2;transform:rotate(-1.5deg)}
+.mini-phone.preview.left{transform:translateX(calc(-50% - 82px)) rotate(-8deg)}
+.mini-phone.preview.right{transform:translateX(calc(-50% + 128px)) rotate(8deg)}
+.mini-phone.primary{position:absolute;left:50%;top:0;width:190px;height:380px;z-index:2;transform:translateX(-50%) rotate(-1.5deg)}
 .mini-phone.primary .auto-phone-new{transform:scale(.6209)}
 @media(max-width:520px){
-.mini-phone.preview{width:95px;height:190px}
+.brisa-phones-v2{height:320px}
+.mini-phone.preview{top:48px;width:95px;height:190px}
 .mini-phone.preview .auto-phone-new{transform:scale(.3105)}
-.mini-phone.preview.left{margin-right:-18px}
-.mini-phone.preview.right{margin-left:-18px}
+.mini-phone.preview.left{transform:translateX(calc(-50% - 64px)) rotate(-8deg)}
+.mini-phone.preview.right{transform:translateX(calc(-50% + 100px)) rotate(8deg)}
 .mini-phone.primary{width:150px;height:300px}
 .mini-phone.primary .auto-phone-new{transform:scale(.4902)}
 }
