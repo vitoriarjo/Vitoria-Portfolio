@@ -8,6 +8,22 @@
   var POSTHOG_PROJECT_KEY = 'phc_CXJiN2bCyuXnh3YJXG49CSUf4pfEcoKJ9ZHw27AenaCi';
   var POSTHOG_API_HOST = 'https://us.i.posthog.com';
 
+  function isInternalBrowser() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('internal') === '1') localStorage.setItem('portfolio_internal', '1');
+      if (params.get('internal') === '0') localStorage.removeItem('portfolio_internal');
+      return localStorage.getItem('portfolio_internal') === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  if (isInternalBrowser()) {
+    console.info('[portfolio analytics] Internal browser: analytics disabled.');
+    return;
+  }
+
   if (!POSTHOG_PROJECT_KEY || POSTHOG_PROJECT_KEY.indexOf('phc_') !== 0) {
     console.info('[portfolio analytics] PostHog is ready for setup. Add the Project API Key in analytics.js.');
     return;
@@ -62,6 +78,7 @@
 
     if (action && action.indexOf('ver-case-') === 0) {
       props.case_slug = action.replace('ver-case-', '');
+      props.case_type = el.getAttribute('data-case-type') || 'unknown';
     }
     if (action && action.indexOf('ler-artigo-') === 0) {
       props.insight_slug = action.replace('ler-artigo-', '');
