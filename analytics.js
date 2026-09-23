@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  var POSTHOG_PROJECT_KEY = '';
+  var POSTHOG_PROJECT_KEY = 'phc_CXJiN2bCyuXnh3YJXG49CSUf4pfEcoKJ9ZHw27AenaCi';
   var POSTHOG_API_HOST = 'https://us.i.posthog.com';
 
   if (!POSTHOG_PROJECT_KEY || POSTHOG_PROJECT_KEY.indexOf('phc_') !== 0) {
