@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://vitoriarjo.github.io/Vitoria-Portfolio/sitemap.xml
-
-# redeploy-pages
