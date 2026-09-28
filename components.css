@@ -857,3 +857,95 @@ body>.voice-drawer.open>aside{transform:translateX(0)!important}
 .mini-phone .ap-kicker{color:var(--rose)!important}
 .mini-phone .ap-date.active{border-color:var(--rose-dark)!important;background:var(--rose-soft)!important;color:var(--rose-dark)!important}
 .mini-phone .ap-period.active{border-color:var(--rose-dark)!important;background:var(--rose-soft)!important}
+
+/* V31 — padronização editorial dos cases: menos caixas, mais respiro */
+.case-standardized .case-quickread{
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  gap:0!important;
+}
+.case-standardized .case-quickread>div{
+  padding:22px 28px!important;
+  border:0!important;
+  border-left:1px solid #eadde3!important;
+  background:transparent!important;
+}
+.case-standardized .case-quickread>div:first-child{border-left:0!important}
+.case-standardized .case-quickread span{font-size:11px!important;letter-spacing:.1em!important}
+.case-standardized .case-quickread p{font-size:14px!important;line-height:1.6!important;max-width:38ch}
+
+#page-case-jornada-fibra .impact-grid-v3,
+#page-case-autoagendamento-rollout-e-impacto-5 .impact-grid-v3{
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+#page-case-jornada-fibra .impact-card-v3,
+#page-case-autoagendamento-rollout-e-impacto-5 .impact-card-v3{
+  border:0!important;
+  border-left:1px solid #eadde3!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+#page-case-jornada-fibra .impact-card-v3:first-child,
+#page-case-autoagendamento-rollout-e-impacto-5 .impact-card-v3:first-child{border-left:0!important}
+
+#page-case-autoagendamento-rollout-e-impacto-5 .section-head{max-width:1100px!important}
+#page-case-autoagendamento-rollout-e-impacto-5 .section-head h2{
+  max-width:1050px!important;
+  font-size:clamp(42px,5.2vw,66px)!important;
+  line-height:1.04!important;
+}
+#page-case-autoagendamento-rollout-e-impacto-5>.container>.content-grid:first-of-type{
+  display:block!important;
+  max-width:100%!important;
+  margin:8px 0 34px!important;
+}
+#page-case-autoagendamento-rollout-e-impacto-5>.container>.content-grid:first-of-type .content-card{
+  padding:8px 0 18px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  max-width:980px!important;
+  min-height:0!important;
+}
+#page-case-autoagendamento-rollout-e-impacto-5>.container>.content-grid:first-of-type .content-card h3{
+  font-size:22px!important;
+  margin-bottom:18px!important;
+}
+#page-case-autoagendamento-rollout-e-impacto-5>.container>.content-grid:first-of-type .list{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:0!important;
+  list-style:none!important;
+  padding:0!important;
+  margin:0!important;
+}
+#page-case-autoagendamento-rollout-e-impacto-5>.container>.content-grid:first-of-type .list li{
+  position:relative!important;
+  padding:18px 28px 18px 0!important;
+  margin:0!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+#page-case-autoagendamento-rollout-e-impacto-5>.container>.content-grid:first-of-type .list li+li{
+  padding-left:28px!important;
+  border-left:1px solid #eadde3!important;
+}
+@media(max-width:760px){
+  .case-standardized .case-quickread>div{border-left:0!important;border-top:1px solid #eadde3!important;padding:18px 0!important}
+  .case-standardized .case-quickread>div:first-child{border-top:0!important}
+  #page-case-autoagendamento-rollout-e-impacto-5 .section-head h2{font-size:clamp(34px,10vw,48px)!important}
+  #page-case-autoagendamento-rollout-e-impacto-5>.container>.content-grid:first-of-type .list{grid-template-columns:1fr!important}
+  #page-case-autoagendamento-rollout-e-impacto-5>.container>.content-grid:first-of-type .list li{padding:16px 0!important;border-left:0!important}
+  #page-case-autoagendamento-rollout-e-impacto-5>.container>.content-grid:first-of-type .list li+li{border-top:1px solid #eadde3!important}
+  #page-case-jornada-fibra .impact-card-v3,
+  #page-case-autoagendamento-rollout-e-impacto-5 .impact-card-v3{border-left:0!important;border-top:1px solid #eadde3!important}
+  #page-case-jornada-fibra .impact-card-v3:first-child,
+  #page-case-autoagendamento-rollout-e-impacto-5 .impact-card-v3:first-child{border-top:0!important}
+}
