@@ -1183,3 +1183,82 @@ body>.voice-drawer.open>aside{transform:translateX(0)!important}
   [id^="page-case-"] .auto-prototype-shell,
   [id^="page-case-"] .portfolio-lab-hero-visual{margin-top:28px!important}
 }
+
+
+/* V35 — correção de grids quebrados após padronização */
+[id^="page-case-"] .case-summary .metrics{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  align-items:stretch!important;
+}
+[id^="page-case-"] .case-summary .metric{
+  min-width:0!important;
+  width:auto!important;
+  align-items:flex-start!important;
+}
+#page-case-autoagendamento .case-summary .metrics{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+#page-case-autoagendamento .case-summary .metric{
+  min-height:78px!important;
+  padding:18px 22px!important;
+  border-left:0!important;
+  border-top:1px solid #eadde3!important;
+}
+#page-case-autoagendamento .case-summary .metric:nth-child(odd){
+  padding-left:0!important;
+  padding-right:28px!important;
+}
+#page-case-autoagendamento .case-summary .metric:nth-child(even){
+  border-left:1px solid #eadde3!important;
+  padding-left:28px!important;
+}
+#page-case-autoagendamento .case-summary .metric:nth-child(-n+2){border-top:0!important}
+
+/* troca de tecnologia: remove a linha vertical longa herdada de versões antigas */
+#page-case-troca-tecnologia .case-summary .summary-card:first-child,
+#page-case-troca-tecnologia .case-summary article.summary-card{
+  border-left:0!important;
+}
+#page-case-troca-tecnologia .case-summary article.summary-card>p{
+  max-width:780px!important;
+  margin-bottom:4px!important;
+}
+#page-case-troca-tecnologia .case-summary .metrics{
+  margin-top:26px!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+
+/* normaliza qualquer case com 3 métricas sem deixar uma célula órfã visualmente */
+#page-case-jornada-fibra .case-summary .metrics,
+#page-case-formalizacao .case-summary .metrics,
+#page-case-portfolio-product .case-summary .metrics{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+#page-case-jornada-fibra .case-summary .metric,
+#page-case-formalizacao .case-summary .metric,
+#page-case-portfolio-product .case-summary .metric{
+  padding:16px 22px!important;
+}
+#page-case-jornada-fibra .case-summary .metric:first-child,
+#page-case-formalizacao .case-summary .metric:first-child,
+#page-case-portfolio-product .case-summary .metric:first-child{padding-left:0!important}
+
+@media(max-width:900px){
+  #page-case-jornada-fibra .case-summary .metrics,
+  #page-case-formalizacao .case-summary .metrics,
+  #page-case-portfolio-product .case-summary .metrics{grid-template-columns:1fr!important}
+}
+@media(max-width:760px){
+  [id^="page-case-"] .case-summary .metrics,
+  #page-case-autoagendamento .case-summary .metrics{grid-template-columns:1fr!important}
+  #page-case-autoagendamento .case-summary .metric,
+  #page-case-autoagendamento .case-summary .metric:nth-child(odd),
+  #page-case-autoagendamento .case-summary .metric:nth-child(even){
+    padding:16px 0!important;
+    border-left:0!important;
+    border-top:1px solid #eadde3!important;
+    min-height:0!important;
+  }
+  #page-case-autoagendamento .case-summary .metric:first-child{border-top:0!important}
+}
