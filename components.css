@@ -1088,3 +1088,38 @@ body>.voice-drawer.open>aside{transform:translateX(0)!important}
   [id^="page-case-"] .impact-card-v3{border-left:0!important;border-top:1px solid #eadde3!important;padding:18px 0!important}
   [id^="page-case-"] .impact-card-v3:first-child{border-top:0!important}
 }
+
+
+/* V33 — quick read com presença proporcional ao hero dos cases */
+[id^="page-case-"] .case-quickread{
+  margin-top:34px!important;
+  margin-bottom:6px!important;
+}
+[id^="page-case-"] .case-quickread>div{
+  min-height:148px!important;
+  padding:30px 34px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+}
+[id^="page-case-"] .case-quickread>div:first-child{padding-left:0!important}
+[id^="page-case-"] .case-quickread span{
+  font-size:11px!important;
+  line-height:1.2!important;
+  letter-spacing:.12em!important;
+  margin-bottom:12px!important;
+}
+[id^="page-case-"] .case-quickread p{
+  max-width:40ch!important;
+  margin:0!important;
+  font-size:16px!important;
+  line-height:1.55!important;
+}
+@media(max-width:760px){
+  [id^="page-case-"] .case-quickread{margin-top:22px!important}
+  [id^="page-case-"] .case-quickread>div{
+    min-height:0!important;
+    padding:22px 0!important;
+  }
+  [id^="page-case-"] .case-quickread p{font-size:15px!important;max-width:none!important}
+}
