@@ -759,8 +759,8 @@ body>.voice-drawer.open>aside{transform:translateX(0)!important}
 
 
 /* V34 — ritmo vertical consistente entre todos os cases */
-[id^="page-case-"]{--case-space-xl:88px;--case-space-lg:64px;--case-space-md:36px;--case-space-sm:20px}
-[id^="page-case-"] .case-hero{padding:76px 0 64px!important}
+[id^="page-case-"]{--case-space-xl:44px;--case-space-lg:64px;--case-space-md:20px;--case-space-sm:20px}
+[id^="page-case-"] .case-hero{padding:44px 0 52px!important}
 [id^="page-case-"] .case-hero .back{display:inline-flex!important;margin-bottom:30px!important}
 [id^="page-case-"] .case-status-row{margin:14px 0 22px!important}
 [id^="page-case-"] .case-summary{margin-top:42px!important}
@@ -800,8 +800,8 @@ body>.voice-drawer.open>aside{transform:translateX(0)!important}
 [id^="page-case-"] .portfolio-lab-hero-visual{margin-top:40px!important;margin-bottom:16px!important}
 
 @media(max-width:760px){
-  [id^="page-case-"]{--case-space-xl:58px;--case-space-lg:44px;--case-space-md:28px;--case-space-sm:16px}
-  [id^="page-case-"] .case-hero{padding:54px 0 46px!important}
+  [id^="page-case-"]{--case-space-xl:36px;--case-space-lg:44px;--case-space-md:16px;--case-space-sm:16px}
+  [id^="page-case-"] .case-hero{padding:32px 0 40px!important}
   [id^="page-case-"] .case-hero .back{margin-bottom:22px!important}
   [id^="page-case-"] .case-status-row{margin:12px 0 18px!important}
   [id^="page-case-"] .case-summary{margin-top:30px!important}
