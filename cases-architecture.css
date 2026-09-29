@@ -31,11 +31,6 @@
 .case-page-shell .metric{min-width:0;padding:18px 18px 0 0}
 .case-page-shell .metric strong{display:block;color:var(--case-ink);font-size:clamp(25px,3vw,38px);line-height:1;letter-spacing:-.04em}
 .case-page-shell .metric span{display:block;margin-top:7px;color:var(--case-muted);font-size:10px;line-height:1.45}
-.case-page-shell .case-quickread{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:30px;border:1px solid var(--case-line);border-radius:18px;overflow:hidden;background:#fff}
-.case-page-shell .case-quickread>div{min-width:0;padding:22px;border-left:1px solid var(--case-line)}
-.case-page-shell .case-quickread>div:first-child{border-left:0}
-.case-page-shell .case-quickread span{display:block;margin-bottom:8px;color:var(--case-accent);font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-.case-page-shell .case-quickread p,.case-page-shell .case-quickread strong{margin:0;color:var(--case-text);font-size:12px;line-height:1.55;font-weight:500}
 
 /* narrativa: rail curto e conteúdo com largura real */
 .case-page-shell section[data-case-step]>.container{display:grid;grid-template-columns:120px minmax(0,1fr);column-gap:40px}
@@ -159,7 +154,6 @@
 
 /* microcases */
 #page-case-release-governance .content-grid,#page-case-portfolio-product .content-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-#page-case-release-governance .case-quickread,#page-case-portfolio-product .case-quickread{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 #page-case-portfolio-product .portfolio-lab-board{max-width:100%;min-width:0}
 
 /* preserva demos e mídia sem overflow */
@@ -176,7 +170,6 @@
 /* responsividade */
 @media(max-width:980px){
  .case-page-shell .case-summary{grid-template-columns:1fr;gap:28px}
- .case-page-shell .case-quickread{grid-template-columns:repeat(2,minmax(0,1fr))}
  .case-page-shell section[data-case-step]>.container{grid-template-columns:90px minmax(0,1fr);column-gap:28px}
  .case-page-shell .section-head{grid-template-columns:1fr;gap:12px}
  #page-case-troca-tecnologia .tt-role-board,#page-case-troca-tecnologia .tt-impact{grid-template-columns:1fr}
@@ -189,9 +182,6 @@
  .case-page-shell h1{font-size:clamp(36px,11vw,48px)}
  .case-page-shell section[data-case-step]>.container{display:block}
  .case-page-shell section[data-case-step]>.container:before{content:attr(data-case-step);display:block;margin-bottom:18px;color:var(--case-accent);font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
- .case-page-shell .case-quickread{grid-template-columns:1fr}
- .case-page-shell .case-quickread>div{border-left:0;border-top:1px solid var(--case-line)}
- .case-page-shell .case-quickread>div:first-child{border-top:0}
  .case-page-shell .content-grid,.case-page-shell .projects-grid,.case-page-shell .v4-thinking-grid,
  #page-case-troca-tecnologia .tt-decisions,#page-case-formalizacao .projects-grid,
  #page-case-release-governance .content-grid,#page-case-portfolio-product .content-grid{grid-template-columns:1fr}
