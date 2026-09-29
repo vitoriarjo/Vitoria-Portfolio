@@ -211,3 +211,44 @@
  #page-case-autoagendamento .auto-details-grid>div{padding:16px 0;border-left:0;border-top:1px solid var(--cv-line)}
  #page-case-autoagendamento .auto-details-grid>div:first-child{border-top:0}
 }
+
+
+/* V2.1 — ritmo vertical mais compacto em todos os cases */
+.case-page-shell>.case-hero{padding-top:52px!important;padding-bottom:54px!important}
+.case-page-shell .case-hero .back{margin-bottom:34px!important}
+.case-page-shell .case-status-row{margin-bottom:18px!important}
+.case-page-shell .case-summary{margin-top:40px!important;gap:48px!important}
+.case-page-shell .case-summary .metrics{margin-top:26px!important}
+
+.case-page-shell .case-quickread>div{min-height:136px!important;padding-top:26px!important;padding-bottom:26px!important}
+
+.case-page-shell>section:not(.case-hero){padding-top:68px!important;padding-bottom:68px!important}
+.case-page-shell .section-head,
+.case-page-shell .case-visual-head{margin-bottom:30px!important}
+
+.case-page-shell .content-card{padding-top:20px!important;padding-bottom:20px!important}
+.case-page-shell .impact-grid-v3{margin-top:28px!important;margin-bottom:28px!important}
+.case-page-shell .impact-card-v3{padding-top:18px!important;padding-bottom:18px!important}
+.case-page-shell .learning-card{padding-top:20px!important;padding-bottom:20px!important}
+
+#page-case-autoagendamento .auto-journey-primary{margin-top:28px!important}
+#page-case-autoagendamento .auto-secondary-head{margin-top:54px!important;margin-bottom:22px!important}
+#page-case-autoagendamento .auto-details{margin-top:38px!important}
+#page-case-autoagendamento-rollout-e-impacto-5 .impact-grid-v3{margin-bottom:30px!important}
+
+.case-page-shell .tech-switch-figure,
+.case-page-shell .budget-screen-figure,
+.case-page-shell .app-window,
+.case-page-shell .voice-demo-shell,
+.case-page-shell .voice-app-window,
+.case-page-shell .case-product-frame{margin-top:30px!important}
+
+@media(max-width:600px){
+ .case-page-shell>.case-hero{padding-top:36px!important;padding-bottom:42px!important}
+ .case-page-shell .case-hero .back{margin-bottom:24px!important}
+ .case-page-shell .case-summary{margin-top:30px!important;gap:26px!important}
+ .case-page-shell>section:not(.case-hero){padding-top:48px!important;padding-bottom:48px!important}
+ .case-page-shell .section-head,
+ .case-page-shell .case-visual-head{margin-bottom:24px!important}
+ .case-page-shell .case-quickread>div{padding-top:20px!important;padding-bottom:20px!important}
+}
