@@ -380,3 +380,50 @@
  #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board{grid-template-columns:1fr}
  #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-primary{padding:22px}
 }
+
+
+/* Hotfix Troca: layout robusto sem depender de estilos de article */
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board{
+ display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(300px,.8fr)!important;
+ gap:16px!important;align-items:stretch!important;margin-top:8px!important
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-primary{
+ display:block!important;padding:30px!important;border:0!important;border-radius:18px!important;
+ background:#5b1f3b!important;color:#fff!important;box-shadow:none!important
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-primary>span{
+ display:block!important;margin:0 0 10px!important;color:#f3b7cc!important;
+ font-size:10px!important;font-weight:800!important;letter-spacing:.12em!important;text-transform:uppercase!important
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-primary>h3{
+ display:block!important;max-width:540px!important;margin:0 0 24px!important;color:#fff!important;
+ font-size:28px!important;line-height:1.12!important;letter-spacing:-.03em!important
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-tags{
+ display:flex!important;flex-wrap:wrap!important;gap:8px!important
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-tags>b{
+ display:inline-flex!important;align-items:center!important;width:auto!important;
+ padding:8px 11px!important;margin:0!important;border:1px solid rgba(255,255,255,.2)!important;
+ border-radius:999px!important;background:rgba(255,255,255,.06)!important;color:#fff!important;
+ font-size:10px!important;line-height:1!important;font-weight:650!important;white-space:nowrap!important
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-support{
+ display:grid!important;grid-template-columns:1fr!important;grid-template-rows:1fr 1fr!important;gap:12px!important
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-support>article{
+ display:block!important;padding:22px!important;margin:0!important;border:1px solid #eadde3!important;
+ border-radius:16px!important;background:#fff8fb!important;color:#62545b!important
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-support>article>span{
+ display:block!important;margin:0 0 10px!important;color:#b4476c!important;
+ font-size:10px!important;font-weight:800!important;letter-spacing:.12em!important;text-transform:uppercase!important
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-support>article>p{
+ display:block!important;margin:0!important;color:#66565e!important;font-size:13px!important;line-height:1.62!important
+}
+@media(max-width:780px){
+ #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board{grid-template-columns:1fr!important}
+ #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-primary{padding:24px!important}
+ #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-primary>h3{font-size:24px!important}
+}
