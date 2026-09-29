@@ -346,3 +346,37 @@
  #page-case-autoagendamento .auto-journey-primary .auto-flow-card{padding:16px 10px 18px!important}
  .case-page-shell .impact-grid-v3{padding:12px 16px!important}
 }
+
+/* Troca de tecnologia: papel mais visual e menos checklist */
+#page-case-troca-tecnologia-minha-atuacao-1 .section-head{max-width:780px!important}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board{
+ display:grid;grid-template-columns:1.45fr .9fr;gap:18px;align-items:stretch
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-primary{
+ padding:28px;border-radius:18px;background:var(--cv-ink);color:#fff
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-primary>span,
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-support span{
+ display:block;margin-bottom:10px;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-primary>span{color:#f0b7ca}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-primary h3{
+ max-width:540px;margin:0 0 24px;font-size:clamp(23px,2.5vw,32px);line-height:1.08;letter-spacing:-.035em;color:#fff
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-tags{display:flex;flex-wrap:wrap;gap:8px}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-tags b{
+ padding:8px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;
+ font-size:10px;font-weight:650;color:#fff;background:rgba(255,255,255,.05)
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-support{display:grid;grid-template-rows:1fr 1fr;gap:12px}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-support article{
+ padding:22px;border-radius:16px;background:var(--cv-wash);border:1px solid var(--cv-line)
+}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-support span{color:var(--cv-accent)}
+#page-case-troca-tecnologia-minha-atuacao-1 .tt-role-support p{
+ margin:0;font-size:13px;line-height:1.62;color:#66565e
+}
+@media(max-width:760px){
+ #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board{grid-template-columns:1fr}
+ #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-primary{padding:22px}
+}
