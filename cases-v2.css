@@ -427,3 +427,39 @@
  #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-primary{padding:24px!important}
  #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-board>.tt-role-primary>h3{font-size:24px!important}
 }
+
+/* Troca de tecnologia: decisões como sequência editorial */
+#page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions{
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:0!important;
+ border-top:1px solid var(--cv-line)!important;border-bottom:1px solid var(--cv-line)!important
+}
+#page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions>article{
+ display:grid!important;grid-template-columns:auto 1fr!important;gap:14px!important;align-content:start!important;
+ padding:24px 22px!important;margin:0!important;border:0!important;border-left:1px solid var(--cv-line)!important;
+ background:transparent!important
+}
+#page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions>article:first-child{
+ border-left:0!important;padding-left:0!important
+}
+#page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions>article>span{
+ display:flex!important;align-items:center!important;justify-content:center!important;width:30px!important;height:30px!important;
+ border-radius:50%!important;background:#5b1f3b!important;color:#fff!important;font-size:10px!important;font-weight:800!important
+}
+#page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions h3{
+ margin:3px 0 8px!important;color:var(--cv-ink)!important;font-size:16px!important;line-height:1.2!important
+}
+#page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions p{
+ margin:0!important;color:#685a61!important;font-size:12px!important;line-height:1.6!important
+}
+#page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions small{
+ display:block!important;margin-top:7px!important;color:#8b747f!important;font-size:10px!important;line-height:1.5!important
+}
+@media(max-width:900px){
+ #page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions{grid-template-columns:repeat(2,1fr)!important}
+ #page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions>article:nth-child(3){border-left:0!important}
+}
+@media(max-width:600px){
+ #page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions{grid-template-columns:1fr!important}
+ #page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions>article{padding:18px 0!important;border-left:0!important;border-top:1px solid var(--cv-line)!important}
+ #page-case-troca-tecnologia-decisoes-e-trade-offs-2 .tt-decisions>article:first-child{border-top:0!important}
+}
