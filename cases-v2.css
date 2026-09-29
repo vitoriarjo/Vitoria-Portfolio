@@ -252,3 +252,97 @@
  .case-page-shell .case-visual-head{margin-bottom:24px!important}
  .case-page-shell .case-quickread>div{padding-top:20px!important;padding-bottom:20px!important}
 }
+
+
+/* V2.2 — cases mais densos e com pontos de destaque */
+.case-page-shell>section:not(.case-hero){
+  position:relative!important;padding-top:52px!important;padding-bottom:52px!important
+}
+.case-page-shell .section-head,
+.case-page-shell .case-visual-head{margin-bottom:22px!important}
+.case-page-shell .section-head h2,
+.case-page-shell .case-visual-head h2{font-size:clamp(30px,3.35vw,44px)!important}
+.case-page-shell .section-head .eyebrow,
+.case-page-shell .case-visual-head .eyebrow{
+  display:flex!important;align-items:center!important;gap:9px!important
+}
+.case-page-shell .section-head .eyebrow:before,
+.case-page-shell .case-visual-head .eyebrow:before{
+  content:"";width:22px;height:2px;border-radius:999px;background:var(--cv-accent);flex:0 0 auto
+}
+
+/* pequeno marcador editorial em cada bloco, sem voltar ao excesso de cards */
+.case-page-shell>section:not(.case-hero)>.container:before{
+  content:"";display:block;width:7px;height:7px;margin-bottom:18px;border-radius:2px;
+  background:var(--cv-accent);transform:rotate(45deg);opacity:.72
+}
+.case-page-shell .content-card{padding-top:16px!important;padding-bottom:16px!important}
+.case-page-shell .content-card h3{font-size:16px!important}
+.case-page-shell .content-card p,
+.case-page-shell .content-card li{font-size:13px!important}
+
+/* decisões e mensagens-chave viram callouts */
+#page-case-autoagendamento .auto-decision-line,
+#page-case-autoagendamento .auto-impact-note{
+  position:relative;max-width:920px;padding:18px 22px 18px 25px!important;
+  border:0!important;border-left:3px solid var(--cv-accent)!important;
+  border-radius:0 12px 12px 0;background:rgba(180,71,108,.055)
+}
+#page-case-autoagendamento .auto-decision-line p,
+#page-case-autoagendamento .auto-impact-note p{font-size:14px!important}
+
+/* solução do autoagendamento: menos vazio, mais composição */
+#page-case-autoagendamento-solucao-4{background:#fff!important}
+#page-case-autoagendamento-solucao-4>.container{
+  padding-top:2px!important
+}
+#page-case-autoagendamento-solucao-4 .content-grid{
+  margin-bottom:34px!important;padding:20px 24px!important;border-radius:16px!important;
+  background:var(--cv-wash)!important
+}
+#page-case-autoagendamento-solucao-4 .content-card{padding-top:4px!important;padding-bottom:4px!important}
+#page-case-autoagendamento-solucao-4 .case-visual-head{margin-top:6px!important}
+#page-case-autoagendamento .auto-journey-primary{
+  gap:18px!important;margin-top:22px!important;align-items:start!important
+}
+#page-case-autoagendamento .auto-journey-primary .auto-flow-card{
+  position:relative!important;padding:18px 14px 20px!important;border-radius:18px!important;
+  background:linear-gradient(180deg,#fff9fb 0%,#fff 44%)!important
+}
+#page-case-autoagendamento .auto-journey-primary .auto-flow-card:before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;border-radius:18px 18px 0 0;
+  background:linear-gradient(90deg,var(--cv-accent),rgba(180,71,108,.12))
+}
+#page-case-autoagendamento .auto-journey-primary .auto-flow-copy{
+  min-height:96px!important;padding:0 4px 14px!important
+}
+#page-case-autoagendamento .auto-journey-primary .auto-flow-copy h3{
+  margin:5px 0!important;font-size:16px!important
+}
+#page-case-autoagendamento .auto-journey-primary .auto-flow-copy p{
+  font-size:11px!important;line-height:1.5!important
+}
+#page-case-autoagendamento .auto-journey-primary .auto-phone-new{
+  box-shadow:0 16px 42px rgba(62,28,44,.12)!important
+}
+
+/* métricas recebem presença visual sem virar cards pesados */
+.case-page-shell .impact-grid-v3{
+  padding:18px 22px!important;border-radius:16px!important;background:var(--cv-wash)!important
+}
+.case-page-shell .impact-card-v3 strong{font-size:clamp(34px,4vw,50px)!important}
+.case-page-shell .impact-card-v3 h3{font-size:13px!important}
+
+/* aprendizados fecham como faixa editorial */
+.case-page-shell .case-learning-section{background:#fff8fb!important}
+.case-page-shell .learning-grid{
+  padding:18px 22px!important;border-top:1px solid var(--cv-line)!important;border-bottom:1px solid var(--cv-line)!important
+}
+
+@media(max-width:600px){
+ .case-page-shell>section:not(.case-hero){padding-top:40px!important;padding-bottom:40px!important}
+ .case-page-shell>section:not(.case-hero)>.container:before{margin-bottom:14px!important}
+ #page-case-autoagendamento-solucao-4 .content-grid{padding:16px!important}
+ #page-case-autoagendamento .auto-journey-primary .auto-flow-card{padding:16px 10px 18px!important}
+ .case-page-shell .impact-grid-v3{padding:12px 16px!important}
+}
