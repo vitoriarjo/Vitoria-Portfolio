@@ -181,3 +181,33 @@
  .case-page-shell .learning-card{padding:20px 0!important;border-left:0!important;border-top:1px solid var(--cv-line)!important}
  .case-page-shell .learning-card:first-child{border-top:0!important}
 }
+/* Autoagendamento compacto */
+#page-case-autoagendamento .auto-decision-line,
+#page-case-autoagendamento .auto-impact-note{
+  max-width:860px;padding:24px 0;border-top:1px solid var(--cv-line);border-bottom:1px solid var(--cv-line)
+}
+#page-case-autoagendamento .auto-decision-line strong,
+#page-case-autoagendamento .auto-impact-note strong{
+  display:block;margin-bottom:8px;color:var(--cv-accent);font-size:10px;letter-spacing:.13em;text-transform:uppercase
+}
+#page-case-autoagendamento .auto-decision-line p,
+#page-case-autoagendamento .auto-impact-note p{margin:0;font-size:16px;line-height:1.65;color:var(--cv-ink)}
+#page-case-autoagendamento .auto-details{
+  margin-top:54px;border-top:1px solid var(--cv-line);border-bottom:1px solid var(--cv-line)
+}
+#page-case-autoagendamento .auto-details summary{
+  padding:20px 0;cursor:pointer;color:var(--cv-ink);font-size:13px;font-weight:800;list-style-position:inside
+}
+#page-case-autoagendamento .auto-details-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0 0 24px
+}
+#page-case-autoagendamento .auto-details-grid>div{padding:4px 26px;border-left:1px solid var(--cv-line)}
+#page-case-autoagendamento .auto-details-grid>div:first-child{padding-left:0;border-left:0}
+#page-case-autoagendamento .auto-details-grid strong{font-size:13px;color:var(--cv-ink)}
+#page-case-autoagendamento .auto-details-grid p{font-size:12px;line-height:1.6;color:#71616a}
+#page-case-autoagendamento-rollout-e-impacto-5 .impact-grid-v3{margin-bottom:42px!important}
+@media(max-width:700px){
+ #page-case-autoagendamento .auto-details-grid{grid-template-columns:1fr}
+ #page-case-autoagendamento .auto-details-grid>div{padding:16px 0;border-left:0;border-top:1px solid var(--cv-line)}
+ #page-case-autoagendamento .auto-details-grid>div:first-child{border-top:0}
+}
