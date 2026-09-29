@@ -545,3 +545,53 @@
  .case-page-shell .content-grid>.content-card{padding:18px 0!important}
  .case-page-shell>section:last-of-type .summary-card{display:block!important}
 }
+
+/* Troca: impacto com hierarquia real */
+#page-case-troca-tecnologia-impacto-4 .tt-impact{
+ display:grid!important;grid-template-columns:1.1fr .9fr!important;gap:16px!important;align-items:stretch!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact>article{
+ padding:28px!important;border-radius:18px!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result{
+ background:#5b1f3b!important;color:#fff!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result>span,
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential-head>span{
+ display:block!important;margin-bottom:10px!important;font-size:9px!important;font-weight:800!important;
+ letter-spacing:.13em!important;text-transform:uppercase!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result>span{color:#f3b7cc!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result h3{
+ max-width:560px!important;margin:0 0 12px!important;color:#fff!important;font-size:25px!important;line-height:1.12!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result p{
+ max-width:620px!important;margin:0 0 22px!important;color:rgba(255,255,255,.82)!important;font-size:13px!important;line-height:1.65!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-tags{display:flex!important;flex-wrap:wrap!important;gap:7px!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-tags b{
+ padding:7px 9px!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:999px!important;
+ color:#fff!important;font-size:9px!important;font-weight:650!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential{
+ border:1px solid var(--cv-line)!important;background:#fff8fb!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential-head{
+ display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;margin-bottom:20px!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential-head>span{margin:0!important;color:var(--cv-accent)!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential-head small{color:#9a7f8c!important;font-size:10px!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-number{
+ padding:16px 0!important;border-top:1px solid var(--cv-line)!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-number:first-of-type{border-top:0!important;padding-top:0!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-number strong{
+ display:block!important;margin-bottom:5px!important;color:var(--cv-ink)!important;font-size:28px!important;line-height:1!important;letter-spacing:-.035em!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-number span{
+ display:block!important;max-width:360px!important;color:#71616a!important;font-size:11px!important;line-height:1.5!important
+}
+@media(max-width:760px){
+ #page-case-troca-tecnologia-impacto-4 .tt-impact{grid-template-columns:1fr!important}
+ #page-case-troca-tecnologia-impacto-4 .tt-impact>article{padding:22px!important}
+}
