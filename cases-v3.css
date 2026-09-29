@@ -1,0 +1,117 @@
+/* CASES V3 — estrutura narrativa
+   Uma linguagem única: resumo, desafio, decisões, solução, impacto, reflexão. */
+.case-page-shell{
+ --c3-ink:#57243d;--c3-text:#66555e;--c3-muted:#907985;--c3-accent:#b4476c;
+ --c3-line:#eadde3;--c3-soft:#fff7fa;--c3-max:1080px;background:#fff!important
+}
+.case-page-shell .container{width:min(var(--c3-max),calc(100% - 48px))!important}
+.case-page-shell>.case-hero{padding:54px 0 48px!important;background:#fff!important;border:0!important}
+.case-page-shell>.case-hero:after{display:none!important}
+.case-page-shell .case-hero .back{margin-bottom:30px!important}
+.case-page-shell .case-hero h1{max-width:920px!important;margin:14px 0 0!important;font-size:clamp(42px,5vw,66px)!important;line-height:1!important;letter-spacing:-.05em!important;color:var(--c3-ink)!important}
+.case-page-shell .case-status-row{margin:14px 0 0!important}
+.case-page-shell .case-summary{display:grid!important;grid-template-columns:1.45fr .75fr!important;gap:44px!important;margin-top:38px!important}
+.case-page-shell .summary-card{padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.case-page-shell .summary-card>p{font-size:16px!important;line-height:1.7!important;color:var(--c3-text)!important}
+.case-page-shell .summary-card.facts{padding-left:24px!important;border-left:1px solid var(--c3-line)!important}
+.case-page-shell .case-summary .metrics{display:flex!important;gap:24px!important;margin-top:24px!important}
+.case-page-shell .case-summary .metric{padding:0!important;border:0!important;background:transparent!important;min-height:0!important}
+.case-page-shell .case-summary .metric strong{font-size:14px!important;color:var(--c3-ink)!important}
+
+.case-page-shell>.container:has(>.case-quickread){width:100%!important;max-width:none!important;padding:0!important;background:var(--c3-ink)!important}
+.case-page-shell .case-quickread{width:min(var(--c3-max),calc(100% - 48px))!important;margin:auto!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important}
+.case-page-shell .case-quickread>div{min-height:128px!important;padding:26px 28px!important;border:0!important;border-left:1px solid rgba(255,255,255,.15)!important}
+.case-page-shell .case-quickread>div:first-child{border-left:0!important;padding-left:0!important}
+.case-page-shell .case-quickread span{color:#f1b7ca!important;font-size:9px!important;letter-spacing:.13em!important}
+.case-page-shell .case-quickread p{color:rgba(255,255,255,.9)!important;font-size:13px!important;line-height:1.6!important}
+
+.case-page-shell .case-local-nav{border:0!important;border-bottom:1px solid var(--c3-line)!important;background:rgba(255,255,255,.96)!important;box-shadow:none!important}
+.case-page-shell>section:not(.case-hero){padding:56px 0!important;background:#fff!important;border:0!important}
+.case-page-shell>section:not(.case-hero)+section:not(.case-hero){border-top:1px solid #f3e9ee!important}
+.case-page-shell>section:not(.case-hero)>.container:before{display:none!important}
+
+.case-page-shell .section-head,.case-page-shell .case-visual-head{max-width:780px!important;margin:0 0 28px!important}
+.case-page-shell .section-head .eyebrow,.case-page-shell .case-visual-head .eyebrow{display:block!important;margin:0 0 8px!important;color:var(--c3-accent)!important;font-size:9px!important;letter-spacing:.14em!important}
+.case-page-shell .section-head .eyebrow:before,.case-page-shell .case-visual-head .eyebrow:before{display:none!important}
+.case-page-shell .section-head h2,.case-page-shell .case-visual-head h2{margin:0 0 10px!important;max-width:760px!important;font-size:clamp(28px,3.2vw,42px)!important;line-height:1.08!important;letter-spacing:-.04em!important;color:var(--c3-ink)!important}
+.case-page-shell .section-head p,.case-page-shell .case-visual-head p{max-width:680px!important;font-size:13px!important;line-height:1.65!important;color:var(--c3-text)!important}
+
+/* conteúdo: sem mosaico de cards; vira narrativa agrupada */
+.case-page-shell .content-grid{display:grid!important;gap:0!important;border:0!important;border-top:1px solid var(--c3-line)!important;border-bottom:1px solid var(--c3-line)!important;border-radius:0!important;background:transparent!important;overflow:visible!important}
+.case-page-shell .content-grid>.content-card{padding:20px 24px!important;border:0!important;border-left:1px solid var(--c3-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+.case-page-shell .content-grid>.content-card:first-child{padding-left:0!important;border-left:0!important}
+.case-page-shell .content-grid>.content-card:nth-child(n+3){border-top:0!important}
+.case-page-shell .content-card h2,.case-page-shell .content-card h3{font-size:16px!important;line-height:1.25!important;color:var(--c3-ink)!important}
+.case-page-shell .content-card p,.case-page-shell .content-card li{font-size:12px!important;line-height:1.62!important;color:var(--c3-text)!important}
+
+/* 3+ itens: uma faixa coerente, não cartões dispersos */
+.case-page-shell .projects-grid{display:grid!important;gap:0!important;margin-top:24px!important;border-top:1px solid var(--c3-line)!important;border-bottom:1px solid var(--c3-line)!important}
+.case-page-shell .projects-grid>article{padding:20px!important;margin:0!important;border:0!important;border-left:1px solid var(--c3-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+.case-page-shell .projects-grid>article:first-child{padding-left:0!important;border-left:0!important}
+
+/* impacto sempre ganha presença */
+.case-page-shell .impact-grid-v3{padding:24px!important;margin:28px 0!important;border:0!important;border-radius:16px!important;background:var(--c3-soft)!important}
+.case-page-shell .impact-card-v3{padding:12px 22px!important;border:0!important;border-left:1px solid var(--c3-line)!important;background:transparent!important}
+.case-page-shell .impact-card-v3:first-child{border-left:0!important;padding-left:0!important}
+.case-page-shell .impact-card-v3 strong{font-size:clamp(32px,4vw,48px)!important;color:var(--c3-accent)!important}
+
+/* reflexão é curta e final */
+.case-page-shell .case-learning-section{background:var(--c3-soft)!important}
+.case-page-shell .learning-grid{padding:0!important;border:0!important;display:grid!important;gap:0!important}
+.case-page-shell .learning-card{padding:16px 24px!important;border:0!important;border-left:1px solid var(--c3-line)!important;background:transparent!important}
+.case-page-shell .learning-card:first-child{padding-left:0!important;border-left:0!important}
+
+/* visuais/protótipos são o principal elemento gráfico */
+.case-page-shell .tech-switch-figure,.case-page-shell .budget-screen-figure,.case-page-shell .app-window,
+.case-page-shell .voice-demo-shell,.case-page-shell .voice-app-window,.case-page-shell .case-product-frame{
+ margin:28px 0 0!important;border-radius:18px!important;box-shadow:0 20px 55px rgba(72,30,51,.08)!important
+}
+
+/* Auto */
+#page-case-autoagendamento .auto-decision-line,#page-case-autoagendamento .auto-impact-note{max-width:780px!important;padding:16px 18px!important;border-left:3px solid var(--c3-accent)!important;background:var(--c3-soft)!important}
+#page-case-autoagendamento-solucao-4 .content-grid{padding:0!important;background:transparent!important}
+#page-case-autoagendamento .auto-journey-primary{grid-template-columns:repeat(3,1fr)!important;gap:16px!important;margin-top:20px!important}
+#page-case-autoagendamento .auto-journey-primary .auto-flow-card{padding:14px 10px 18px!important;border-radius:14px!important;background:var(--c3-soft)!important}
+#page-case-autoagendamento .auto-details{margin-top:28px!important}
+
+/* Troca */
+#page-case-troca-tecnologia-contexto-0 .content-grid{grid-template-columns:repeat(4,1fr)!important;gap:0!important;border-top:1px solid var(--c3-line)!important;border-bottom:1px solid var(--c3-line)!important}
+#page-case-troca-tecnologia-contexto-0 .content-grid>.content-card{padding:18px!important;border:0!important;border-left:1px solid var(--c3-line)!important;border-radius:0!important;background:transparent!important}
+#page-case-troca-tecnologia-contexto-0 .content-grid>.content-card:first-child{border-left:0!important;padding-left:0!important}
+#page-case-troca-tecnologia-contexto-0 .tt-flow{margin-bottom:18px!important}
+#page-case-troca-tecnologia .tt-phase{border:0!important;border-left:1px solid var(--c3-line)!important;border-radius:0!important;background:transparent!important}
+#page-case-troca-tecnologia .tt-phase:first-child{border-left:0!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact{gap:12px!important}
+
+/* Formalização */
+#page-case-formalizacao .content-grid{grid-template-columns:repeat(3,1fr)!important;gap:0!important;border-top:1px solid var(--c3-line)!important;border-bottom:1px solid var(--c3-line)!important}
+#page-case-formalizacao .content-grid>.content-card{border:0!important;border-left:1px solid var(--c3-line)!important;border-radius:0!important;background:transparent!important}
+#page-case-formalizacao .content-grid>.content-card:first-child{border-left:0!important}
+
+/* cases curtos */
+#page-case-release-governance>section:not(.case-hero),#page-case-portfolio-product>section:not(.case-hero){padding:48px 0!important}
+
+/* fechamento */
+.case-page-shell>section:last-of-type .summary-card{padding:20px 0!important;border-top:1px solid var(--c3-line)!important;border-bottom:0!important}
+
+@media(max-width:820px){
+ .case-page-shell .case-summary{grid-template-columns:1fr!important;gap:24px!important}
+ .case-page-shell .summary-card.facts{padding:20px 0 0!important;border-left:0!important;border-top:1px solid var(--c3-line)!important}
+ .case-page-shell .case-quickread{grid-template-columns:1fr!important}
+ .case-page-shell .case-quickread>div{min-height:0!important;padding:18px 0!important;border-left:0!important;border-top:1px solid rgba(255,255,255,.15)!important}
+ .case-page-shell .case-quickread>div:first-child{border-top:0!important}
+ #page-case-troca-tecnologia-contexto-0 .content-grid{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:600px){
+ .case-page-shell .container{width:min(var(--c3-max),calc(100% - 32px))!important}
+ .case-page-shell>.case-hero{padding:38px 0 40px!important}
+ .case-page-shell .case-hero h1{font-size:38px!important}
+ .case-page-shell>section:not(.case-hero){padding:42px 0!important}
+ .case-page-shell .content-grid,#page-case-formalizacao .content-grid,#page-case-troca-tecnologia-contexto-0 .content-grid{grid-template-columns:1fr!important}
+ .case-page-shell .content-grid>.content-card,#page-case-formalizacao .content-grid>.content-card,#page-case-troca-tecnologia-contexto-0 .content-grid>.content-card{padding:16px 0!important;border-left:0!important;border-top:1px solid var(--c3-line)!important}
+ .case-page-shell .content-grid>.content-card:first-child{border-top:0!important}
+ .case-page-shell .projects-grid{grid-template-columns:1fr!important}
+ .case-page-shell .projects-grid>article{padding:16px 0!important;border-left:0!important;border-top:1px solid var(--c3-line)!important}
+ .case-page-shell .projects-grid>article:first-child{border-top:0!important}
+ #page-case-autoagendamento .auto-journey-primary{grid-template-columns:1fr!important}
+}
