@@ -295,3 +295,49 @@
  #page-case-autoagendamento .auto-details-grid>div{padding:14px 0!important;border-left:0!important;border-top:1px solid var(--ca-line)!important}
  #page-case-autoagendamento .auto-details-grid>div:first-child{border-top:0!important}
 }
+
+
+/* Impact system — um único componente estável para todos os cases */
+.case-page-shell section[data-case-step="Impacto"] .impact-grid-v3{
+ display:grid!important;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important;
+ gap:0!important;width:100%!important;max-width:100%!important;min-width:0!important;
+ margin:22px 0!important;padding:0!important;border:1px solid var(--ca-line)!important;
+ border-radius:16px!important;background:var(--ca-soft)!important;overflow:hidden!important
+}
+.case-page-shell section[data-case-step="Impacto"] .impact-card-v3{
+ min-width:0!important;width:auto!important;height:auto!important;padding:22px!important;margin:0!important;
+ border:0!important;border-left:1px solid var(--ca-line)!important;border-radius:0!important;background:transparent!important;
+ display:block!important;overflow:visible!important
+}
+.case-page-shell section[data-case-step="Impacto"] .impact-card-v3:first-child{border-left:0!important}
+.case-page-shell section[data-case-step="Impacto"] .impact-card-v3 strong{
+ display:block!important;margin:0 0 7px!important;color:var(--ca-accent)!important;
+ font-size:clamp(26px,3vw,38px)!important;line-height:1.05!important;letter-spacing:-.035em!important;
+ white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important
+}
+.case-page-shell section[data-case-step="Impacto"] .impact-card-v3 span,
+.case-page-shell section[data-case-step="Impacto"] .impact-card-v3 p{
+ display:block!important;margin:0!important;color:#71616a!important;font-size:11px!important;line-height:1.5!important;
+ white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important
+}
+.case-page-shell section[data-case-step="Impacto"] .content-grid{
+ width:100%!important;max-width:100%!important;grid-template-columns:repeat(2,minmax(0,1fr))!important
+}
+.case-page-shell section[data-case-step="Impacto"] .content-card{
+ min-width:0!important;height:auto!important;overflow:visible!important
+}
+/* Formalização usa um único bloco de resultado */
+#page-case-formalizacao-resultado-6 .content-card{
+ width:100%!important;max-width:760px!important;height:auto!important;margin:0!important;padding:22px 0!important;
+ border:0!important;border-top:1px solid var(--ca-line)!important;border-bottom:1px solid var(--ca-line)!important;
+ border-radius:0!important;background:transparent!important;box-shadow:none!important
+}
+@media(max-width:760px){
+ .case-page-shell section[data-case-step="Impacto"] .impact-grid-v3{grid-template-columns:1fr!important}
+ .case-page-shell section[data-case-step="Impacto"] .impact-card-v3{
+  padding:18px!important;border-left:0!important;border-top:1px solid var(--ca-line)!important
+ }
+ .case-page-shell section[data-case-step="Impacto"] .impact-card-v3:first-child{border-top:0!important}
+ .case-page-shell section[data-case-step="Impacto"] .content-grid{grid-template-columns:1fr!important}
+ #page-case-troca-tecnologia-impacto-4 .tt-impact>article{padding:20px!important}
+}
