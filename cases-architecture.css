@@ -115,3 +115,76 @@
  .case-page-shell .projects-grid>article:first-child{border-top:0!important}
  #page-case-autoagendamento .auto-journey-primary{grid-template-columns:1fr!important}
 }
+
+/* Stability pass — neutraliza dimensões legadas que quebram conteúdo */
+.case-page-shell,.case-page-shell *{box-sizing:border-box!important}
+.case-page-shell img,.case-page-shell svg,.case-page-shell video,.case-page-shell canvas{max-width:100%!important;height:auto}
+.case-page-shell h1,.case-page-shell h2,.case-page-shell h3,.case-page-shell h4,
+.case-page-shell p,.case-page-shell li,.case-page-shell strong,.case-page-shell span{
+ overflow-wrap:break-word!important;word-break:normal!important;hyphens:none!important
+}
+.case-page-shell .container,
+.case-page-shell .content-grid,
+.case-page-shell .projects-grid,
+.case-page-shell .case-summary,
+.case-page-shell .case-quickread,
+.case-page-shell .impact-grid-v3,
+.case-page-shell .learning-grid{min-width:0!important}
+.case-page-shell .content-grid>*,
+.case-page-shell .projects-grid>*,
+.case-page-shell .case-summary>*,
+.case-page-shell .case-quickread>*,
+.case-page-shell .impact-grid-v3>*,
+.case-page-shell .learning-grid>*{min-width:0!important;max-width:100%!important}
+.case-page-shell .content-grid,
+.case-page-shell .projects-grid{grid-auto-flow:row!important}
+.case-page-shell .content-card,
+.case-page-shell .summary-card,
+.case-page-shell .learning-card,
+.case-page-shell .impact-card-v3{width:auto!important;height:auto!important;min-height:0!important;overflow:visible!important}
+.case-page-shell .metric{width:auto!important;max-width:100%!important}
+.case-page-shell .metric strong,.case-page-shell .metric span{white-space:normal!important}
+.case-page-shell .evidence-label{white-space:normal!important;max-width:100%!important}
+.case-page-shell .list{min-width:0!important}
+.case-page-shell .list li{padding-right:0!important}
+
+/* protótipos mantêm seu layout interno, mas nunca extrapolam o case */
+.case-page-shell .tech-switch-figure,
+.case-page-shell .budget-screen-figure,
+.case-page-shell .app-window,
+.case-page-shell .voice-demo-shell,
+.case-page-shell .voice-app-window,
+.case-page-shell .case-product-frame,
+.case-page-shell .auto-prototype-shell,
+.case-page-shell .auto-phone-new{
+ max-width:100%!important
+}
+
+/* desktop estreito: evita colunas comprimidas que partem texto */
+@media(max-width:1100px){
+ .case-page-shell>section[data-case-step]>.container{grid-template-columns:110px minmax(0,1fr)!important;column-gap:28px!important}
+ #page-case-troca-tecnologia-contexto-0 .content-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #page-case-formalizacao .content-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:900px){
+ .case-page-shell .content-grid{grid-template-columns:1fr!important}
+ .case-page-shell .content-grid>.content-card{
+  padding:16px 0!important;border-left:0!important;border-top:1px solid var(--ca-line)!important
+ }
+ .case-page-shell .content-grid>.content-card:first-child{border-top:0!important}
+ .case-page-shell .projects-grid{grid-template-columns:1fr!important}
+ .case-page-shell .projects-grid>article{
+  padding:16px 0!important;border-left:0!important;border-top:1px solid var(--ca-line)!important
+ }
+ .case-page-shell .projects-grid>article:first-child{border-top:0!important}
+ #page-case-formalizacao .content-grid,
+ #page-case-troca-tecnologia-contexto-0 .content-grid{grid-template-columns:1fr!important}
+ #page-case-autoagendamento .auto-journey-primary{grid-template-columns:1fr!important;max-width:520px!important}
+}
+@media(max-width:600px){
+ .case-page-shell h1{font-size:clamp(34px,10vw,40px)!important}
+ .case-page-shell .section-head h2,.case-page-shell .case-visual-head h2{font-size:28px!important}
+ .case-page-shell .case-summary .metrics{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+ .case-page-shell .case-summary .metric{padding-top:12px!important;border-top:1px solid var(--ca-line)!important}
+ .case-page-shell .case-summary .metric:first-child{padding-top:0!important;border-top:0!important}
+}
