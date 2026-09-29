@@ -595,3 +595,92 @@
  #page-case-troca-tecnologia-impacto-4 .tt-impact{grid-template-columns:1fr!important}
  #page-case-troca-tecnologia-impacto-4 .tt-impact>article{padding:22px!important}
 }
+
+/* V2.4 — revisão completa: blocos conectados, sem quadrantes soltos */
+.case-page-shell .content-grid{
+ overflow:hidden!important;border:1px solid var(--cv-line)!important;border-radius:16px!important;
+ background:#fff!important
+}
+.case-page-shell .content-grid>.content-card{
+ padding:22px 24px!important;border:0!important;border-left:1px solid var(--cv-line)!important;
+ background:transparent!important
+}
+.case-page-shell .content-grid>.content-card:first-child{padding-left:24px!important;border-left:0!important}
+.case-page-shell .content-grid>.content-card:nth-child(n+3){border-top:1px solid var(--cv-line)!important}
+.case-page-shell .content-grid>.content-card h2,
+.case-page-shell .content-grid>.content-card h3{font-size:17px!important;margin-bottom:9px!important}
+.case-page-shell .content-grid>.content-card p,
+.case-page-shell .content-grid>.content-card li{font-size:12px!important;line-height:1.6!important}
+
+/* grids com 3+ itens usam cartões leves coerentes, não linhas quebradas */
+.case-page-shell .projects-grid{
+ gap:12px!important;border:0!important
+}
+.case-page-shell .projects-grid>.content-card{
+ padding:20px!important;border:1px solid var(--cv-line)!important;border-radius:14px!important;background:#fff!important
+}
+
+/* Troca: contexto como uma única história */
+#page-case-troca-tecnologia-contexto-0 .content-grid{
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ border:0!important;border-radius:0!important;background:transparent!important;gap:10px!important
+}
+#page-case-troca-tecnologia-contexto-0 .content-grid>.content-card{
+ padding:18px!important;border:1px solid var(--cv-line)!important;border-radius:14px!important;
+ background:#fff!important
+}
+#page-case-troca-tecnologia-contexto-0 .content-grid>.content-card:nth-child(n+3){border-top:1px solid var(--cv-line)!important}
+#page-case-troca-tecnologia-contexto-0 .content-card h2{font-size:15px!important}
+#page-case-troca-tecnologia-contexto-0 .tt-flow{
+ margin:0 0 18px!important;padding:14px 16px!important;border:1px solid #f0dce5!important;
+ border-radius:14px!important;background:#fff8fb!important
+}
+
+/* Jornada Fibra: muitos blocos ficam em grupos claros */
+#page-case-jornada-fibra .content-grid{border-radius:16px!important}
+#page-case-jornada-fibra .projects-grid>.content-card{height:auto!important}
+
+/* Auto: dois conceitos iniciais como faixa, não caixas soltas */
+#page-case-autoagendamento-solucao-4 .content-grid{
+ border:0!important;background:#fff8fb!important;padding:18px 20px!important
+}
+#page-case-autoagendamento-solucao-4 .content-grid>.content-card{
+ padding:4px 20px!important;border-left:1px solid var(--cv-line)!important
+}
+#page-case-autoagendamento-solucao-4 .content-grid>.content-card:first-child{padding-left:0!important;border-left:0!important}
+
+/* Voice e Capacidade: pares tratados como uma unidade */
+#page-case-voice-cloud .content-grid,
+#page-case-automacao-capacidade .content-grid{border-radius:16px!important}
+
+/* Formalização: decisões equilibradas */
+#page-case-formalizacao .content-grid{
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;border:0!important;background:transparent!important;gap:12px!important
+}
+#page-case-formalizacao .content-grid>.content-card{
+ padding:20px!important;border:1px solid var(--cv-line)!important;border-radius:14px!important;background:#fff!important
+}
+#page-case-formalizacao .content-grid>.content-card:nth-child(n+3){border-top:1px solid var(--cv-line)!important}
+
+/* Release: dois blocos sem espaço artificial */
+#page-case-release-governance .content-grid{max-width:980px!important}
+
+/* Portfolio lab */
+#page-case-portfolio-product .content-grid{border-radius:16px!important}
+
+@media(max-width:980px){
+ #page-case-troca-tecnologia-contexto-0 .content-grid{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:700px){
+ .case-page-shell .content-grid,
+ #page-case-formalizacao .content-grid,
+ #page-case-troca-tecnologia-contexto-0 .content-grid{grid-template-columns:1fr!important}
+ .case-page-shell .content-grid>.content-card,
+ #page-case-formalizacao .content-grid>.content-card,
+ #page-case-troca-tecnologia-contexto-0 .content-grid>.content-card{
+   padding:18px!important;border-left:0!important;border-top:1px solid var(--cv-line)!important;border-radius:0!important
+ }
+ .case-page-shell .content-grid>.content-card:first-child{border-top:0!important}
+ #page-case-troca-tecnologia-contexto-0 .content-grid>.content-card,
+ #page-case-formalizacao .content-grid>.content-card{border:1px solid var(--cv-line)!important;border-radius:14px!important}
+}
