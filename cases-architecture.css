@@ -240,3 +240,58 @@
  #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-support{grid-template-columns:1fr!important}
  #page-case-troca-tecnologia-minha-atuacao-1 .tt-role-support>article{padding:17px!important}
 }
+
+
+/* Audit migration: componentes que ainda dependiam exclusivamente da V2 */
+
+/* Troca: Impacto */
+#page-case-troca-tecnologia-impacto-4 .tt-impact{
+ display:grid!important;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr)!important;
+ gap:14px!important;width:100%!important;min-width:0!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact>article{min-width:0!important;height:auto!important;padding:24px!important;border-radius:16px!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result{background:var(--ca-ink)!important;color:#fff!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result>span,
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential-head>span{
+ display:block!important;margin:0 0 9px!important;font-size:9px!important;font-weight:800!important;letter-spacing:.13em!important;text-transform:uppercase!important
+}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result>span{color:#efb4c8!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result h3{margin:0 0 11px!important;color:#fff!important;font-size:24px!important;line-height:1.15!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-result p{margin:0 0 20px!important;color:rgba(255,255,255,.82)!important;font-size:13px!important;line-height:1.62!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-tags{display:flex!important;flex-wrap:wrap!important;gap:7px!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-tags b{padding:7px 9px!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:999px!important;color:#fff!important;font-size:9px!important;white-space:normal!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential{border:1px solid var(--ca-line)!important;background:var(--ca-soft)!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential-head{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;margin-bottom:18px!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential-head>span{margin:0!important;color:var(--ca-accent)!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-potential-head small{color:var(--ca-muted)!important;font-size:10px!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-number{padding:14px 0!important;border-top:1px solid var(--ca-line)!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-number:first-of-type{padding-top:0!important;border-top:0!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-number strong{display:block!important;margin-bottom:5px!important;color:var(--ca-ink)!important;font-size:28px!important;line-height:1.05!important}
+#page-case-troca-tecnologia-impacto-4 .tt-impact-number span{display:block!important;color:#71616a!important;font-size:11px!important;line-height:1.5!important}
+
+/* Autoagendamento: textos dos três momentos e detalhes */
+#page-case-autoagendamento .auto-flow-copy{min-height:112px!important;padding:0 4px 16px!important}
+#page-case-autoagendamento .auto-flow-copy>span{display:block!important;color:var(--ca-accent)!important;font-size:9px!important;font-weight:800!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+#page-case-autoagendamento .auto-flow-copy h3{margin:5px 0 7px!important;color:var(--ca-ink)!important;font-size:18px!important;line-height:1.2!important}
+#page-case-autoagendamento .auto-flow-copy p{margin:0!important;font-size:11px!important;line-height:1.52!important}
+#page-case-autoagendamento .auto-details-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:0!important;padding:4px 0 22px!important}
+#page-case-autoagendamento .auto-details-grid>div{min-width:0!important;padding:4px 22px!important;border-left:1px solid var(--ca-line)!important}
+#page-case-autoagendamento .auto-details-grid>div:first-child{padding-left:0!important;border-left:0!important}
+#page-case-autoagendamento .auto-details-grid strong{font-size:13px!important;color:var(--ca-ink)!important}
+#page-case-autoagendamento .auto-details-grid p{font-size:12px!important;line-height:1.6!important;color:#71616a!important}
+
+/* notas de evidência compartilhadas */
+.case-page-shell .case-evidence-note{max-width:760px!important;margin:16px 0 0!important;padding:12px 14px!important;border-left:2px solid var(--ca-line)!important;color:var(--ca-muted)!important;font-size:11px!important;line-height:1.55!important}
+
+/* Voice Cloud: painel sem regra própria */
+#page-case-voice-cloud .voice-volume-panel{width:100%!important;max-width:100%!important;min-width:0!important;overflow:hidden!important}
+
+/* mini cases */
+.case-page-shell.mini-case{min-height:100vh!important}
+
+@media(max-width:900px){
+ #page-case-troca-tecnologia-impacto-4 .tt-impact{grid-template-columns:1fr!important}
+ #page-case-autoagendamento .auto-details-grid{grid-template-columns:1fr!important}
+ #page-case-autoagendamento .auto-details-grid>div{padding:14px 0!important;border-left:0!important;border-top:1px solid var(--ca-line)!important}
+ #page-case-autoagendamento .auto-details-grid>div:first-child{border-top:0!important}
+}
