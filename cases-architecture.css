@@ -31,7 +31,7 @@
 .case-page-shell .metric{min-width:0;padding:18px 18px 0 0}
 .case-page-shell .metric strong{display:block;color:var(--case-ink);font-size:clamp(25px,3vw,38px);line-height:1;letter-spacing:-.04em}
 .case-page-shell .metric span{display:block;margin-top:7px;color:var(--case-muted);font-size:10px;line-height:1.45}
-.case-page-shell .case-quickread{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:30px;border:1px solid var(--case-line);border-radius:18px;overflow:hidden;background:#fff}
+.case-page-shell .case-quickread{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:30px;border:1px solid var(--case-line);border-radius:18px;overflow:hidden;background:#fff}
 .case-page-shell .case-quickread>div{min-width:0;padding:22px;border-left:1px solid var(--case-line)}
 .case-page-shell .case-quickread>div:first-child{border-left:0}
 .case-page-shell .case-quickread span{display:block;margin-bottom:8px;color:var(--case-accent);font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
@@ -99,8 +99,12 @@
 #page-case-troca-tecnologia .tt-impact-tags{display:flex;flex-wrap:wrap;gap:7px}
 #page-case-troca-tecnologia .tt-impact-tags b{padding:7px 9px;border:1px solid rgba(255,255,255,.2);border-radius:999px;color:#fff;font-size:9px}
 #page-case-troca-tecnologia .tt-impact-potential{border:1px solid var(--case-line);background:#fff}
+#page-case-troca-tecnologia .tt-impact-potential-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+#page-case-troca-tecnologia .tt-impact-potential-head>span{color:var(--case-accent);font-size:13px;font-weight:800}
+#page-case-troca-tecnologia .tt-impact-potential-head small{color:var(--case-muted);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
 #page-case-troca-tecnologia .tt-impact-number{padding:15px 0;border-top:1px solid var(--case-line)}
 #page-case-troca-tecnologia .tt-impact-number strong{display:block;color:var(--case-ink);font-size:28px}
+#page-case-troca-tecnologia .tt-impact-number span{display:block;margin-top:4px;color:var(--case-muted);font-size:12px;line-height:1.5}
 
 /* Auto */
 #page-case-autoagendamento .auto-journey-primary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
@@ -115,11 +119,22 @@
 #page-case-autoagendamento .auto-details-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding-bottom:20px}
 #page-case-autoagendamento .auto-details-grid>div{padding:4px 22px;border-left:1px solid var(--case-line)}
 #page-case-autoagendamento .auto-details-grid>div:first-child{padding-left:0;border-left:0}
+#page-case-autoagendamento .auto-decision-line,#page-case-autoagendamento .auto-impact-note{position:relative;max-width:920px;margin:24px 0;padding:18px 22px 18px 25px;border-left:3px solid var(--case-accent);border-radius:0 12px 12px 0;background:rgba(168,65,111,.06)}
+#page-case-autoagendamento .auto-decision-line strong,#page-case-autoagendamento .auto-impact-note strong{display:block;margin-bottom:6px;color:var(--case-accent);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+#page-case-autoagendamento .auto-decision-line p,#page-case-autoagendamento .auto-impact-note p{margin:0;color:var(--case-ink);font-size:14px;line-height:1.6}
 
 /* Voice e Capacidade: corrige o aspecto solto mostrado no print */
 #page-case-voice-cloud .v4-thinking,#page-case-automacao-capacidade .v4-thinking{padding:26px;border:1px solid var(--case-line);border-radius:18px;background:var(--case-soft)}
 #page-case-voice-cloud section[data-case-step="Problema"] .content-grid,
 #page-case-automacao-capacidade section[data-case-step="Problema"] .content-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:981px){
+#page-case-voice-cloud-meu-papel-2>.container.content-grid,
+#page-case-automacao-capacidade-meu-papel-2>.container.content-grid{display:flex!important;gap:24px;align-items:start}
+#page-case-voice-cloud-meu-papel-2>.container.content-grid:before,
+#page-case-automacao-capacidade-meu-papel-2>.container.content-grid:before{flex:0 0 120px}
+#page-case-voice-cloud-meu-papel-2>.container.content-grid>.content-card,
+#page-case-automacao-capacidade-meu-papel-2>.container.content-grid>.content-card{flex:1 1 0;min-width:0}
+}
 #page-case-voice-cloud .voice-demo-shell,#page-case-voice-cloud .voice-app-window,#page-case-voice-cloud .voice-monitor-grid,
 #page-case-voice-cloud .future-concept-grid,#page-case-automacao-capacidade .product-screen-showcase{max-width:100%;min-width:0}
 #page-case-voice-cloud .voice-monitor-grid,#page-case-voice-cloud .future-concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
