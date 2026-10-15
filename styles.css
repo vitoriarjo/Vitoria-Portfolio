@@ -186,6 +186,29 @@ img{
 .insight-article-footer{margin-top:16px;padding-top:32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .insight-article-footer .back{margin-bottom:0}
 @media(max-width:600px){.insight-article-footer{flex-direction:column;align-items:flex-start}}
+/* Recomendações profissionais — depoimentos reais, renderizados a partir
+   do array RECOMMENDATIONS em portfolio.js */
+.reco-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:8px}
+.reco-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 28px 26px;display:flex;flex-direction:column;gap:18px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.reco-card:hover{transform:translateY(-3px);border-color:#e6b6c8;box-shadow:var(--shadow)}
+.reco-quote{position:absolute;top:16px;right:24px;font:800 46px/1 'Plus Jakarta Sans',sans-serif;color:var(--rose);opacity:.14;pointer-events:none}
+.reco-head{display:flex;align-items:center;gap:14px}
+.reco-avatar{flex:0 0 auto;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--rose-soft);color:var(--rose-dark);font:800 15px 'Plus Jakarta Sans',sans-serif;letter-spacing:.02em;overflow:hidden}
+.reco-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.reco-who{display:flex;flex-direction:column;gap:2px;min-width:0}
+.reco-name{font:700 16px 'Plus Jakarta Sans',sans-serif;color:var(--rose-dark)}
+.reco-role{font-size:12.5px;color:var(--muted);line-height:1.4}
+.reco-meta{font-size:11.5px;color:#a78695}
+.reco-text{margin:0;font-size:14px;line-height:1.75;color:var(--ink)}
+.reco-actions{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:auto;padding-top:4px}
+.reco-toggle{background:none;border:0;padding:0;font:700 12.5px Inter,sans-serif;color:var(--rose-dark);cursor:pointer;display:inline-flex;align-items:center;gap:4px}
+.reco-toggle:hover{text-decoration:underline}
+.reco-linkedin{font-size:12.5px;font-weight:700;color:var(--rose);white-space:nowrap}
+.reco-linkedin:hover{text-decoration:underline}
+.reco-all{margin-top:28px;text-align:center}
+.reco-all-link{font-size:13px;font-weight:700;color:var(--rose-dark);border-bottom:1px solid var(--line);padding-bottom:3px}
+.reco-all-link:hover{border-color:var(--rose)}
+@media(max-width:900px){.reco-grid{grid-template-columns:1fr}.reco-quote{font-size:38px;top:14px;right:20px}}
 @media(max-width:640px){.insight-article-content{padding:36px 0 56px}}
 .cov-block{padding:14px 18px;border-radius:14px;background:#fff;border:1px solid rgba(145,35,85,.14);font-size:14px;font-weight:800;color:var(--ink);box-shadow:0 8px 20px rgba(36,30,36,.06)}
 .cov-block.active{background:var(--rose-dark);color:#fff;border-color:var(--rose-dark)}

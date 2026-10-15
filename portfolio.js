@@ -661,3 +661,140 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
   }, {rootMargin:'0px 0px -8% 0px', threshold:0.1});
   pending.forEach(function(el){ io.observe(el); });
 })();
+
+/* Recomendações profissionais — depoimentos reais de LinkedIn.
+   Para adicionar uma nova recomendação, inclua um novo objeto no array
+   RECOMMENDATIONS abaixo. photo: caminho para uma foto própria (ex.:
+   "assets/recomendacoes/nome.jpg"); deixe null para usar o avatar com
+   iniciais. linkedinUrl: ainda sem link direto e verificado para cada
+   recomendação — aponta para o perfil principal até existir um link
+   direto confirmado; basta trocar o valor aqui quando houver um. */
+(function(){
+  var RECOMMENDATIONS = [
+    {
+      id: 'lais-verissimo',
+      name: 'Laís Verissimo',
+      role: 'Product Manager | Onboarding & User Journey | Telecom',
+      company: 'Brisanet Telecomunicações',
+      date: '29/09/2026',
+      initials: 'LV',
+      photo: null,
+      textShort: 'Tenho o prazer de trabalhar com a Vitória no time de Jornada do Cliente e admiro muito a forma como ela atua em Produto. É uma profissional proativa, ágil e responsável, com muita facilidade para conectar diferentes áreas, analisar dados e transformar aprendizados em melhorias.',
+      textFull: 'Tenho o prazer de trabalhar com a Vitória no time de Jornada do Cliente e admiro muito a forma como ela atua em Produto. É uma profissional proativa, ágil e responsável, com muita facilidade para conectar diferentes áreas, analisar dados e transformar aprendizados em melhorias. Além disso, tem uma comunicação leve, é super colaborativa e encara os desafios sempre com pensamento positivo. É uma ótima parceira de trabalho e uma pessoa muito boa de ter por perto no time!',
+      linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/'
+    },
+    {
+      id: 'ney-peres',
+      name: 'Ney Peres',
+      role: 'Senior Product Manager',
+      company: 'Selbetti Tecnologia',
+      date: '04/09/2023',
+      initials: 'NP',
+      photo: null,
+      textShort: 'É um prazer recomendar a Vitória, nossa Agile Master do squad. Ela é uma profissional exemplar, conhecida por sua integridade, responsabilidade e dedicação ao time.',
+      textFull: 'É um prazer recomendar a Vitória, nossa Agile Master do squad. Ela é uma profissional exemplar, conhecida por sua integridade, responsabilidade e dedicação ao time. Sua capacidade de apoio e empatia foram inestimáveis, sempre pronta para ajudar e garantir o sucesso do grupo. Pude contar com ela em todos os momentos e sua influência positiva é evidente em nosso progresso contínuo. Recomendo sem hesitação como uma líder ágil excepcional.',
+      linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/'
+    }
+  ];
+
+  function track(name, params){
+    try{
+      if(typeof window.gtag==='function') window.gtag('event', name, params||{});
+      if(typeof window.plausible==='function') window.plausible(name, params?{props:params}:undefined);
+    }catch(e){}
+  }
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, function(ch){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+    });
+  }
+
+  var grid = document.querySelector('[data-reco-grid]');
+  if(!grid) return;
+
+  RECOMMENDATIONS.forEach(function(reco){
+    var card = document.createElement('article');
+    card.className = 'reco-card';
+
+    var avatarInner = reco.photo
+      ? '<img src="' + escapeHtml(reco.photo) + '" alt="" loading="lazy"/>'
+      : escapeHtml(reco.initials || '');
+
+    var textId = 'reco-text-' + reco.id;
+
+    card.innerHTML =
+      '<span class="reco-quote" aria-hidden="true">“</span>' +
+      '<div class="reco-head">' +
+        '<div class="reco-avatar" aria-hidden="true">' + avatarInner + '</div>' +
+        '<div class="reco-who">' +
+          '<strong class="reco-name">' + escapeHtml(reco.name) + '</strong>' +
+          '<span class="reco-role">' + escapeHtml(reco.role) + '</span>' +
+          '<span class="reco-meta">' + escapeHtml(reco.company) + ' · ' + escapeHtml(reco.date) + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<p class="reco-text" id="' + textId + '"></p>' +
+      '<div class="reco-actions">' +
+        '<button type="button" class="reco-toggle" aria-expanded="false" aria-controls="' + textId + '" data-track="recommendation-expand">Ler recomendação completa</button>' +
+        '<a class="reco-linkedin" href="' + escapeHtml(reco.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" data-track="recommendation-linkedin">Ver recomendação no LinkedIn <span aria-hidden="true">↗</span></a>' +
+      '</div>';
+
+    var textEl = card.querySelector('.reco-text');
+    textEl.textContent = reco.textShort;
+
+    var toggle = card.querySelector('.reco-toggle');
+    var expanded = false;
+    toggle.addEventListener('click', function(){
+      expanded = !expanded;
+      textEl.textContent = expanded ? reco.textFull : reco.textShort;
+      toggle.textContent = expanded ? 'Recolher' : 'Ler recomendação completa';
+      toggle.setAttribute('aria-expanded', String(expanded));
+    });
+
+    grid.appendChild(card);
+  });
+
+  if(typeof IntersectionObserver !== 'undefined'){
+    var section = document.getElementById('recomendacoes');
+    if(section){
+      var seen = false;
+      var sectionObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting && !seen){
+            seen = true;
+            track('recommendation-section-view', {});
+            sectionObserver.disconnect();
+          }
+        });
+      }, {threshold: 0.3});
+      sectionObserver.observe(section);
+    }
+  }
+})();
+
+/* Links opcionais para a publicação no LinkedIn correspondente a cada
+   artigo de Insights. Preencha a URL real da publicação para que o link
+   "Ver publicação no LinkedIn" apareça no rodapé do artigo — deixe a
+   string vazia para não exibir nada. Nunca invente uma URL aqui. */
+(function(){
+  var INSIGHT_LINKEDIN_POSTS = {
+    'page-insight-mvp': '',
+    'page-insight-priorizacao': '',
+    'page-insight-rollout': ''
+  };
+
+  Object.keys(INSIGHT_LINKEDIN_POSTS).forEach(function(pageId){
+    var url = INSIGHT_LINKEDIN_POSTS[pageId];
+    if(!url) return;
+    var footer = document.querySelector('#' + pageId + ' .insight-article-footer');
+    if(!footer || !footer.lastElementChild) return;
+    var link = document.createElement('a');
+    link.className = 'reco-linkedin';
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('data-track', 'insight-linkedin-post');
+    link.textContent = 'Ver publicação no LinkedIn ↗';
+    footer.insertBefore(link, footer.lastElementChild);
+  });
+})();
