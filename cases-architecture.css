@@ -427,6 +427,8 @@
 .story-scope-next .story-scope-items span{background:#f6f0f2}
 .story-scope-next p{font:450 11px/1.6 'Figtree',sans-serif;color:#806572;margin:15px 0 0}
 /* Diagnostic: many signals merge into one synthesis before prioritized output */
+.story-diagnostic>.container{background:#fffafc}
+
 .story-discovery-flow{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr);gap:6px;align-items:center}
 .story-discovery-node{display:flex;flex-direction:column;align-items:flex-start;gap:13px;padding:24px 17px;border-radius:18px;min-height:215px;box-sizing:border-box;background:#f9eef3;border:1px solid #ecd3df}
 .story-discovery-node>span{font:750 10px 'Figtree',sans-serif;letter-spacing:.14em;color:#985674}
