@@ -269,7 +269,7 @@
 .cs-phase{position:relative;display:grid;grid-template-columns:56px 1fr;gap:20px;padding-bottom:32px}
 .cs-phase:last-child{padding-bottom:0}
 .cs-phase:not(:last-child):after{content:'';position:absolute;left:27px;top:56px;bottom:0;width:2px;background:var(--case-line)}
-.cs-phase-num{position:relative;z-index:1;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--case-soft);border:1px solid var(--case-line);color:var(--case-accent);font:800 16px 'Plus Jakarta Sans',sans-serif}
+.cs-phase-num{position:relative;z-index:1;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--case-soft);border:1px solid var(--case-line);color:var(--case-accent);font:800 16px 'Figtree',sans-serif}
 .cs-phase.is-active .cs-phase-num{background:var(--case-accent);color:#fff;border-color:var(--case-accent)}
 .cs-phase-body{background:#fff;border:1px solid var(--case-line);border-radius:18px;padding:22px 24px}
 .cs-phase.is-active .cs-phase-body{border-color:var(--case-accent);box-shadow:0 12px 30px rgba(168,65,111,.12)}
@@ -364,3 +364,13 @@
  .cs-result-arrow{display:none}
  .cs-rollout{gap:14px}
 }
+
+/* V3: mock conceitual da Jornada Web e hierarquia editorial do roadmap */
+#page-case-formalizacao .cs-hero-mock .cs-mock-card{display:flex;flex-direction:column;gap:16px;align-items:stretch}
+#page-case-formalizacao .cs-hero-mock .cs-mock-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#page-case-formalizacao .cs-hero-mock .cs-mock-pill{display:flex;align-items:center;justify-content:center;min-height:45px;padding:10px;text-align:center;font-family:'Figtree',sans-serif;font-size:11px}
+#page-case-formalizacao .cs-hero-mock .cs-mock-stack-label{display:block;text-align:center;line-height:1.5;white-space:normal}
+#page-case-troca-tecnologia .cs-phase-body{transition:border-color .2s ease,box-shadow .2s ease}
+#page-case-troca-tecnologia .cs-phase:not(.is-active) .cs-phase-body{background:#fffafc}
+@media(max-width:560px){#page-case-formalizacao .cs-hero-mock .cs-mock-pills{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){#page-case-troca-tecnologia .cs-phase-body{transition:none}}
