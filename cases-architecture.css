@@ -468,3 +468,17 @@
 @media(max-width:790px){.story-topline{display:block}.story-topline p{margin-top:12px}.story-scope,.story-formal-lanes{grid-template-columns:1fr}.story-discovery-flow{grid-template-columns:1fr;gap:7px}.story-discovery-arrow{transform:rotate(90deg);height:25px}.story-discovery-node{min-height:0}.story-lab-loop{grid-template-columns:repeat(2,minmax(0,1fr))}.story-lab-loop li:nth-child(2):after{display:none}}
 @media(max-width:520px){.case-story-visual{padding:18px 0}.case-story-visual>.container{padding:19px}.story-funnel-bar{padding:14px;flex-direction:column;align-items:flex-start}.story-funnel-bar span{text-align:left}.story-funnel-bar.partial{min-width:0;width:76%}.story-funnel-rate{flex-direction:column;text-align:center;gap:3px}.story-scope-items{grid-template-columns:1fr}.story-lab-loop{grid-template-columns:1fr}.story-lab-loop li:after{display:none!important}#page-case-troca-tecnologia .cs-phase-scope{grid-template-columns:1fr}.story-formal-before>div,.story-formal-after>div{align-items:stretch}}
 @media(prefers-reduced-motion:reduce){.case-story-visual *{animation:none!important;transition:none!important}}
+
+/* Autoagendamento: resultados executivos, sem dashboard operacional */
+#page-case-autoagendamento .case-auto-results-intro{padding:24px 0 5px}
+#page-case-autoagendamento .case-auto-results-intro p{max-width:780px;margin:0;color:#5b4a52;font:500 14px/1.75 'Figtree',sans-serif}
+#page-case-autoagendamento .case-auto-results .section-head{margin-bottom:24px}
+#page-case-autoagendamento .auto-exec-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#page-case-autoagendamento .auto-exec-card{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:clamp(22px,2.8vw,32px);background:#fffdfd;border:1px solid #ebdce4;border-radius:21px}
+#page-case-autoagendamento .auto-exec-card.auto-exec-primary{background:#fff6f8;border-color:#d7abc1}
+#page-case-autoagendamento .auto-exec-icon{display:grid;place-items:center;width:32px;height:32px;background:#f7e9f0;color:#8c315e;border-radius:10px;font:750 17px 'Figtree',sans-serif}
+#page-case-autoagendamento .auto-exec-card strong{font:800 clamp(30px,3.5vw,46px)/1.08 'Figtree',sans-serif;letter-spacing:-.04em;color:#6b2346;margin-top:8px}
+#page-case-autoagendamento .auto-exec-card h3{font:700 16px/1.4 'Figtree',sans-serif;color:#6b2346;margin:0}
+#page-case-autoagendamento .auto-exec-card p{font:450 13px/1.65 'Figtree',sans-serif;color:#5b4a52;margin:0}
+#page-case-autoagendamento .auto-exec-summary{font:450 14px/1.75 'Figtree',sans-serif;color:#5b4a52;max-width:830px;margin:23px 0 0}
+@media(max-width:780px){#page-case-autoagendamento .auto-exec-grid{grid-template-columns:1fr;gap:12px}#page-case-autoagendamento .auto-exec-card{padding:23px}#page-case-autoagendamento .auto-exec-card strong{font-size:38px}}
