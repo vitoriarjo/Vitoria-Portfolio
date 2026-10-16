@@ -694,6 +694,18 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
       textShort: 'É um prazer recomendar a Vitória, nossa Agile Master do squad. Ela é uma profissional exemplar, conhecida por sua integridade, responsabilidade e dedicação ao time.',
       textFull: 'É um prazer recomendar a Vitória, nossa Agile Master do squad. Ela é uma profissional exemplar, conhecida por sua integridade, responsabilidade e dedicação ao time. Sua capacidade de apoio e empatia foram inestimáveis, sempre pronta para ajudar e garantir o sucesso do grupo. Pude contar com ela em todos os momentos e sua influência positiva é evidente em nosso progresso contínuo. Recomendo sem hesitação como uma líder ágil excepcional.',
       linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/'
+    },
+    {
+      id: 'emerson-amancio',
+      name: 'Emerson Amancio',
+      role: 'Analista de Infraestrutura Sênior | Azure Solutions Architect (AZ-305) | AZ-104 | Hybrid Networking | DPO | Security & LGPD',
+      company: 'Fortics Tecnologia',
+      date: '21/05/2025',
+      initials: 'EA',
+      photo: null,
+      textShort: 'Trabalhar com a Vitória foi uma experiência extremamente positiva. Como Product Owner, ela se destaca por sua proatividade, clareza na comunicação e foco em resolver problemas de forma inteligente e eficiente.',
+      textFull: 'Trabalhar com a Vitória foi uma experiência extremamente positiva. Como Product Owner, ela se destaca por sua proatividade, clareza na comunicação e foco em resolver problemas de forma inteligente e eficiente. Vitória tem um olhar apurado para melhorias de processo e não mede esforços para inovar no dia a dia. Além da competência técnica, ela é organizada, responsável e transmite segurança nas decisões, o que a torna uma profissional completa. Mas o que mais encanta é a leveza com que ela conduz tudo isso. Vitória é humilde, divertida e cria um ambiente de trabalho colaborativo e agradável. Sem dúvida, uma daquelas pessoas que a gente tem orgulho de ter no time e com quem eu adoraria trabalhar novamente no futuro.',
+      linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/'
     }
   ];
 
