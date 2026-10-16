@@ -785,6 +785,23 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
   }
 })();
 
+/* Métricas compartilhadas: valores observados, sem reclassificar hipóteses como resultados. */
+(function(){
+  var METRICS = Object.freeze({
+    autoagendamentos: {value:'13.491', label:'Autoagendamentos registrados', period:'ago–29/set/2026', evidence:'observado'},
+    instalacoes: {value:'8.246', label:'Instalações concluídas', period:'ago–29/set/2026', evidence:'observado'},
+    taxaInstalacao: {value:'61,12%', label:'Instalações / autoagendamentos registrados', period:'ago–29/set/2026', evidence:'observado'},
+    primeiraAgenda: {value:'75,58%', label:'Sucesso na primeira agenda — autosserviço', period:'conferir recorte da fonte', evidence:'observado'},
+    agendaAssistida: {value:'78,33%', label:'Sucesso na primeira agenda — fluxo assistido', period:'conferir recorte da fonte', evidence:'observado'}
+  });
+  document.querySelectorAll('[data-portfolio-metric]').forEach(function(el){
+    var entry=METRICS[el.getAttribute('data-portfolio-metric')];
+    if(!entry)return;
+    el.textContent=entry.value;
+    el.setAttribute('title',entry.label+' · '+entry.period+' · '+entry.evidence);
+  });
+})();
+
 /* Links opcionais para a publicação no LinkedIn correspondente a cada
    artigo de Insights. Preencha a URL real da publicação para que o link
    "Ver publicação no LinkedIn" apareça no rodapé do artigo — deixe a
