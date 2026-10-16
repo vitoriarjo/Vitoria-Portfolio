@@ -681,7 +681,7 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
       photo: null,
       textShort: 'Tenho o prazer de trabalhar com a Vitória no time de Jornada do Cliente e admiro muito a forma como ela atua em Produto. É uma profissional proativa, ágil e responsável, com muita facilidade para conectar diferentes áreas, analisar dados e transformar aprendizados em melhorias.',
       textFull: 'Tenho o prazer de trabalhar com a Vitória no time de Jornada do Cliente e admiro muito a forma como ela atua em Produto. É uma profissional proativa, ágil e responsável, com muita facilidade para conectar diferentes áreas, analisar dados e transformar aprendizados em melhorias. Além disso, tem uma comunicação leve, é super colaborativa e encara os desafios sempre com pensamento positivo. É uma ótima parceira de trabalho e uma pessoa muito boa de ter por perto no time!',
-      linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/'
+      linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/details/recommendations/'
     },
     {
       id: 'ney-peres',
@@ -693,7 +693,7 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
       photo: null,
       textShort: 'É um prazer recomendar a Vitória, nossa Agile Master do squad. Ela é uma profissional exemplar, conhecida por sua integridade, responsabilidade e dedicação ao time.',
       textFull: 'É um prazer recomendar a Vitória, nossa Agile Master do squad. Ela é uma profissional exemplar, conhecida por sua integridade, responsabilidade e dedicação ao time. Sua capacidade de apoio e empatia foram inestimáveis, sempre pronta para ajudar e garantir o sucesso do grupo. Pude contar com ela em todos os momentos e sua influência positiva é evidente em nosso progresso contínuo. Recomendo sem hesitação como uma líder ágil excepcional.',
-      linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/'
+      linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/details/recommendations/'
     },
     {
       id: 'emerson-amancio',
@@ -705,7 +705,7 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
       photo: null,
       textShort: 'Trabalhar com a Vitória foi uma experiência extremamente positiva. Como Product Owner, ela se destaca por sua proatividade, clareza na comunicação e foco em resolver problemas de forma inteligente e eficiente.',
       textFull: 'Trabalhar com a Vitória foi uma experiência extremamente positiva. Como Product Owner, ela se destaca por sua proatividade, clareza na comunicação e foco em resolver problemas de forma inteligente e eficiente. Vitória tem um olhar apurado para melhorias de processo e não mede esforços para inovar no dia a dia. Além da competência técnica, ela é organizada, responsável e transmite segurança nas decisões, o que a torna uma profissional completa. Mas o que mais encanta é a leveza com que ela conduz tudo isso. Vitória é humilde, divertida e cria um ambiente de trabalho colaborativo e agradável. Sem dúvida, uma daquelas pessoas que a gente tem orgulho de ter no time e com quem eu adoraria trabalhar novamente no futuro.',
-      linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/'
+      linkedinUrl: 'https://www.linkedin.com/in/vitoriaaraujo-produto/details/recommendations/'
     }
   ];
 
@@ -748,7 +748,7 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
       '<p class="reco-text" id="' + textId + '"></p>' +
       '<div class="reco-actions">' +
         '<button type="button" class="reco-toggle" aria-expanded="false" aria-controls="' + textId + '" aria-label="Ler recomendação completa de ' + escapeHtml(reco.name) + '" data-track="recommendation-expand">Ler recomendação completa</button>' +
-        '<a class="reco-linkedin" href="' + escapeHtml(reco.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="Ver recomendação de ' + escapeHtml(reco.name) + ' no LinkedIn" data-track="recommendation-linkedin">Ver recomendação no LinkedIn <span aria-hidden="true">↗</span></a>' +
+        '<a class="reco-linkedin" href="' + escapeHtml(reco.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="Ver recomendações recebidas por Vitória no LinkedIn, incluindo a de ' + escapeHtml(reco.name) + '" data-track="recommendation-linkedin">Ver recomendações no LinkedIn <span aria-hidden="true">↗</span></a>' +
       '</div>';
 
     var textEl = card.querySelector('.reco-text');
