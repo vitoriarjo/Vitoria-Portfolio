@@ -718,3 +718,16 @@ h1,h2,h3,h4,.brand,.btn{
     line-height:1.05;
   }
 }
+
+/* Insight: o go-live como início da descoberta */
+.cover-pos-go-live{background:linear-gradient(135deg,#fff1f3 0%,#f6e9f1 100%);padding:24px}
+.cov-after-launch{display:flex;align-items:center;gap:14px;width:100%;max-width:300px}
+.cov-launch-milestone{white-space:nowrap;border-radius:13px;background:#6b2346;color:#fff;padding:13px 12px;font:800 12px 'Figtree',sans-serif;letter-spacing:.045em}
+.cov-launch-milestone i{font-style:normal;margin-left:4px;color:#f9d6e4}
+.cov-launch-line{height:2px;background:#a8416f;flex:1;min-width:12px;position:relative}
+.cov-launch-line:after{content:'›';position:absolute;right:-2px;top:-14px;color:#a8416f;font-size:23px}
+.cov-launch-next{display:flex;flex-direction:column;gap:5px}
+.cov-launch-next b{padding:5px 9px;background:#fff;border:1px solid #e7c4d5;border-radius:8px;font:700 10px 'Figtree',sans-serif;color:#6b2346}
+.insight-reflection-list{padding-left:22px;margin:0 0 25px;color:#5b4a52}
+.insight-reflection-list li{font:450 15.5px/1.75 'Figtree',sans-serif;padding-left:4px;margin-bottom:6px}
+@media(max-width:420px){.cov-after-launch{gap:8px}.cov-launch-milestone{font-size:10px;padding:10px 8px}.cov-launch-next b{font-size:9px;padding:5px}}
