@@ -731,3 +731,16 @@ h1,h2,h3,h4,.brand,.btn{
 .insight-reflection-list{padding-left:22px;margin:0 0 25px;color:#5b4a52}
 .insight-reflection-list li{font:450 15.5px/1.75 'Figtree',sans-serif;padding-left:4px;margin-bottom:6px}
 @media(max-width:420px){.cov-after-launch{gap:8px}.cov-launch-milestone{font-size:10px;padding:10px 8px}.cov-launch-next b{font-size:9px;padding:5px}}
+
+/* Shared numeric labels for all case presentations. */
+.case-index{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;flex:0 0 36px;min-width:36px;min-height:28px;padding:5px 7px;white-space:nowrap;word-break:normal;overflow-wrap:normal;font-family:'Figtree',sans-serif;font-size:12px;line-height:1;font-weight:800;letter-spacing:.04em;font-variant-numeric:tabular-nums;color:var(--rose-dark)}
+.case-eyebrow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;min-width:0}
+.case-eyebrow .case-index{position:static;top:auto;right:auto;flex-shrink:0}
+.other-project-grid-v3 a{grid-template-columns:36px 32px minmax(0,1fr) auto}
+.other-project-grid-v3 a>.case-index{width:36px;min-width:36px;align-self:center;justify-self:center}
+.other-project-grid-v3 a>div{min-width:0}
+.portfolio-lab-card>.case-index{min-width:36px;flex-shrink:0;white-space:nowrap}
+.case-page-shell .case-back{display:inline-flex;align-items:center;min-height:44px;margin-bottom:28px;font:700 13px/1.5 'Figtree',sans-serif;text-decoration:none;color:var(--case-accent);white-space:nowrap}
+.case-page-shell .case-back:hover{text-decoration:underline;text-underline-offset:3px}
+.case-page-shell .case-back:focus-visible{outline:3px solid var(--case-accent);outline-offset:3px}
+@media(max-width:600px){.other-project-grid-v3 a{grid-template-columns:36px 32px minmax(0,1fr) auto;gap:8px}.case-eyebrow{row-gap:7px}.case-page-shell .case-back{margin-bottom:22px}}
