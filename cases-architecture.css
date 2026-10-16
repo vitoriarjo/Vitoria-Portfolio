@@ -215,6 +215,26 @@
 .cs-stat span{display:block;margin-top:5px;font-size:10.5px;color:var(--case-muted);line-height:1.4}
 .cs-stat-note{margin-top:16px;padding-top:16px;border-top:1px solid var(--case-line);font-size:12.5px;color:var(--case-text);line-height:1.5;display:flex;align-items:flex-start;gap:10px}
 .cs-stat-note svg{width:16px;height:16px;color:var(--case-accent);flex:0 0 auto;margin-top:2px}
+.cs-hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.cs-hero-tag{padding:6px 11px;border-radius:999px;border:1px solid var(--case-line);background:#fff;font-size:11px;font-weight:700;color:var(--case-text)}
+.cs-hero-visual{display:flex;flex-direction:column;gap:20px}
+.cs-hero-mock{position:relative;display:flex;align-items:center;justify-content:center;min-height:240px;padding:12px}
+.cs-mock-blob{position:absolute;inset:-10px;background:radial-gradient(ellipse at 28% 22%,rgba(168,65,111,.16),transparent 60%),radial-gradient(ellipse at 76% 82%,rgba(107,35,70,.13),transparent 55%);border-radius:48% 52% 60% 40%/50% 45% 55% 50%}
+.cs-mock-device{position:relative;z-index:1;width:184px;border-radius:28px;background:#fff;border:1px solid var(--case-line);box-shadow:0 24px 48px rgba(91,45,65,.16);padding:14px}
+.cs-mock-notch{width:40px;height:5px;border-radius:999px;background:var(--case-line);margin:0 auto 14px}
+.cs-mock-screen{display:flex;flex-direction:column;gap:10px}
+.cs-mock-app-label{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--case-accent)}
+.cs-mock-calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cs-mock-calendar span{aspect-ratio:1;border-radius:5px;background:var(--case-soft)}
+.cs-mock-calendar span.is-selected{background:var(--case-accent)}
+.cs-mock-slots{display:flex;gap:6px;flex-wrap:wrap}
+.cs-mock-slots span{padding:5px 9px;border-radius:999px;background:var(--case-soft);font-size:9.5px;font-weight:700;color:var(--case-text)}
+.cs-mock-slots span.is-selected{background:var(--case-accent);color:#fff}
+.cs-mock-cta{margin-top:2px;padding:9px;border-radius:12px;background:var(--case-ink);color:#fff;font-size:10.5px;font-weight:800;text-align:center}
+.cs-mock-chip{position:absolute;display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--case-line);box-shadow:0 10px 24px rgba(91,45,65,.12);font-size:10.5px;font-weight:700;color:var(--case-ink);z-index:2}
+.cs-mock-chip svg{width:13px;height:13px;color:var(--case-accent);flex:0 0 auto}
+.cs-mock-chip.is-check{top:14px;right:4px}
+.cs-mock-chip.is-self{bottom:10px;left:-4px}
 .cs-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
 .cs-trio-4{grid-template-columns:repeat(2,minmax(0,1fr))}
 .cs-trio-item.cs-trio-impact{padding:18px 20px;border-radius:16px;background:var(--case-soft);border:1px solid var(--case-line)}
@@ -273,6 +293,9 @@
  .cs-before-after{grid-template-columns:1fr}
 }
 @media(max-width:600px){
+ .cs-hero-mock{min-height:210px;padding:20px 16px}
+ .cs-mock-chip.is-self{left:2px}
+ .cs-mock-chip.is-check{right:0}
  .cs-stat-row{flex-direction:column;gap:10px}
  .cs-results{flex-direction:column;align-items:stretch;gap:12px}
  .cs-result-arrow{display:none}
