@@ -747,8 +747,8 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
       '</div>' +
       '<p class="reco-text" id="' + textId + '"></p>' +
       '<div class="reco-actions">' +
-        '<button type="button" class="reco-toggle" aria-expanded="false" aria-controls="' + textId + '" data-track="recommendation-expand">Ler recomendação completa</button>' +
-        '<a class="reco-linkedin" href="' + escapeHtml(reco.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" data-track="recommendation-linkedin">Ver recomendação no LinkedIn <span aria-hidden="true">↗</span></a>' +
+        '<button type="button" class="reco-toggle" aria-expanded="false" aria-controls="' + textId + '" aria-label="Ler recomendação completa de ' + escapeHtml(reco.name) + '" data-track="recommendation-expand">Ler recomendação completa</button>' +
+        '<a class="reco-linkedin" href="' + escapeHtml(reco.linkedinUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="Ver recomendação de ' + escapeHtml(reco.name) + ' no LinkedIn" data-track="recommendation-linkedin">Ver recomendação no LinkedIn <span aria-hidden="true">↗</span></a>' +
       '</div>';
 
     var textEl = card.querySelector('.reco-text');
@@ -761,6 +761,7 @@ if(c[1]){c[1].querySelectorAll('.ap-date').forEach(function(x){x.onclick=functio
       textEl.textContent = expanded ? reco.textFull : reco.textShort;
       toggle.textContent = expanded ? 'Recolher' : 'Ler recomendação completa';
       toggle.setAttribute('aria-expanded', String(expanded));
+      toggle.setAttribute('aria-label', (expanded ? 'Recolher recomendação de ' : 'Ler recomendação completa de ') + reco.name);
     });
 
     grid.appendChild(card);
