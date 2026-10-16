@@ -756,7 +756,7 @@ h1,.hero-copy-v3 h1{letter-spacing:-.045em}h2,.section-head h2{letter-spacing:-.
 .hero-badges span,.cs-hero-tag,.other-project-badge,.chip,.cs-badge{border-radius:999px}
 .case-index{font-family:var(--display);color:var(--brand-wine)}
 .brand-mark{display:inline-flex;align-items:center;justify-content:center;color:var(--brand-raspberry)}
-.brand-mark svg{width:26px;height:22px;display:block;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.brand-mark svg{width:28px;height:26px;display:block;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
 .hero-v3{background-color:var(--brand-blush);background-image:radial-gradient(circle,rgba(168,57,106,.12) 1px,transparent 1.3px);background-size:25px 25px;background-position:right 14px top 12px}
 .hero-copy-v3{background:var(--brand-blush);border-radius:12px}
 .hero-highlight{color:var(--brand-raspberry);text-decoration-color:var(--brand-rose-light)}
