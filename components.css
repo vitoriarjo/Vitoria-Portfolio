@@ -765,7 +765,7 @@ body>.voice-drawer.open>aside{transform:translateX(0)!important}
 /* V35 — correção de grids quebrados após padronização */
 [id^="page-case-"] .case-summary .metrics{
   display:grid!important;
-  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
   align-items:stretch!important;
 }
 [id^="page-case-"] .case-summary .metric{
