@@ -489,3 +489,7 @@
 .case-page-shell .cs-insight p,.case-page-shell .cs-insight-sub{max-width:75ch}
 @media(max-width:680px){.case-page-shell .cs-case-nav{gap:18px}.case-page-shell .cs-case-nav-link{max-width:45%;min-height:44px}.case-page-shell .cs-case-nav-link .cs-case-nav-name{overflow-wrap:anywhere}.case-page-shell .case-hero h1{overflow-wrap:break-word}}
 @media(prefers-reduced-motion:reduce){.case-page-shell *, .case-card-v4{scroll-behavior:auto;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Case de efetivação: dois indicadores executivos, adaptáveis ao mobile. */
+.case-page-shell .formalization-results-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:680px){.case-page-shell .formalization-results-grid{grid-template-columns:minmax(0,1fr)}}
