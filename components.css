@@ -708,7 +708,7 @@ body>.voice-drawer.open>aside{transform:translateX(0)!important}
 /* V34 — ritmo vertical consistente entre todos os cases */
 [id^="page-case-"]{--case-space-xl:44px;--case-space-lg:64px;--case-space-md:20px;--case-space-sm:20px}
 [id^="page-case-"] .case-hero{padding:44px 0 52px!important}
-[id^="page-case-"] .case-hero .back{display:inline-flex;margin-bottom:28px}
+[id^="page-case-"] .case-hero .back{display:inline-flex}
 [id^="page-case-"] .case-status-row{margin:14px 0 22px!important}
 [id^="page-case-"] .case-summary{margin-top:42px!important}
 [id^="page-case-"] .case-summary .metrics{margin-top:28px!important}
@@ -747,7 +747,7 @@ body>.voice-drawer.open>aside{transform:translateX(0)!important}
 @media(max-width:760px){
   [id^="page-case-"]{--case-space-xl:36px;--case-space-lg:44px;--case-space-md:16px;--case-space-sm:16px}
   [id^="page-case-"] .case-hero{padding:32px 0 40px!important}
-  [id^="page-case-"] .case-hero .back{margin-bottom:22px}
+  
   [id^="page-case-"] .case-status-row{margin:12px 0 18px!important}
   [id^="page-case-"] .case-summary{margin-top:30px!important}
   [id^="page-case-"]>section:not(.case-hero){padding-top:var(--case-space-xl)!important;padding-bottom:var(--case-space-xl)!important}
