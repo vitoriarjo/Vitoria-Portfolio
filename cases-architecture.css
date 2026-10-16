@@ -481,3 +481,11 @@
 #page-case-autoagendamento .auto-exec-card p{font:450 13px/1.65 'Figtree',sans-serif;color:#5b4a52;margin:0}
 #page-case-autoagendamento .auto-exec-summary{font:450 14px/1.75 'Figtree',sans-serif;color:#5b4a52;max-width:830px;margin:23px 0 0}
 @media(max-width:780px){#page-case-autoagendamento .auto-exec-grid{grid-template-columns:1fr;gap:12px}#page-case-autoagendamento .auto-exec-card{padding:23px}#page-case-autoagendamento .auto-exec-card strong{font-size:38px}}
+
+/* Portfolio case consistency / accessibility, October 2026 */
+.case-page-shell a:focus-visible,.case-page-shell button:focus-visible,.case-card-v4:focus-visible,.other-project-grid-v3 a:focus-visible,.cs-case-nav-link:focus-visible{outline:3px solid #a8416f;outline-offset:4px;border-radius:6px}
+.case-page-shell .back{display:inline-flex;align-items:center;min-height:40px;gap:8px;font-size:13px;font-weight:700;line-height:1.5;text-decoration:none}
+.case-page-shell .cs-case-nav-name{font-size:14.5px;font-weight:700}
+.case-page-shell .cs-insight p,.case-page-shell .cs-insight-sub{max-width:75ch}
+@media(max-width:680px){.case-page-shell .cs-case-nav{gap:18px}.case-page-shell .cs-case-nav-link{max-width:45%;min-height:44px}.case-page-shell .cs-case-nav-link .cs-case-nav-name{overflow-wrap:anywhere}.case-page-shell .case-hero h1{overflow-wrap:break-word}}
+@media(prefers-reduced-motion:reduce){.case-page-shell *, .case-card-v4{scroll-behavior:auto;animation-duration:.01ms!important;transition-duration:.01ms!important}}
