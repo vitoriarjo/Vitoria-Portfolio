@@ -20,5 +20,30 @@
 <section class="soft"><div class="wrap"><span class="eyebrow">07 · Reflexão</span><h2>Definir MVP também é decidir o que preservar.</h2><p class="quote">“Participar da concepção reforçou minha visão de que um MVP não se resume a escolher o que construir primeiro: também exige entender o que não pode deixar de funcionar e como preparar o caminho para evoluir.”</p></div></section>
 <section class="case-nav-section"><div class="wrap"><div class="cs-case-nav"><a class="cs-case-nav-link is-prev" data-track="ver-case-portfolio-product" data-case-type="lab" href="index.html#case-portfolio-product"><span class="cs-case-nav-label">← Case anterior</span><span class="cs-case-nav-name">Portfolio as a Product</span></a><a class="cs-case-nav-link is-next" data-track="ver-case-autoagendamento" data-case-type="principal" href="index.html#case-autoagendamento"><span class="cs-case-nav-label">Próximo case →</span><span class="cs-case-nav-name">Autoagendamento</span></a></div></div></section>
 </main><footer class="footer"><div class="wrap">© 2026 Vitória Araújo · <a href="index.html#cases">Explorar outros cases →</a></div></footer>
-<script>const tabs=document.querySelectorAll('[role="tab"]');tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>{const active=t===tab;t.setAttribute('aria-selected',String(active));document.getElementById(t.getAttribute('aria-controls')).hidden=!active;});}));</script>
+<script>
+(function(){
+ const tabs=Array.from(document.querySelectorAll('[role="tab"]'));
+ function activate(tab,focus){
+  tabs.forEach(function(t){
+   const selected=t===tab;
+   t.setAttribute('aria-selected',String(selected));
+   t.tabIndex=selected?0:-1;
+   document.getElementById(t.getAttribute('aria-controls')).hidden=!selected;
+  });
+  if(focus)tab.focus();
+ }
+ tabs.forEach(function(tab,index){
+  tab.addEventListener('click',function(){activate(tab,false);});
+  tab.addEventListener('keydown',function(e){
+   let target=null;
+   if(e.key==='ArrowRight')target=tabs[(index+1)%tabs.length];
+   else if(e.key==='ArrowLeft')target=tabs[(index-1+tabs.length)%tabs.length];
+   else if(e.key==='Home')target=tabs[0];
+   else if(e.key==='End')target=tabs[tabs.length-1];
+   if(target){e.preventDefault();activate(target,true);}
+  });
+ });
+ if(tabs.length)activate(tabs[0],false);
+})();
+</script>
 <script>(function(){try{var p=new URLSearchParams(location.search);if(p.get("internal")==="1")localStorage.setItem("portfolio_internal","1");if(p.get("internal")==="0")localStorage.removeItem("portfolio_internal");if(localStorage.getItem("portfolio_internal")==="1")return;}catch(e){}(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","ymvuvgg1zd");})();</script><script src="analytics.js" defer></script></body></html>
