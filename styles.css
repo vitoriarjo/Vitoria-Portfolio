@@ -664,7 +664,7 @@ h1,h2,h3,h4,.brand,.btn{
 
 /* ---- legacy head block 17 ---- */
 .other-project-badge.is-lab{background:#f6edf8;color:#7b3f86;border:1px solid rgba(123,63,134,.14)}
-.portfolio-lab-card{grid-column:span 1!important;grid-template-columns:26px minmax(0,1fr) auto!important;padding:16px!important;background:linear-gradient(135deg,#fff 0%,#fff8fb 58%,var(--rose-soft) 100%)!important;border-color:rgba(145,35,85,.18)!important}
+.portfolio-lab-card{grid-column:span 1!important;grid-template-columns:36px minmax(0,1fr) auto!important;padding:16px!important;background:linear-gradient(135deg,#fff 0%,#fff8fb 58%,var(--rose-soft) 100%)!important;border-color:rgba(145,35,85,.18)!important}
 .portfolio-lab-card:hover{border-color:rgba(145,35,85,.32)!important;box-shadow:0 16px 36px rgba(91,31,61,.08)}
 .portfolio-lab-cover{display:none}
 .portfolio-lab-cover i{display:block;width:9px;border-radius:999px 999px 3px 3px;background:var(--rose-soft);border:1px solid rgba(145,35,85,.12)}
@@ -697,7 +697,7 @@ h1,h2,h3,h4,.brand,.btn{
   .portfolio-lab-funnel span:last-child{grid-column:1/-1}
 }
 @media(max-width:760px){
-  .portfolio-lab-card{grid-column:1/-1!important;grid-template-columns:28px minmax(0,1fr) auto!important}
+  .portfolio-lab-card{grid-column:1/-1!important;grid-template-columns:36px minmax(0,1fr) auto!important}
   .portfolio-lab-cover{width:58px;height:52px;padding:10px 8px;gap:4px}
   .portfolio-lab-cycle,.portfolio-lab-funnel,.portfolio-lab-questions{grid-template-columns:1fr}
   .portfolio-lab-step:not(:last-child):after{content:'↓';right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%)}
@@ -708,7 +708,7 @@ h1,h2,h3,h4,.brand,.btn{
 /* ---- portfolio foundation refinements ---- */
 @media (max-width:520px){
   .portfolio-lab-card{
-    grid-template-columns:28px minmax(0,1fr) auto!important;
+    grid-template-columns:36px minmax(0,1fr) auto!important;
     gap:10px!important;
     padding:15px 16px!important;
   }
