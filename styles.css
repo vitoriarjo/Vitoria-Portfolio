@@ -531,7 +531,7 @@ h1,h2,h3,h4,.brand,.btn{
   font-weight:800!important;
   letter-spacing:-.02em!important;
 }
-.brand-mark{width:31px!important;height:31px!important}
+.brand-mark{width:40px;height:36px}
 .navlinks{
   color:#5f4d57!important;
   font-size:14px!important;
@@ -755,8 +755,8 @@ h1,.hero-copy-v3 h1{letter-spacing:-.045em}h2,.section-head h2{letter-spacing:-.
 .btn.secondary{background:transparent;color:var(--brand-wine);border-color:var(--brand-rose-light)}
 .hero-badges span,.cs-hero-tag,.other-project-badge,.chip,.cs-badge{border-radius:999px}
 .case-index{font-family:var(--display);color:var(--brand-wine)}
-.brand-mark{display:inline-flex;align-items:center;justify-content:center;color:var(--brand-raspberry)}
-.brand-mark svg{width:28px;height:26px;display:block;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.brand-mark{display:inline-flex;align-items:center;justify-content:center;width:40px;height:36px;padding:0;flex:0 0 40px;background:transparent;box-shadow:none;color:var(--brand-raspberry)}
+.brand-mark svg{width:36px;height:32px;display:block;flex:none;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
 .hero-v3{background-color:var(--brand-blush);background-image:radial-gradient(circle,rgba(168,57,106,.12) 1px,transparent 1.3px);background-size:25px 25px;background-position:right 14px top 12px}
 .hero-copy-v3{background:var(--brand-blush);border-radius:12px}
 .hero-highlight{color:var(--brand-raspberry);text-decoration-color:var(--brand-rose-light)}
