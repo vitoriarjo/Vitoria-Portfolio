@@ -736,7 +736,7 @@ h1,h2,h3,h4,.brand,.btn{
 .cov-launch-milestone{white-space:nowrap;border-radius:13px;background:#5A1F3C;color:#fff;padding:13px 12px;font:800 12px 'Plus Jakarta Sans',sans-serif;letter-spacing:.045em}
 .cov-launch-milestone i{font-style:normal;margin-left:4px;color:#f9d6e4}
 .cov-launch-line{height:2px;background:#A8396A;flex:1;min-width:12px;position:relative}
-.cov-launch-line:after{content:'›';position:absolute;right:-2px;top:-14px;color:#A8396A;font-size:23px}
+.cov-launch-line:after{content:'';position:absolute;right:0;top:50%;width:10px;height:10px;border-top:2px solid #A8396A;border-right:2px solid #A8396A;transform:translateY(-50%) rotate(45deg);transform-origin:center;box-sizing:border-box}
 .cov-launch-next{display:flex;flex-direction:column;gap:5px}
 .cov-launch-next b{padding:5px 9px;background:#fff;border:1px solid #e7c4d5;border-radius:8px;font:700 10px 'Plus Jakarta Sans',sans-serif;color:#5A1F3C}
 .insight-reflection-list{padding-left:22px;margin:0 0 25px;color:#6B5560}
