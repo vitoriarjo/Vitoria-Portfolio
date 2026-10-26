@@ -85,3 +85,5 @@
 /* Square portrait, preserving the original photo. */
 #page-home .hero-portrait-editorial img{aspect-ratio:1/1!important;object-fit:cover!important;object-position:50% 25%!important;height:auto!important}
 #page-home .hero-portrait-editorial{max-width:380px}
+
+#page-home .hero-portrait-editorial{aspect-ratio:1/1!important;align-self:center}
