@@ -76,3 +76,8 @@
 .compact-case-action>span{margin-left:4px}
 @media(max-width:1000px){.compact-case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.additional-cases-heading{display:block}.additional-cases-heading>p{margin-top:8px}}
 @media(max-width:600px){.compact-case-grid{grid-template-columns:minmax(0,1fr)}.additional-cases{margin-top:28px;padding-top:26px}.compact-case-card{padding:20px}}
+
+/* Experience timeline: contain the stem and separate only the text column. */
+#experiencia .experience-item{border-bottom:0}
+#experiencia .experience-item:not(:last-child) .experience-body{border-bottom:1px solid var(--line,#eadbe2);padding-bottom:24px}
+#experiencia .experience-marker::after{left:50%;transform:translateX(-50%);bottom:24px}
