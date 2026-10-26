@@ -51,3 +51,8 @@
  #page-home section:not(.hero-v3){padding:42px 0}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}}
+/* Keep the unification diagram readable in a three-column card. */
+#cases a[href="case-novo-brisacliente.html"] .case-cover>div{gap:6px!important;width:100%}
+#cases a[href="case-novo-brisacliente.html"] .case-cover>div>div{padding:16px 8px!important;font-size:12px!important;min-width:0;flex-shrink:1}
+#cases a[href="case-novo-brisacliente.html"] .case-cover>div>div:nth-child(2),
+#cases a[href="case-novo-brisacliente.html"] .case-cover>div>div:nth-child(4){padding:0!important;font-size:18px!important}
