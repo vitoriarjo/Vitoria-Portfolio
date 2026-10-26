@@ -57,3 +57,22 @@
 #cases a[href="case-novo-brisacliente.html"] .case-cover>div>div:nth-child(2),
 #cases a[href="case-novo-brisacliente.html"] .case-cover>div>div:nth-child(4){padding:0!important;font-size:18px!important}
 .decision-evidence>.container{width:min(1120px,calc(100% - 40px));margin-inline:auto;box-sizing:border-box}
+
+/* Secondary projects remain visible and easy to scan. */
+.additional-cases{margin-top:40px;padding-top:32px;border-top:1px solid var(--line,#eadbe2)}
+.additional-cases-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:20px}
+.additional-cases-heading h3{font-size:24px;line-height:1.3;margin:0;color:var(--rose-dark,#5A1F3C);letter-spacing:-.03em}
+.additional-cases-heading>p{font-size:13px;margin:0;color:var(--muted,#6B5560)}
+.compact-case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.compact-case-card{display:flex;flex-direction:column;min-width:0;padding:23px;border:1px solid var(--line,#eadbe2);border-radius:16px;background:#fff;text-decoration:none;color:inherit;transition:border-color .18s,box-shadow .18s}
+.compact-case-card:hover{border-color:var(--rose,#A8396A);box-shadow:0 8px 24px rgba(90,31,60,.07)}
+.compact-case-card:focus-visible{outline:3px solid var(--rose,#A8396A);outline-offset:4px}
+.compact-case-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.compact-case-meta .case-index{padding:0;justify-content:flex-start;min-height:20px;font-size:11px}
+.compact-case-kind{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rose,#A8396A)}
+.compact-case-card h4{font-size:18px;line-height:1.35;letter-spacing:-.02em;color:var(--rose-dark,#5A1F3C);margin:0 0 10px}
+.compact-case-card>p{font-size:13px!important;line-height:1.65;margin:0 0 20px;color:var(--muted,#6B5560)}
+.compact-case-action{margin-top:auto;font-size:12px;font-weight:700;color:var(--rose-dark,#5A1F3C)}
+.compact-case-action>span{margin-left:4px}
+@media(max-width:1000px){.compact-case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.additional-cases-heading{display:block}.additional-cases-heading>p{margin-top:8px}}
+@media(max-width:600px){.compact-case-grid{grid-template-columns:minmax(0,1fr)}.additional-cases{margin-top:28px;padding-top:26px}.compact-case-card{padding:20px}}
