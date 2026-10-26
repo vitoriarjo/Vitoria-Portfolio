@@ -81,3 +81,7 @@
 #experiencia .experience-item{border-bottom:0}
 #experiencia .experience-item:not(:last-child) .experience-body{border-bottom:1px solid var(--line,#eadbe2);padding-bottom:24px}
 #experiencia .experience-marker::after{left:50%;transform:translateX(-50%);bottom:24px}
+
+/* Square portrait, preserving the original photo. */
+#page-home .hero-portrait-editorial img{aspect-ratio:1/1!important;object-fit:cover!important;object-position:50% 25%!important;height:auto!important}
+#page-home .hero-portrait-editorial{max-width:380px}
