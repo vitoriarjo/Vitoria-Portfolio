@@ -9,7 +9,7 @@
 #cases .case-curation-copy strong{color:#57243d;font-size:14px;font-weight:800}
 #cases .case-curation-copy span{color:#806874;font-size:12px;line-height:1.5}
 #cases .case-curation-controls{display:flex;gap:8px;flex-wrap:wrap}
-#cases .case-curation-filter{font:700 11px/1.4 inherit;font-family:inherit;cursor:pointer;border:1px solid #e5cbd7;border-radius:999px;background:#fff;color:#683049;padding:10px 13px;min-height:41px;transition:background .15s,color .15s,border-color .15s}
+#cases .case-curation-filter{font-size:11px;line-height:1.4;font-weight:700;font-family:inherit;cursor:pointer;border:1px solid #e5cbd7;border-radius:999px;background:#fff;color:#683049;padding:10px 13px;min-height:41px;transition:background .15s,color .15s,border-color .15s}
 #cases .case-curation-filter:hover{border-color:#A8396A}
 #cases .case-curation-filter.is-active{background:#5A1F3C;color:#fff;border-color:#5A1F3C}
 #cases .case-curation-filter:focus-visible{outline:3px solid #A8396A;outline-offset:3px}
