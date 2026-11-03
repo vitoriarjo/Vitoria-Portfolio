@@ -1,0 +1,26 @@
+/* Revisão editorial: preserva a identidade vinho/rosa e componentes existentes. */
+#page-home .hero-copy-v3 h1{max-width:820px;text-wrap:balance}
+#page-home .hero-copy-v3 .lead{max-width:700px}
+#impacto .impact-grid-curated .impact-card-v3{position:relative}
+#impacto .impact-grid-curated .impact-kind{display:block;margin:0 0 12px;color:#A8396A;font-size:10px;font-weight:800;line-height:1.5;letter-spacing:.115em;text-transform:uppercase}
+#impacto .impact-grid-curated .impact-card-v3 h3{margin-top:6px}
+#cases .case-curation{border:1px solid #eadde3;border-radius:19px;background:#fff9fb;padding:22px 24px;margin:4px 0 26px;display:flex;gap:12px 24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#cases .case-curation-copy{display:flex;flex-direction:column;gap:3px;max-width:300px}
+#cases .case-curation-copy strong{color:#57243d;font-size:14px;font-weight:800}
+#cases .case-curation-copy span{color:#806874;font-size:12px;line-height:1.5}
+#cases .case-curation-controls{display:flex;gap:8px;flex-wrap:wrap}
+#cases .case-curation-filter{font:700 11px/1.4 inherit;font-family:inherit;cursor:pointer;border:1px solid #e5cbd7;border-radius:999px;background:#fff;color:#683049;padding:10px 13px;min-height:41px;transition:background .15s,color .15s,border-color .15s}
+#cases .case-curation-filter:hover{border-color:#A8396A}
+#cases .case-curation-filter.is-active{background:#5A1F3C;color:#fff;border-color:#5A1F3C}
+#cases .case-curation-filter:focus-visible{outline:3px solid #A8396A;outline-offset:3px}
+#cases .case-curation-status{flex:1 0 100%;margin:1px 0 0;color:#876e79;font-size:11px}
+#cases [data-case-focus][hidden]{display:none!important}
+#cases .additional-cases[hidden]{display:none!important}
+#cases .cases-v3[hidden]{display:none!important}
+@media(max-width:700px){
+ #cases .case-curation{padding:18px 15px;align-items:stretch}
+ #cases .case-curation-copy{max-width:none}
+ #cases .case-curation-controls{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:7px}
+ #cases .case-curation-filter{font-size:11px;padding:10px 8px;min-width:0}
+ #impacto .impact-grid-curated .impact-kind{margin-bottom:7px}
+}
