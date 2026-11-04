@@ -1,0 +1,35 @@
+/* Sprint 02 — Tipos de evidência e notas metodológicas.
+   Não altera a identidade visual existente. */
+#page-home .evidence-legend{
+  margin:18px 0 0;
+  max-width:940px;
+  padding:13px 17px;
+  border-left:3px solid #A8396A;
+  border-radius:0 12px 12px 0;
+  background:#FFF8FB;
+  color:#785E6B;
+  font-size:12px;
+  line-height:1.7
+}
+#page-home .evidence-legend strong{color:#5A1F3C}
+.case-page-shell .evidence-type{
+  display:block;
+  margin-bottom:9px;
+  font-size:10px;
+  line-height:1.45;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:#A8396A
+}
+.case-page-shell .evidence-note{
+  margin:14px 0 0;
+  font-size:12px;
+  line-height:1.75;
+  max-width:790px;
+  color:#785E6B
+}
+@media(max-width:700px){
+  #page-home .evidence-legend{font-size:11.5px;padding:12px 13px}
+  .case-page-shell .evidence-type{font-size:9px}
+}
