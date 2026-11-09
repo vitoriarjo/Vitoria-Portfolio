@@ -34,6 +34,7 @@
 
   function currentRoute() {
     if (/\/case-novo-brisacliente\.html$/i.test(window.location.pathname)) return 'case-novo-brisacliente';
+    if (/\/cases\/governanca-backlog\/(?:index\.html)?$/i.test(window.location.pathname)) return 'case-governanca-backlog';
     return (window.location.hash || '#home').replace(/^#/, '') || 'home';
   }
 
@@ -56,6 +57,7 @@
     var href = el.getAttribute('href') || '';
 
     if (action.indexOf('ver-case-') === 0) return 'case_opened';
+    if (action.indexOf('filtrar-cases-') === 0) return 'case_filter_selected';
     if (action.indexOf('ler-artigo-') === 0) return 'insight_opened';
     if (action === 'baixar-cv' || /\.pdf(?:$|[?#])/i.test(href)) return 'cv_clicked';
     if (action === 'linkedin' || /linkedin\.com/i.test(href)) return 'linkedin_clicked';
@@ -80,6 +82,9 @@
     if (action && action.indexOf('ver-case-') === 0) {
       props.case_slug = action.replace('ver-case-', '');
       props.case_type = el.getAttribute('data-case-type') || 'unknown';
+    }
+    if (action && action.indexOf('filtrar-cases-') === 0) {
+      props.case_filter = el.getAttribute('data-case-filter') || 'unknown';
     }
     if (action && action.indexOf('ler-artigo-') === 0) {
       props.insight_slug = action.replace('ler-artigo-', '');
