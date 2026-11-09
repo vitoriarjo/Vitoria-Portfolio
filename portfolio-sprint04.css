@@ -1,0 +1,8 @@
+/* Sprint 04 — alinhado à identidade atual do portfólio */
+.case-page-shell .portfolio-measurement-panel{background:#fff;border-color:#eadde3}
+.case-page-shell .portfolio-measurement-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0}
+.case-page-shell .portfolio-measurement-grid article{border:1px solid #eedde5;border-radius:12px;background:#fff9fb;padding:20px}
+.case-page-shell .portfolio-measurement-grid h3{font-size:15px;color:#5A1F3C;margin:0 0 12px}
+.case-page-shell .portfolio-measurement-grid p{font-size:12.5px;line-height:1.75;margin:10px 0;color:#725c68}
+.case-page-shell .portfolio-measurement-grid p strong{color:#5A1F3C}
+@media(max-width:800px){.case-page-shell .portfolio-measurement-grid{grid-template-columns:1fr}.case-page-shell .portfolio-measurement-grid article{padding:17px}}
