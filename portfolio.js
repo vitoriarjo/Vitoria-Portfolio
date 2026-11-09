@@ -37,7 +37,7 @@
 
   function showHome(anchor, updateTitle=true){
     setActiveView(home);
-    if (updateTitle) document.title = 'Vitória Araújo — Product Manager · Jornada, Growth e Product Ops';
+    if (updateTitle) document.title = 'Vitória Araújo — Senior Product Owner · Estratégia de Produto e Product Operations';
     requestAnimationFrame(() => {
       if (anchor) {
         const el = document.getElementById(anchor);
@@ -58,7 +58,7 @@
     }
     setActiveView(view);
     const h1 = view.querySelector('h1');
-    document.title = h1 ? h1.textContent.trim() + ' — Vitória Araújo' : 'Vitória Araújo — Product Manager · Jornada, Growth e Product Ops';
+    document.title = h1 ? h1.textContent.trim() + ' — Vitória Araújo' : 'Vitória Araújo — Senior Product Owner · Estratégia de Produto e Product Operations';
     window.scrollTo({top:0, behavior:'auto'});
     return true;
   }
@@ -72,7 +72,7 @@
 
     setActiveView(caseView);
     const h1 = caseView.querySelector('h1');
-    document.title = h1 ? h1.textContent.trim() + ' — Vitória Araújo' : 'Vitória Araújo — Product Manager · Jornada, Growth e Product Ops';
+    document.title = h1 ? h1.textContent.trim() + ' — Vitória Araújo' : 'Vitória Araújo — Senior Product Owner · Estratégia de Produto e Product Operations';
 
     requestAnimationFrame(() => {
       target.scrollIntoView({behavior:'smooth', block:'start'});
