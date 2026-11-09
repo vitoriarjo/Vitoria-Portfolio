@@ -1,54 +1,95 @@
-/* Sprint 03 — melhoria progressiva de acesso por teclado e menu mobile */
-(function(){
+/* Navegação acessível: complemento progressivo ao roteador de portfolio.js. */
+(function () {
   'use strict';
-  const menu=document.getElementById('mobile-nav');
-  const skip=document.getElementById('skip-content');
-  const views=[...document.querySelectorAll('.single-page-view')];
-  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-  const activeView=()=>document.querySelector('.single-page-view.active');
-  let scheduled=0;
-  function closeMenu(){if(menu)menu.open=false;}
-  function focusCurrentView(){
-    const v=activeView();
-    if(!v)return;
-    const title=v.querySelector('h1')||v;
-    if(!title.hasAttribute('tabindex')) title.setAttribute('tabindex','-1');
-    title.focus({preventScroll:true});
+
+  const menu = document.getElementById('mobile-nav');
+  const skipLink = document.getElementById('skip-content');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const HOME_ANCHORS = new Set(['sobre', 'cases', 'experiencia', 'recomendacoes', 'insights']);
+  let focusFrame = 0;
+
+  function closeMenu() {
+    if (menu) menu.open = false;
   }
-  function queueFocus(){
-    cancelAnimationFrame(scheduled);
-    scheduled=requestAnimationFrame(()=>{scheduled=requestAnimationFrame(focusCurrentView);});
+
+  function activeView() {
+    return document.querySelector('.single-page-view.active');
   }
-  // Only take focus after explicit keyboard / pointer navigation, not initial load.
-  document.addEventListener('click',function(e){
-    const link=e.target.closest('a');
-    if(!link)return;
-    if(menu&&menu.contains(link))closeMenu();
-    const href=link.getAttribute('href')||'';
-    if(link===skip){
-      e.preventDefault();
-      const home=document.getElementById('page-home');
-      if(home&&home.classList.contains('active')){const h=home.querySelector('h1');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});h.scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'});}}
-      else focusCurrentView();
+
+  function focusElement(el) {
+    if (!el) return;
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+    el.focus({ preventScroll: true });
+  }
+
+  function focusDestination() {
+    const view = activeView();
+    if (!view) return;
+
+    const hash = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+    // Section links should focus the heading of the destination, not the top of the home.
+    if (view.id === 'page-home' && HOME_ANCHORS.has(hash)) {
+      const section = document.getElementById(hash);
+      if (section && view.contains(section)) {
+        focusElement(section.querySelector('h1, h2, h3') || section);
+        return;
+      }
+    }
+
+    // Routes for cases and articles: announce the new page's heading.
+    focusElement(view.querySelector('h1') || view);
+  }
+
+  function queueFocus() {
+    window.cancelAnimationFrame(focusFrame);
+    focusFrame = window.requestAnimationFrame(function () {
+      focusFrame = window.requestAnimationFrame(focusDestination);
+    });
+  }
+
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('a');
+    if (!link) return;
+    if (menu && menu.contains(link)) closeMenu();
+
+    if (link === skipLink) {
+      event.preventDefault();
+      const view = activeView();
+      if (!view) return;
+      const heading = view.querySelector('h1') || view;
+      focusElement(heading);
+      heading.scrollIntoView({
+        behavior: reducedMotion.matches ? 'auto' : 'smooth',
+        block: 'start'
+      });
       return;
     }
-    const internalRoute=href.startsWith('#')&&(href.length>1);
-    if(internalRoute&&link.closest('.nav,.mobile-nav,.case-page-shell,.insight-page,#page-home,.footer')){
-      if(/^(#home|#cases|#sobre|#experiencia|#recomendacoes|#insights)$/.test(href)){
-        // Section scrolling is handled by the existing router; avoid moving focus away from the destination.
-        const id=href.slice(1);
-        requestAnimationFrame(()=>requestAnimationFrame(()=>{
-          const target=id==='home'?document.querySelector('#page-home h1'):document.getElementById(id);
-          if(target){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});}
-        }));
-      }else if(/^#(?:case-|page-case-|insight-|page-insight-)/.test(href)){queueFocus();}
+
+    if (event.defaultPrevented && !link.hasAttribute('data-route') && !link.hasAttribute('data-home-anchor')) return;
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    // pushState in the main router does not emit hashchange; explicitly sync focus.
+    if (link.hasAttribute('data-route') || link.hasAttribute('data-home-anchor')) {
+      queueFocus();
     }
   });
-  if(menu){
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.open){closeMenu();menu.querySelector('summary')?.focus();}});
-    document.addEventListener('click',function(e){if(menu.open&&!menu.contains(e.target))closeMenu();});
-    window.addEventListener('resize',function(){if(window.innerWidth>900)closeMenu();});
-  }
-  window.addEventListener('popstate',queueFocus);
-  // Preserve the existing hash router; this layer only enhances focus after navigating.
+
+  document.addEventListener('keydown', function (event) {
+    if (menu && menu.open && event.key === 'Escape') {
+      closeMenu();
+      menu.querySelector('summary')?.focus();
+    }
+  });
+
+  document.addEventListener('click', function (event) {
+    if (menu && menu.open && !menu.contains(event.target)) closeMenu();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) closeMenu();
+  });
+
+  // Browser back/forward and ordinary hash links use the same focus handling.
+  window.addEventListener('popstate', queueFocus);
+  window.addEventListener('hashchange', queueFocus);
 })();
