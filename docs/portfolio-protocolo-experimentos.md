@@ -1,6 +1,6 @@
 # Portfolio as a Product — protocolo de medição e experimentação
 
-Status: **instrumentação preparada; resultados reais não acessados nesta sprint**.
+Status: **instrumentação preparada; linha de base preliminar consultada no PostHog em 09/11/2026**.
 Objetivo: descobrir se o portfólio ajuda a pessoa visitante a localizar evidências de atuação, aprofundar um case e avançar para um canal de conexão profissional.
 
 ## Fonte de dados e escopo
@@ -9,7 +9,25 @@ Objetivo: descobrir se o portfólio ajuda a pessoa visitante a localizar evidên
 - **Microsoft Clarity**: dados comportamentais agregados, como scroll e zonas de interação. Não substitui evento explícito de entendimento ou satisfação.
 - **Exclusão de visitas internas**: parâmetro `?internal=1` marca o navegador para não disparar a instrumentação; `?internal=0` remove a marca. Validar o filtro antes de comparar períodos.
 - **Outis**: inclusão de `analytics.js` na página externa em `cases/governanca-backlog/`; a classificação de rota usa `case-governanca-backlog`.
-- Nenhum destes dados foi consultado no PostHog nesta sprint. Resultados observados, tendências e uplifts **não estão afirmados**.
+- A linha de base acima foi consultada diretamente no PostHog; não há resultado de experimento, tendência comprovada ou uplift atribuído à Sprint 04.
+
+## Linha de base preliminar — consulta em 09/11/2026
+
+A conexão de PostHog foi conferida com o token público do SDK utilizado no site (sem reproduzir credenciais). A consulta de tendências cobriu **os últimos 30 dias**, no fuso UTC do projeto.
+
+| Evento | Ocorrências no período |
+| --- | ---: |
+| `$pageview` | 183 |
+| `case_opened` | 23 |
+| `insight_opened` | 3 |
+| `cv_clicked` | 1 |
+| `linkedin_clicked` | 2 |
+
+**Interpretação:** são contagens brutas de eventos, não número de visitantes únicos nem taxas de conversão. Os registros podem incluir navegação repetida, bots, testes e tráfego interno não excluído; é necessário validar a qualidade da amostra antes de inferir comportamento. Não somar eventos como se representassem uma única jornada nem calcular conversão dividindo contagens brutas.
+
+O evento `case_filter_selected` ainda não fazia parte da taxonomia registrada na data da consulta, pois a Sprint 04 permanece em PR e não foi publicada. A medição dos filtros dependerá da publicação do código, de tráfego posterior e da validação no navegador. O mesmo vale para a ampliação de cobertura do Outis.
+
+A amostra é **insuficiente para afirmar melhora da experiência, comparar versões ou declarar uplift**. Não foi executado experimento controlado. As hipóteses H1, H2 e H3 permanecem abertas.
 
 ## Taxonomia que importa para a decisão
 
