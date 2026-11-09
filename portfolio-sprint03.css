@@ -1,0 +1,17 @@
+/* Sprint 03: mobile, acessibilidade e experiência sem alterar marca. */
+.skip-content-link{position:fixed;top:8px;left:12px;z-index:1000;transform:translateY(-180%);padding:12px 16px;background:#5A1F3C;color:#fff;border-radius:10px;font-weight:800;font-size:13px;box-shadow:0 8px 22px rgba(60,20,40,.18)}
+.skip-content-link:focus-visible{transform:translateY(0);outline:3px solid #A8396A;outline-offset:3px}
+.mobile-nav{display:none;position:relative;color:#5A1F3C}
+.mobile-nav summary{display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;min-height:44px;padding:8px 13px;border:1px solid #E8B4C8;border-radius:11px;font-size:13px;font-weight:800}
+.mobile-nav summary::-webkit-details-marker{display:none}
+.mobile-nav[open] summary span{transform:rotate(180deg)}
+.mobile-nav-panel{position:absolute;right:0;top:calc(100% + 10px);width:min(275px,calc(100vw - 32px));display:flex;flex-direction:column;gap:2px;padding:10px;border:1px solid #E8B4C8;border-radius:14px;box-shadow:0 16px 36px rgba(80,25,49,.14);background:#fff;z-index:55}
+.mobile-nav-panel a{display:flex;align-items:center;min-height:44px;padding:10px 13px;border-radius:8px;color:#5A1F3C;font-size:13px;font-weight:700;text-decoration:none}
+.mobile-nav-panel a:hover,.mobile-nav-panel a:focus-visible{background:#F7E4EC}
+.nav .mobile-nav summary:focus-visible,.nav a:focus-visible,#page-home a:focus-visible,.case-page-shell a:focus-visible{outline:3px solid #A8396A;outline-offset:3px}
+#page-home section[id]{scroll-margin-top:86px}
+.single-page-view h1:focus,.single-page-view:focus{outline:none}
+@media(max-width:900px){.nav .mobile-nav{display:block}.nav .navlinks{display:none}.nav .navin{gap:12px}.nav .brand{min-width:0}.nav .brand>span:last-child{white-space:nowrap}}
+@media(max-width:510px){.nav .navin{gap:8px}.nav .brand{font-size:14px!important}.nav .brand-mark{width:27px!important;height:28px!important}.nav .mobile-nav summary{padding:8px 10px;font-size:12px}.nav .navin>.btn{padding:9px 11px!important;font-size:11px!important;min-height:44px}.nav .mobile-nav-panel{right:-5px}}
+@media(max-width:365px){.nav .navin>.btn{font-size:0!important;gap:0}.nav .navin>.btn span{font-size:14px!important}.nav .brand>span:last-child{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.mobile-nav summary span,.mobile-nav-panel a{transition:none!important}}
