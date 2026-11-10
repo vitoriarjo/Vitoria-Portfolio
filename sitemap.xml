@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://vitoriarjo.github.io/Vitoria-Portfolio/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://vitoriarjo.github.io/Vitoria-Portfolio/cases/troca-tecnologia/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://vitoriarjo.github.io/Vitoria-Portfolio/cases/jornada-fibra/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://vitoriarjo.github.io/Vitoria-Portfolio/cases/autoagendamento/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://vitoriarjo.github.io/Vitoria-Portfolio/cases/voice-cloud/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://vitoriarjo.github.io/Vitoria-Portfolio/cases/automacao-capacidade/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vitoriarjo.github.io/Vitoria-Portfolio/case-novo-brisacliente.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vitoriarjo.github.io/Vitoria-Portfolio/cases/governanca-backlog/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
