@@ -1,0 +1,20 @@
+/* Sprint 07: curadoria editorial para recrutadores.
+   Identidade vinho/rosa existente; sem modificar cards dos dez cases. */
+#cases .recruiter-featured{margin:0 0 28px;padding:27px;border:1px solid #E8B4C8;background:linear-gradient(125deg,#FFF9FB,#FDF1F6);border-radius:22px}
+#cases .recruiter-featured-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:20px}
+#cases .recruiter-featured-head h3{font-size:clamp(21px,2.2vw,28px);line-height:1.25;color:#5A1F3C;letter-spacing:-.035em;margin:8px 0 0}
+#cases .recruiter-featured-head p{max-width:390px;font-size:13px;line-height:1.7;color:#6E5D66;margin:0}
+#cases .recruiter-featured-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#cases .recruiter-featured-card{display:flex;flex-direction:column;gap:10px;min-width:0;padding:20px;background:white;border:1px solid #E9D1DB;border-radius:15px;text-decoration:none;color:#5A1F3C;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+#cases .recruiter-featured-card:hover{transform:translateY(-2px);border-color:#A8396A;box-shadow:0 12px 24px rgba(90,31,60,.08)}
+#cases .recruiter-featured-card:focus-visible,#cases .recruiter-featured-anchor:focus-visible{outline:3px solid #A8396A;outline-offset:3px}
+#cases .recruiter-featured-index{font-size:10px;font-weight:800;color:#A8396A;letter-spacing:.07em;text-transform:uppercase}
+#cases .recruiter-featured-card strong{font-size:18px;line-height:1.25;letter-spacing:-.02em}
+#cases .recruiter-featured-card>span:nth-child(3){font-size:12.5px;line-height:1.65;color:#6E5D66;flex:1}
+#cases .recruiter-featured-action{font-size:12px;font-weight:800;color:#822750}
+#cases .recruiter-featured-footer{display:flex;gap:20px;justify-content:flex-start;flex-wrap:wrap;margin-top:18px}
+#cases .recruiter-featured-anchor{font-size:12px;font-weight:800;color:#6C2549;text-decoration:underline;text-underline-offset:4px}
+#case-curation-controls{scroll-margin-top:100px}
+@media(max-width:850px){#cases .recruiter-featured-head{display:block}#cases .recruiter-featured-head p{margin-top:10px;max-width:680px}#cases .recruiter-featured-grid{grid-template-columns:1fr}}
+@media(max-width:520px){#cases .recruiter-featured{padding:18px;margin-bottom:22px}#cases .recruiter-featured-card{padding:17px}#cases .recruiter-featured-footer{gap:12px;flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){#cases .recruiter-featured-card{transition:none}#cases .recruiter-featured-card:hover{transform:none}}
