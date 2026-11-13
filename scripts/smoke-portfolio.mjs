@@ -41,13 +41,22 @@ assert.ok(html.includes('Product Manager · Governance, Automation &amp; AI'), '
 assert.ok(read('portfolio.js').includes('Product Manager e Product Owner Sênior · Estratégia de Produto'), 'Título dinâmico deve refletir posicionamento atual');
 assert.ok(html.includes('Desde nov 2026'), 'Data de início em Governança de TI ausente');
 assert.ok(!html.includes('transição prevista para 11/11/2026'), 'Referência antiga à transição futura deve ser removida');
-assert.equal((html.match(/class="recruiter-featured-card"/g) || []).length, 3, 'Devem existir três cases recomendados');
-for (const slug of ['autoagendamento', 'troca-tecnologia', 'voice-cloud']) {
-  assert.ok(html.includes('data-track="destaque-' + slug + '"'), 'Destaque ausente: ' + slug);
-  assert.ok(html.includes('data-route="case-' + slug + '"'), 'Rota do destaque ausente: ' + slug);
-}
-assert.ok(html.includes('id="case-curation-controls"'), 'Atalho para filtros não encontrado');
-assert.ok(html.includes('portfolio-sprint07.css?v=20261112'), 'CSS da sprint não vinculado');
+assert.equal((html.match(/class="recruiter-featured-card"/g) || []).length, 0, 'A vitrine duplicada da Sprint 07 deve ser removida');
+assert.equal((html.match(/class="case-card-v4/g) || []).length, 3, 'Três cases principais esperados');
+assert.equal((html.match(/class="compact-case-card"/g) || []).length, 7, 'Sete cases complementares esperados');
+const casesSection = html.split('<section id="cases">')[1].split('<section class="method-section"')[0];
+const uniqueSlugs = [...casesSection.matchAll(/data-track="ver-case-([^"]+)"/g)].map(match => match[1]);
+assert.equal(uniqueSlugs.length, 10, 'A vitrine deve ter exatamente dez cases');
+assert.equal(new Set(uniqueSlugs).size, 10, 'Nenhum case pode aparecer duas vezes');
+assert.deepEqual(uniqueSlugs.slice(0, 3), ['autoagendamento', 'troca-tecnologia', 'voice-cloud'], 'Três destaques na ordem esperada');
+assert.deepEqual(uniqueSlugs.slice(3), ['novo-brisacliente', 'jornada-fibra', 'formalizacao', 'automacao-capacidade', 'release-governance', 'portfolio-product', 'governanca-backlog'], 'Sete complementares esperados');
+assert.ok(casesSection.includes('id="case-curation-controls"'), 'Filtros devem continuar disponíveis');
+assert.ok(casesSection.includes('data-track="filtrar-cases-ops"'), 'Filtro de Product Operations ausente');
+assert.ok(html.includes('portfolio-cases-v2.css?v=20261112'), 'Folha CSS da nova vitrine ausente');
+assert.ok(!html.includes('href="portfolio-sprint07.css'), 'Estilo da vitrine duplicada não deve ser carregado');
+assert.ok(read('portfolio-evolucao.js').includes('mainCards.hidden='), 'O filtro precisa ocultar os destaques quando não houver correspondência');
+assert.ok(read('case-novo-brisacliente.html').includes('Case 04 · Product Strategy · MVP'), 'Número do case Novo BrisaCliente inconsistente');
+
 assert.ok(html.includes('portfolio-sprints.css?v=20261109'), 'Bundle CSS não vinculado');
 assert.ok(html.includes('src="data:image/webp;base64,'), 'Retrato da hero não encontrado');
 assert.ok(!html.includes('Product Manager · Senior Product Owner'), 'Rodapé apresenta cargo inconsistente');
