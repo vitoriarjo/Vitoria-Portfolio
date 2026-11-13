@@ -5,7 +5,7 @@ Facilitar que recrutadores de **Product Owner, Product Manager e Product Operati
 
 ## Atualização da trajetória
 - Cargo apresentado: **Senior Product Owner**, sem afirmar exercício formal do cargo de Product Manager.
-- Atuação em Governança de TI e Automações: **iniciada em 11/11/2026**, sucedendo a jornada de Customer Journey & Growth.
+- Atuação em Governança de TI e Automações: **iniciada em nov/2026**, sucedendo a jornada de Customer Journey & Growth.
 - A experiência anterior permanece preservada; a seção atual descreve **escopo e responsabilidades**, não resultados atribuídos a automações ainda não comprovados.
 - Hero, metadescrição e descrição Open Graph foram atualizadas para refletir a atuação atual, sem exageros de impacto.
 - A classificação da transição como "futura" foi retirada do conteúdo.
