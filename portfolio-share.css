@@ -1,0 +1,15 @@
+/* Sprint 06 — utilidade discreta de compartilhamento nos cases. */
+.case-page-shell .case-share-copy{
+  display:inline-flex;align-items:center;gap:7px;min-height:40px;
+  margin:0 0 18px 14px;padding:8px 13px;border:1px solid #E8B4C8;
+  border-radius:10px;background:#FFF8FB;color:#5A1F3C;
+  font:700 12px/1.4 'Plus Jakarta Sans',Arial,sans-serif;cursor:pointer;
+  vertical-align:middle
+}
+.case-page-shell .case-share-copy:hover{background:#F7E4EC}
+.case-page-shell .case-share-copy:focus-visible{outline:3px solid #A8396A;outline-offset:2px}
+.case-page-shell .case-share-feedback{display:inline-block;margin-left:9px;color:#5A1F3C;font-size:12px;line-height:1.6;vertical-align:middle}
+@media(max-width:600px){
+  .case-page-shell .case-share-copy{margin-left:0;margin-right:12px}
+  .case-page-shell .case-share-feedback{display:block;margin:0 0 10px}
+}
