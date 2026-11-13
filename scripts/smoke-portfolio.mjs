@@ -48,6 +48,11 @@ const casesSection = html.split('<section id="cases">')[1].split('<section class
 const uniqueSlugs = [...casesSection.matchAll(/data-track="ver-case-([^"]+)"/g)].map(match => match[1]);
 assert.equal(uniqueSlugs.length, 10, 'A vitrine deve ter exatamente dez cases');
 assert.equal(new Set(uniqueSlugs).size, 10, 'Nenhum case pode aparecer duas vezes');
+const visualIndexes = [
+  ...[...casesSection.matchAll(/class="case-number case-index">(\d\d)<\/span>/g)].map(match => match[1]),
+  ...[...casesSection.matchAll(/class="case-index">(\d\d)<\/span>/g)].map(match => match[1])
+];
+assert.deepEqual(visualIndexes, ['01','02','03','04','05','06','07','08','09','10'], 'Numeração visual deve ser contínua de 01 a 10');
 assert.deepEqual(uniqueSlugs.slice(0, 3), ['autoagendamento', 'troca-tecnologia', 'voice-cloud'], 'Três destaques na ordem esperada');
 assert.deepEqual(uniqueSlugs.slice(3), ['novo-brisacliente', 'jornada-fibra', 'formalizacao', 'automacao-capacidade', 'release-governance', 'portfolio-product', 'governanca-backlog'], 'Sete complementares esperados');
 assert.ok(casesSection.includes('id="case-curation-controls"'), 'Filtros devem continuar disponíveis');
