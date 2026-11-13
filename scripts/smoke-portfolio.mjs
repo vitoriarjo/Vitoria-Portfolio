@@ -36,7 +36,9 @@ for (const target of hashLinks) {
 assert.equal((html.match(/data-track="ver-case-/g) || []).length, 10, 'Esperados dez links de cases');
 assert.ok(html.includes('data-evidence="mixed" id="page-case-formalizacao"'), 'Efetivação deve distinguir evidências');
 assert.ok(html.includes('data-evidence="estimated" id="page-case-troca-tecnologia"'), 'Estimativa do business case deve continuar explícita');
-assert.ok(html.includes('Atuação atual: Governança de TI e Automações · desde 11/11/2026'), 'Transição atual deve indicar a data efetiva');
+assert.ok(html.includes('Objetivo profissional: Product Manager Pleno ou Product Owner Sênior'), 'Vagas-alvo PM Pleno / PO Sênior ausentes');
+assert.ok(html.includes('Product Manager · Governance, Automation &amp; AI'), 'Cargo atual deve refletir currículo enviado');
+assert.ok(read('portfolio.js').includes('Product Manager e Product Owner Sênior · Estratégia de Produto'), 'Título dinâmico deve refletir posicionamento atual');
 assert.ok(html.includes('Desde 11 nov 2026'), 'Data de início em Governança de TI ausente');
 assert.ok(!html.includes('transição prevista para 11/11/2026'), 'Referência antiga à transição futura deve ser removida');
 assert.equal((html.match(/class="recruiter-featured-card"/g) || []).length, 3, 'Devem existir três cases recomendados');
@@ -77,4 +79,13 @@ for (const slug of shareSlugs) {
 }
 assert.ok(html.includes('property="og:url"'), 'Falta og:url na home');
 
-console.log('OK: scripts, folhas CSS, âncoras, dez cases, evidências, compartilhamento e SEO.');
+const cvFilename = 'CV_Vitoria_Araujo_PM_Pleno_PO_Senior_2026.pdf';
+const cv = readFileSync(join(root, cvFilename));
+const legacyCv = readFileSync(join(root, 'cv-vitoria-araujo.pdf'));
+assert.equal((html.match(/href="CV_Vitoria_Araujo_PM_Pleno_PO_Senior_2026.pdf"/g) || []).length, 3, 'Três links de currículo devem apontar ao novo PDF');
+assert.ok(!html.includes('href="cv-vitoria-araujo.pdf"'), 'Link antigo do PDF não deve ser usado na home');
+assert.ok(cv.subarray(0, 8).toString('ascii').startsWith('%PDF-1.'), 'CV deve ter cabeçalho PDF');
+assert.ok(cv.toString('ascii').includes('%%EOF'), 'CV deve ter fechamento PDF');
+assert.ok(cv.toString('ascii').includes('/Count 2'), 'CV deve conter as duas páginas');
+assert.ok(cv.equals(legacyCv), 'Alias legado do CV deve estar atualizado');
+console.log('OK: scripts, CSS, rotas, dez cases, compartilhamento, foco PM/PO e currículo PDF.');
