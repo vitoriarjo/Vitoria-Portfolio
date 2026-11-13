@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Corujinha do Outis">
+<rect width="120" height="120" rx="27" fill="#FFF2E9"/>
+<path d="M18 26 40 42 Q60 34 80 42 L102 26 102 76 Q102 108 60 108 Q18 108 18 76Z" fill="#282B33"/>
+<circle cx="42" cy="66" r="14" fill="#FFFFFF"/><circle cx="78" cy="66" r="14" fill="#FFFFFF"/>
+<circle cx="44" cy="66" r="6" fill="#282B33"/><circle cx="80" cy="66" r="6" fill="#282B33"/>
+<path d="M53 82H67L60 94Z" fill="#E53001"/>
+</svg>
