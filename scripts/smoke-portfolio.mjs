@@ -36,7 +36,16 @@ for (const target of hashLinks) {
 assert.equal((html.match(/data-track="ver-case-/g) || []).length, 10, 'Esperados dez links de cases');
 assert.ok(html.includes('data-evidence="mixed" id="page-case-formalizacao"'), 'Efetivação deve distinguir evidências');
 assert.ok(html.includes('data-evidence="estimated" id="page-case-troca-tecnologia"'), 'Estimativa do business case deve continuar explícita');
-assert.ok(html.includes('transição prevista para 11/11/2026'), 'Data da transição não pode ser antecipada');
+assert.ok(html.includes('Atuação atual: Governança de TI e Automações · desde 11/11/2026'), 'Transição atual deve indicar a data efetiva');
+assert.ok(html.includes('Desde 11 nov 2026'), 'Data de início em Governança de TI ausente');
+assert.ok(!html.includes('transição prevista para 11/11/2026'), 'Referência antiga à transição futura deve ser removida');
+assert.equal((html.match(/class="recruiter-featured-card"/g) || []).length, 3, 'Devem existir três cases recomendados');
+for (const slug of ['autoagendamento', 'troca-tecnologia', 'voice-cloud']) {
+  assert.ok(html.includes('data-track="destaque-' + slug + '"'), 'Destaque ausente: ' + slug);
+  assert.ok(html.includes('data-route="case-' + slug + '"'), 'Rota do destaque ausente: ' + slug);
+}
+assert.ok(html.includes('id="case-curation-controls"'), 'Atalho para filtros não encontrado');
+assert.ok(html.includes('portfolio-sprint07.css?v=20261112'), 'CSS da sprint não vinculado');
 assert.ok(html.includes('portfolio-sprints.css?v=20261109'), 'Bundle CSS não vinculado');
 assert.ok(html.includes('src="data:image/webp;base64,'), 'Retrato da hero não encontrado');
 assert.ok(!html.includes('Product Manager · Senior Product Owner'), 'Rodapé apresenta cargo inconsistente');
