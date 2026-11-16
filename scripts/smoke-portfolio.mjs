@@ -153,9 +153,10 @@ assert.deepEqual(uniqueSlugs, sequence.map((entry) => entry[0]), 'Ordem dos case
 const filterJs = read('portfolio-evolucao.js');
 for (const elementId of ['cases-section-heading', 'cases-section-description', 'other-cases-heading', 'other-cases-description']) {
   assert.ok(html.includes('id="' + elementId + '"'), 'Elemento para título de filtro ausente: ' + elementId);
-  assert.ok(filterJs.includes('"' + elementId + '"'), 'Título não controlado pelo filtro: ' + elementId);
+  assert.ok(filterJs.includes('"#' + elementId + '"'), 'Título não controlado pelo filtro: ' + elementId);
 }
 assert.ok(filterJs.includes('Projetos relacionados'), 'Título dinâmico dos filtros ausente');
+assert.ok(html.includes('portfolio-evolucao.js?v=20261116-sprint08'), 'Cache do script de filtros não atualizado');
 assert.ok(html.includes('Da estratégia ao produto em produção'), 'Storytelling da hero não atualizado');
 assert.ok(html.includes('Em busca de oportunidades como Product Manager Pleno ou Product Owner Sênior'), 'Objetivo profissional não destacado na hero');
 
