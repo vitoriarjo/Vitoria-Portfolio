@@ -33,7 +33,7 @@ const hashLinks = [...html.matchAll(/<a\b[^>]*href="#([^"]+)"/g)].map((match) =>
 for (const target of hashLinks) {
   assert.ok(target === 'home' || idSet.has(target) || idSet.has('page-' + target), 'Âncora sem destino: #' + target);
 }
-assert.equal((html.match(/data-track="ver-case-/g) || []).length, 10, 'Esperados dez links de cases');
+assert.ok(html.includes('data-track="ver-case-autoagendamento"'), 'Links rastreáveis para os cases ausentes');
 assert.ok(html.includes('data-evidence="mixed" id="page-case-formalizacao"'), 'Efetivação deve distinguir evidências');
 assert.ok(html.includes('data-evidence="estimated" id="page-case-troca-tecnologia"'), 'Estimativa do business case deve continuar explícita');
 assert.ok(html.includes('Objetivo profissional: Product Manager Pleno ou Product Owner Sênior'), 'Vagas-alvo PM Pleno / PO Sênior ausentes');
@@ -93,13 +93,81 @@ for (const slug of shareSlugs) {
 }
 assert.ok(html.includes('property="og:url"'), 'Falta og:url na home');
 
+// Sprint 08: correspondência entre ordem dos cards, navegação anterior/próximo
+// e páginas independentes. A ordem oficial é única para a vitrine e os testes.
+const sequence = [
+  ['autoagendamento', 'Autoagendamento', 'index.html'],
+  ['troca-tecnologia', 'Troca de Tecnologia', 'index.html'],
+  ['voice-cloud', 'Voice Cloud', 'index.html'],
+  ['novo-brisacliente', 'Novo BrisaCliente', 'case-novo-brisacliente.html'],
+  ['jornada-fibra', 'Diagnóstico de Conversão', 'index.html'],
+  ['formalizacao', 'Efetivação e Onboarding', 'index.html'],
+  ['automacao-capacidade', 'Automação de Capacidade', 'index.html'],
+  ['release-governance', 'Release Governance', 'index.html'],
+  ['portfolio-product', 'Portfolio as a Product', 'index.html'],
+  ['governanca-backlog', 'Outis · Governança de backlog', 'cases/governanca-backlog/index.html']
+];
+
+function getView(entry) {
+  const [slug, , filename] = entry;
+  if (filename !== 'index.html') return read(filename);
+  const match = html.match(new RegExp('<main\\b[^>]*id="page-case-' + slug + '"[^>]*>[\\s\\S]*?<\\/main>'));
+  assert.ok(match, 'View interna ausente: ' + slug);
+  return match[0];
+}
+
+function getNavLinks(view) {
+  const navigation = view.match(/<div class="cs-case-nav">([\s\S]*?)<\/div>/);
+  assert.ok(navigation, 'Navegação entre cases ausente');
+  const links = [...navigation[1].matchAll(/<a\b([^>]*class="cs-case-nav-link is-(prev|next)"[^>]*)>([\s\S]*?)<\/a>/g)];
+  return links.map((m) => ({
+    direction: m[2],
+    href: m[1].match(/href="([^"]+)"/)?.[1],
+    name: m[3].match(/class="cs-case-nav-name">([^<]+)</)?.[1]
+  }));
+}
+
+function expectedLink(target, origin) {
+  const [slug, name, filename] = target;
+  let href = '';
+  if (origin === 'index.html') {
+    href = filename === 'index.html' ? '#case-' + slug : filename;
+  } else if (origin === 'case-novo-brisacliente.html') {
+    href = filename === 'index.html' ? 'index.html#case-' + slug : filename;
+  } else {
+    href = filename === 'index.html' ? '../../index.html#case-' + slug : '../../' + filename;
+  }
+  return { href, name };
+}
+
+for (let i = 0; i < sequence.length; i++) {
+  const entry = sequence[i];
+  const links = getNavLinks(getView(entry));
+  const expected = [];
+  if (i > 0) expected.push({ direction: 'prev', ...expectedLink(sequence[i - 1], entry[2]) });
+  if (i < sequence.length - 1) expected.push({ direction: 'next', ...expectedLink(sequence[i + 1], entry[2]) });
+  assert.deepEqual(links, expected, 'Navegação incoerente no case ' + entry[0]);
+}
+
+assert.deepEqual(uniqueSlugs, sequence.map((entry) => entry[0]), 'Ordem dos cases difere da navegação');
+const filterJs = read('portfolio-evolucao.js');
+for (const elementId of ['cases-section-heading', 'cases-section-description', 'other-cases-heading', 'other-cases-description']) {
+  assert.ok(html.includes('id="' + elementId + '"'), 'Elemento para título de filtro ausente: ' + elementId);
+  assert.ok(filterJs.includes('"#' + elementId + '"'), 'Título não controlado pelo filtro: ' + elementId);
+}
+assert.ok(filterJs.includes('Projetos relacionados'), 'Título dinâmico dos filtros ausente');
+assert.ok(html.includes('portfolio-evolucao.js?v=20261116-sprint08'), 'Cache do script de filtros não atualizado');
+assert.ok(html.includes('Da estratégia ao produto em produção'), 'Storytelling da hero não atualizado');
+assert.ok(html.includes('Em busca de oportunidades como Product Manager Pleno ou Product Owner Sênior'), 'Objetivo profissional não destacado na hero');
+
 const cvFilename = 'CV_Vitoria_Araujo_PM_Pleno_PO_Senior_2026.pdf';
 const cv = readFileSync(join(root, cvFilename));
 const legacyCv = readFileSync(join(root, 'cv-vitoria-araujo.pdf'));
-assert.equal((html.match(/href="CV_Vitoria_Araujo_PM_Pleno_PO_Senior_2026.pdf"/g) || []).length, 3, 'Três links de currículo devem apontar ao novo PDF');
+assert.equal((html.match(/href="CV_Vitoria_Araujo_PM_Pleno_PO_Senior_2026.pdf"/g) || []).length, 2, 'Os dois links de currículo devem apontar ao PDF atualizado');
 assert.ok(!html.includes('href="cv-vitoria-araujo.pdf"'), 'Link antigo do PDF não deve ser usado na home');
 assert.ok(cv.subarray(0, 8).toString('ascii').startsWith('%PDF-1.'), 'CV deve ter cabeçalho PDF');
 assert.ok(cv.toString('ascii').includes('%%EOF'), 'CV deve ter fechamento PDF');
 assert.ok(cv.toString('ascii').includes('/Count 2'), 'CV deve conter as duas páginas');
 assert.ok(cv.equals(legacyCv), 'Alias legado do CV deve estar atualizado');
+assert.equal((html.match(/aria-label="Baixar currículo atualizado de Vitória Araújo para vagas de PM Pleno e PO Sênior em PDF"/g) || []).length, 2, 'Os dois botões do CV precisam de identificação acessível');
 console.log('OK: scripts, CSS, rotas, dez cases, compartilhamento, foco PM/PO e currículo PDF.');
