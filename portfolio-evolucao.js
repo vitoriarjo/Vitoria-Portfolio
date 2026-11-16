@@ -4,7 +4,8 @@
   const root=document.getElementById("cases");
   if(!root)return;
   const buttons=[...root.querySelectorAll("[data-case-filter]")];
-  const cases=[...root.querySelectorAll("[data-case-focus]")];
+  // Os dez cards únicos participam dos filtros; não há vitrines paralelas.
+  const cases=[...root.querySelectorAll(".cases-v3 [data-case-focus], .compact-case-grid [data-case-focus]")];
   const status=root.querySelector("#case-curation-status");
   const extra=root.querySelector(".additional-cases");
   const mainCards=root.querySelector(".cases-v3");
@@ -21,6 +22,9 @@
       const active=button.dataset.caseFilter===value;
       button.classList.toggle("is-active",active);
       button.setAttribute("aria-pressed",String(active));
+    }
+    if(mainCards){
+      mainCards.hidden=![...mainCards.querySelectorAll("[data-case-focus]")].some(x=>!x.hidden);
     }
     if(extra){
       extra.hidden=![...extra.querySelectorAll("[data-case-focus]")].some(x=>!x.hidden);
