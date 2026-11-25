@@ -59,12 +59,12 @@
 
   function sectionFor(el) {
     var section = el && el.closest ? el.closest('section') : null;
-    if (section && section.id && homeAnchors.indexOf(section.id) >= 0) return section.id;
     if (el && el.closest && el.closest('.cs-case-nav')) return 'case_navigation';
     if (el && el.closest && el.closest('.case-card-v4')) return 'featured_cases';
     if (el && el.closest && el.closest('.compact-case-grid')) return 'other_cases';
     if (el && el.closest && el.closest('.hero, .case-hero')) return 'hero';
     if (el && el.closest && el.closest('.reco-card, .reco-all-link')) return 'recommendations';
+    if (section && section.id && homeAnchors.indexOf(section.id) >= 0) return section.id;
     if (el && el.closest && el.closest('.case-page-shell, #case-main')) return 'case_content';
     if (el && el.closest && el.closest('nav')) return 'nav';
     if (el && el.closest && el.closest('footer')) return 'footer';
@@ -121,7 +121,6 @@
   }
 
   var lastPageviewKey = '';
-  var lastPageviewAt = 0;
   var lastViewKey = '';
   var depthSeen = {};
   var depthRoute = '';
@@ -152,12 +151,10 @@
     if (!window.posthog || typeof window.posthog.capture !== 'function') return;
     var route = currentRoute();
     var key = window.location.pathname + '#' + route;
-    var now = Date.now();
 
     // Avoid double counting when popstate + hashchange fire together.
-    if (key === lastPageviewKey && now - lastPageviewAt < 1000) return;
+    if (key === lastPageviewKey) return;
     lastPageviewKey = key;
-    lastPageviewAt = now;
 
     capture('$pageview', {
       $current_url: window.location.origin + window.location.pathname + '#' + route,
