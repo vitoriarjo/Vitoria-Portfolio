@@ -24,7 +24,7 @@
   };
   const original = {
     title: "Projetos em destaque",
-    description: "Três experiências-chave em estratégia, entrega e SaaS. Explore todos os dez projetos usando os filtros abaixo.",
+    description: "Três experiências-chave em governança, crescimento e estratégia de produto. Explore os dez projetos usando os filtros abaixo.",
     otherTitle: "Outros projetos",
     otherDescription: "Mais sete cases e recortes sobre estratégia, execução e Product Operations."
   };
