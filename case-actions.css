@@ -1,0 +1,11 @@
+/* Shared case actions — all ten cases. */
+.case-actions{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;margin:0 0 24px;padding:0 0 14px;border-bottom:1px solid #eadde3}
+.case-actions .case-back,.case-actions .case-share-copy{display:inline-flex!important;align-items:center;justify-content:center;gap:8px;min-height:44px;margin:0!important;padding:9px 13px!important;border-radius:9px;font:700 13px/1.4 'Plus Jakarta Sans',Arial,sans-serif!important;letter-spacing:normal;text-decoration:none!important;color:#5a1f3c!important;box-sizing:border-box;white-space:normal;cursor:pointer}
+.case-actions .case-back{background:transparent;border:1px solid transparent;padding-left:0!important}
+.case-actions .case-share-copy{background:#fff;border:1px solid #ead0dc;box-shadow:none}
+.case-actions .case-back:hover,.case-actions .case-share-copy:hover{background:#f7e4ec;color:#5a1f3c!important}
+.case-actions .case-back:focus-visible,.case-actions .case-share-copy:focus-visible{outline:3px solid #a8396a;outline-offset:3px}
+.case-actions svg{width:16px;height:16px;flex:none}
+.case-actions .case-share-feedback{flex:0 0 100%;margin:0!important;font:600 12px/1.6 'Plus Jakarta Sans',Arial,sans-serif;color:#5a1f3c;overflow-wrap:anywhere}
+.case-actions .case-share-feedback:empty{display:none!important}
+@media(max-width:380px){.case-actions{gap:6px 10px}.case-actions .case-back,.case-actions .case-share-copy{font-size:12px!important;padding-inline:8px!important}.case-actions .case-back{padding-left:0!important}}
