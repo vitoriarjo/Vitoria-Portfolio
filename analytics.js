@@ -32,10 +32,23 @@
   // Official PostHog browser snippet loader.
   !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
 
+  var caseSlugs = ['autoagendamento','troca-tecnologia','voice-cloud','jornada-fibra','formalizacao','automacao-capacidade','release-governance','portfolio-product','governanca-backlog','novo-brisacliente'];
+  var insightSlugs = ['mvp','priorizacao','rollout','pos-go-live'];
+  var homeAnchors = ['home','sobre','impacto','cases','metodo','experiencia','recomendacoes','insights','contato'];
   function currentRoute() {
     if (/\/case-novo-brisacliente\.html$/i.test(window.location.pathname)) return 'case-novo-brisacliente';
     if (/\/cases\/governanca-backlog\/(?:index\.html)?$/i.test(window.location.pathname)) return 'case-governanca-backlog';
-    return (window.location.hash || '#home').replace(/^#/, '') || 'home';
+    var hash = (window.location.hash || '#home').replace(/^#/, '');
+    var active = document.querySelector('.single-page-view.active');
+    if (active && active.id !== 'page-home') {
+      var activeRoute = active.id.replace(/^page-/, '');
+      if (activeRoute.indexOf('case-') === 0 && caseSlugs.indexOf(activeRoute.slice(5)) >= 0) return activeRoute;
+      if (activeRoute.indexOf('insight-') === 0 && insightSlugs.indexOf(activeRoute.slice(8)) >= 0) return activeRoute;
+    }
+    hash = hash.replace(/^page-/, '');
+    if (caseSlugs.indexOf(hash.slice(5)) >= 0 && hash.indexOf('case-') === 0) return hash;
+    if (insightSlugs.indexOf(hash.slice(8)) >= 0 && hash.indexOf('insight-') === 0) return hash;
+    return homeAnchors.indexOf(hash) >= 0 ? hash : 'home';
   }
 
   function pageType(route) {
@@ -46,7 +59,13 @@
 
   function sectionFor(el) {
     var section = el && el.closest ? el.closest('section') : null;
-    if (section && section.id) return section.id;
+    if (section && section.id && homeAnchors.indexOf(section.id) >= 0) return section.id;
+    if (el && el.closest && el.closest('.cs-case-nav')) return 'case_navigation';
+    if (el && el.closest && el.closest('.case-card-v4')) return 'featured_cases';
+    if (el && el.closest && el.closest('.compact-case-grid')) return 'other_cases';
+    if (el && el.closest && el.closest('.hero, .case-hero')) return 'hero';
+    if (el && el.closest && el.closest('.reco-card, .reco-all-link')) return 'recommendations';
+    if (el && el.closest && el.closest('.case-page-shell, #case-main')) return 'case_content';
     if (el && el.closest && el.closest('nav')) return 'nav';
     if (el && el.closest && el.closest('footer')) return 'footer';
     return 'unknown';
@@ -76,7 +95,8 @@
       portfolio_section: sectionFor(el),
       portfolio_route: route,
       portfolio_page_type: pageType(route),
-      target_route: targetRoute
+      target_route: targetRoute,
+      measurement_version: 's04'
     };
 
     if (action && action.indexOf('ver-case-') === 0) {
@@ -92,8 +112,41 @@
     return props;
   }
 
+  function capture(name, props) {
+    try {
+      if (window.posthog && typeof window.posthog.capture === 'function') {
+        window.posthog.capture(name, Object.assign({measurement_version:'s04'}, props || {}));
+      }
+    } catch (_) { /* analytics must not interrupt navigation */ }
+  }
+
   var lastPageviewKey = '';
   var lastPageviewAt = 0;
+  var lastViewKey = '';
+  var depthSeen = {};
+  var depthRoute = '';
+  var depthPending = false;
+  function measureDepth() {
+    depthPending = false;
+    var route = currentRoute();
+    if (pageType(route) !== 'case' || depthRoute !== route || document.visibilityState === 'hidden') return;
+    var main = document.querySelector('.single-page-view.active') || document.querySelector('main');
+    if (!main) return;
+    var rect = main.getBoundingClientRect();
+    if (rect.height <= 0) return;
+    var progress = Math.min(100, Math.max(0, (window.innerHeight - rect.top) / rect.height * 100));
+    [25,50,75,100].forEach(function (threshold) {
+      if (progress >= threshold - (threshold === 100 ? 0.1 : 0) && !depthSeen[threshold]) {
+        depthSeen[threshold] = true;
+        capture('case_depth_reached',{case_slug:route.slice(5),depth_percent:threshold,portfolio_route:route});
+      }
+    });
+  }
+  function scheduleDepth() {
+    if (depthPending) return;
+    depthPending = true;
+    window.requestAnimationFrame(measureDepth);
+  }
 
   function captureVirtualPageview() {
     if (!window.posthog || typeof window.posthog.capture !== 'function') return;
@@ -106,16 +159,27 @@
     lastPageviewKey = key;
     lastPageviewAt = now;
 
-    window.posthog.capture('$pageview', {
-      $current_url: window.location.href,
+    capture('$pageview', {
+      $current_url: window.location.origin + window.location.pathname + '#' + route,
       portfolio_route: route,
       portfolio_page_type: pageType(route)
     });
+    var viewKey = pageType(route) === 'home' ? 'home' : route;
+    if (viewKey !== lastViewKey) {
+      lastViewKey = viewKey;
+      capture('portfolio_viewed', {portfolio_route:route, portfolio_page_type:pageType(route)});
+      if (pageType(route) === 'case') capture('case_viewed', {case_slug:route.slice(5),portfolio_route:route});
+      depthSeen = {};
+      depthRoute = viewKey;
+      scheduleDepth();
+    }
   }
 
   window.posthog.init(POSTHOG_PROJECT_KEY, {
     api_host: POSTHOG_API_HOST,
     autocapture: true,
+    mask_all_element_attributes: true,
+    mask_all_text: true,
     capture_pageview: false,
     capture_pageleave: true,
     person_profiles: 'identified_only',
@@ -131,7 +195,13 @@
 
     var eventName = eventFromElement(el);
     if (eventName && window.posthog && typeof window.posthog.capture === 'function') {
-      window.posthog.capture(eventName, eventProperties(el));
+      var props = eventProperties(el);
+      capture(eventName, props);
+      var action = el.getAttribute('data-track') || '';
+      var channel = eventName === 'cv_clicked' && action === 'baixar-cv' ? 'cv' :
+        eventName === 'linkedin_clicked' && action === 'linkedin' ? 'linkedin' :
+        eventName === 'email_clicked' ? 'email' : eventName === 'whatsapp_clicked' ? 'whatsapp' : '';
+      if (channel) capture('professional_intent_clicked', Object.assign({},props,{intent_channel:channel}));
     }
 
     // pushState does not fire hashchange, so capture the new virtual page after the router runs.
@@ -140,6 +210,11 @@
     }
   }, true);
 
-  window.addEventListener('popstate', captureVirtualPageview);
-  window.addEventListener('hashchange', captureVirtualPageview);
+  function queuePageview() { window.setTimeout(captureVirtualPageview, 0); }
+  window.addEventListener('popstate', queuePageview);
+  window.addEventListener('hashchange', queuePageview);
+  window.addEventListener('scroll', scheduleDepth, {passive:true});
+  window.addEventListener('resize', scheduleDepth);
+  // SDK queues captures before its network loader finishes; preserve first route.
+  queuePageview();
 })();
