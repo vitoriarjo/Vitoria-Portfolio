@@ -9,3 +9,39 @@
 .case-actions .case-share-feedback{flex:0 0 100%;margin:0!important;font:600 12px/1.6 'Plus Jakarta Sans',Arial,sans-serif;color:#5a1f3c;overflow-wrap:anywhere}
 .case-actions .case-share-feedback:empty{display:none!important}
 @media(max-width:380px){.case-actions{gap:6px 10px}.case-actions .case-back,.case-actions .case-share-copy{font-size:12px!important;padding-inline:8px!important}.case-actions .case-back{padding-left:0!important}}
+
+/* Sprint 05 — shared editorial system, isolated from product demos. */
+.case-identifier{display:inline-flex!important;align-items:center;width:max-content;max-width:100%;margin:0 0 14px!important;padding:6px 12px;border-radius:999px;background:#5a1f3c;color:white!important;font:800 10px/1.5 'Plus Jakarta Sans',Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.case-identifier-detail{display:inline-block;margin:0 0 14px 10px;color:#785e6b;font:700 11px/1.5 'Plus Jakarta Sans',Arial,sans-serif}
+.case-page-shell .cs-hero-tags,#case-main>.hero .tags,.hero .chips{display:flex;flex-wrap:wrap;gap:8px}
+.case-page-shell .cs-hero-tag,#case-main>.hero .tags>span,.hero .chips>.chip:not(.status){display:inline-flex;align-items:center;min-height:30px;padding:5px 11px;border:1px solid #eadde3;border-radius:999px;background:#fff;color:#5a1f3c;font-size:11px;font-weight:700;line-height:1.4}
+.case-page-shell .cs-insight>p:first-child{font-size:16px;font-weight:700;line-height:1.55;max-width:70ch}
+.case-page-shell .cs-insight p.cs-insight-sub{margin:12px 0 0;font-size:14px;font-weight:400;line-height:1.7;color:#66555e;max-width:75ch}
+.case-page-shell .case-review-note,.case-page-shell .evidence-note,.case-page-shell .story-footnote,#case-main>.white>.wrap>.note{font-size:12px;line-height:1.7;color:#705b65;overflow-wrap:anywhere}
+.case-page-shell .section-head h2,#case-main>.white>.wrap>h2,#case-main>section>.wrap>h2{overflow-wrap:break-word;text-wrap:balance}
+.case-page-shell .cs-hero-grid>*,.case-page-shell .case-summary>*,#case-main>.white>.wrap>.impact>article{min-width:0}
+.case-sequence.cs-case-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px!important;margin:0!important;padding:0!important;border:0!important}
+.case-sequence .cs-case-nav-link{display:flex!important;flex-direction:column;justify-content:center;gap:6px;max-width:none!important;min-width:0;min-height:86px;padding:15px 18px;border:1px solid #eadde3;border-radius:12px;background:white;text-decoration:none!important;box-sizing:border-box}
+.case-sequence .cs-case-nav-link.is-prev{grid-column:1;text-align:left;align-items:flex-start}
+.case-sequence .cs-case-nav-link.is-next{grid-column:2;text-align:right;align-items:flex-end;margin:0!important}
+.case-sequence .cs-case-nav-label{color:#a8396a;font:800 10px/1.5 'Plus Jakarta Sans',Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.case-sequence .cs-case-nav-name{color:#5a1f3c;font:700 14px/1.5 'Plus Jakarta Sans',Arial,sans-serif;overflow-wrap:anywhere}
+.case-sequence .cs-case-nav-link:hover{border-color:#a8396a;background:#fff8fb}
+.case-sequence .cs-case-nav-link:focus-visible,.case-nav-return .btn-return:focus-visible,.case-page-shell .btn-return:focus-visible{outline:3px solid #a8396a;outline-offset:3px}
+.case-nav-return{text-align:center;margin:20px 0 0}
+.case-nav-return .btn-return,.case-page-shell .btn-return{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid #ead0dc;border-radius:9px;background:#fff;color:#5a1f3c;text-decoration:none;font:700 13px/1.5 'Plus Jakarta Sans',Arial,sans-serif;box-sizing:border-box}
+.case-nav-return .btn-return:hover,.case-page-shell .btn-return:hover{background:#f7e4ec;color:#5a1f3c}
+.case-page-shell .case-return-section{padding:0 0 40px;border-top:0}
+.case-page-shell .case-return-section .case-nav-return{margin-top:0}
+@media(max-width:600px){.case-sequence.cs-case-nav{gap:10px!important}.case-sequence .cs-case-nav-link{padding:12px;min-height:78px}.case-sequence .cs-case-nav-name{font-size:13px}.case-identifier-detail{margin-left:6px}.case-page-shell .case-return-section{padding-bottom:28px}}
+@media(max-width:360px){.case-sequence.cs-case-nav{grid-template-columns:1fr}.case-sequence .cs-case-nav-link.is-next{grid-column:1}.case-nav-return .btn-return{width:100%}}
+@media(prefers-reduced-motion:reduce){.case-sequence .cs-case-nav-link,.case-sequence .cs-case-nav-name{transition:none!important}}
+
+/* Shared card finish; only editorial cards, never prototype panels. */
+.case-page-shell .case-review-panel,.case-page-shell .tradeoff-item,.case-page-shell .cs-insight{border-radius:12px}
+.case-page-shell .case-review-grid>article,.case-page-shell .portfolio-measurement-grid>article{min-width:0;overflow-wrap:break-word}
+.case-page-shell .case-review-grid>article p,.case-page-shell .portfolio-measurement-grid>article p{line-height:1.7}
+.case-page-shell .case-hero .case-identifier{display:inline-flex!important}
+.outis-case-navigation .case-sequence .cs-case-nav-link.is-next{align-items:flex-end;text-align:right}
+.outis-case-navigation .case-nav-return .btn-return,.case-nav-section .case-nav-return .btn-return{background:#fff;color:#5a1f3c;border:1px solid #ead0dc;border-radius:9px}
+.outis-case-navigation .case-nav-return .btn-return:hover,.case-nav-section .case-nav-return .btn-return:hover{background:#f7e4ec;color:#5a1f3c}
