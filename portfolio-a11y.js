@@ -26,7 +26,8 @@
     const view = activeView();
     if (!view) return;
 
-    const hash = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+    let hash = window.location.hash.replace(/^#/, '');
+    try { hash = decodeURIComponent(hash); } catch (_) { /* malformed URL: keep raw hash */ }
     // Section links should focus the heading of the destination, not the top of the home.
     if (view.id === 'page-home' && HOME_ANCHORS.has(hash)) {
       const section = document.getElementById(hash);
@@ -34,6 +35,12 @@
         focusElement(section.querySelector('h1, h2, h3') || section);
         return;
       }
+    }
+
+    const target = hash && document.getElementById(hash);
+    if (target && target !== view && view.contains(target)) {
+      focusElement(target.querySelector('h1, h2, h3') || target);
+      return;
     }
 
     // Routes for cases and articles: announce the new page's heading.
@@ -50,6 +57,7 @@
   document.addEventListener('click', function (event) {
     const link = event.target.closest('a');
     if (!link) return;
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     if (menu && menu.contains(link)) closeMenu();
 
     if (link === skipLink) {
@@ -66,8 +74,6 @@
     }
 
     if (event.defaultPrevented && !link.hasAttribute('data-route') && !link.hasAttribute('data-home-anchor')) return;
-    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-
     // pushState in the main router does not emit hashchange; explicitly sync focus.
     if (link.hasAttribute('data-route') || link.hasAttribute('data-home-anchor')) {
       queueFocus();
