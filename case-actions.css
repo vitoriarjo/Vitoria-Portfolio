@@ -36,3 +36,12 @@
 @media(max-width:600px){.case-sequence.cs-case-nav{gap:10px!important}.case-sequence .cs-case-nav-link{padding:12px;min-height:78px}.case-sequence .cs-case-nav-name{font-size:13px}.case-identifier-detail{margin-left:6px}.case-page-shell .case-return-section{padding-bottom:28px}}
 @media(max-width:360px){.case-sequence.cs-case-nav{grid-template-columns:1fr}.case-sequence .cs-case-nav-link.is-next{grid-column:1}.case-nav-return .btn-return{width:100%}}
 @media(prefers-reduced-motion:reduce){.case-sequence .cs-case-nav-link,.case-sequence .cs-case-nav-name{transition:none!important}}
+
+/* Shared card finish; only editorial cards, never prototype panels. */
+.case-page-shell .case-review-panel,.case-page-shell .tradeoff-item,.case-page-shell .cs-insight{border-radius:12px}
+.case-page-shell .case-review-grid>article,.case-page-shell .portfolio-measurement-grid>article{min-width:0;overflow-wrap:break-word}
+.case-page-shell .case-review-grid>article p,.case-page-shell .portfolio-measurement-grid>article p{line-height:1.7}
+.case-page-shell .case-hero .case-identifier{display:inline-flex!important}
+.outis-case-navigation .case-sequence .cs-case-nav-link.is-next{align-items:flex-end;text-align:right}
+.outis-case-navigation .case-nav-return .btn-return,.case-nav-section .case-nav-return .btn-return{background:#fff;color:#5a1f3c;border:1px solid #ead0dc;border-radius:9px}
+.outis-case-navigation .case-nav-return .btn-return:hover,.case-nav-section .case-nav-return .btn-return:hover{background:#f7e4ec;color:#5a1f3c}
