@@ -23,6 +23,7 @@
       const active = v === view;
       v.classList.toggle('active', active);
       v.setAttribute('aria-hidden', active ? 'false' : 'true');
+      v.toggleAttribute('inert', !active);
     });
   }
 
